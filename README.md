@@ -1,2 +1,2 @@
 # LibraryApp
-An application for a library
+Desktop application for a Library management, written in C# (School project)
