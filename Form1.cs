@@ -26,7 +26,7 @@ namespace LibraryApp
         {
             MessageBox.Show("Hello World!");
             MessageBox.Show("Goodbye World");
-            MessageBox.Show("By Rado & Niki");
+            MessageBox.Show("By Niki & Rado");
         }
     }
 }
