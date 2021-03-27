@@ -10,56 +10,50 @@ using System.Windows.Forms;
 
 namespace LibraryApp
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
-        public Form1()
+        public Form2()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form2_Load(object sender, EventArgs e)
         {
             panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
-            label1.Text = "Login";
+            label1.Text = "Change Password";
             label2.BackColor = Color.FromArgb(100, 0, 0, 0);
             label2.Font = new Font(label2.Font, FontStyle.Underline);
-          
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if(textBox1.Text.Equals("Usernam"))
-            textBox1.Text = "";
+            if (textBox1.Text.Equals("Your passwor"))
+                textBox1.Text = "";
+            textBox1.PasswordChar = '*';
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if(textBox2.Text.Equals("Passwor"))
+            if (textBox2.Text.Equals("New passwor"))
                 textBox2.Text = "";
+            textBox2.PasswordChar = '*';
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox3.Text.Equals("Confirm new passwor"))
+                textBox3.Text = "";
+            textBox3.PasswordChar = '*';
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-            Form2 frm2 = new Form2();
-            frm2.Show();
+            Form1 frm1 = new Form1();
+            frm1.Show();
             this.Hide();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form3 frm3 = new Form3();
-            frm3.Show();
-            this.Hide();
-        }
+  
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form4 frm4 = new Form4();
-            frm4.Show();
-            this.Hide();
-
-        }
-
-   
     }
 }
