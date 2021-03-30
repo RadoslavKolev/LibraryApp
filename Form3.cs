@@ -27,7 +27,7 @@ namespace LibraryApp
 
         private void label2_Click(object sender, EventArgs e)
         {
-            Form1 frm1 = new Form1();
+            Form_Login frm1 = new Form_Login();
             frm1.Show();
             this.Hide();
         }

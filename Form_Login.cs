@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LibraryApp
 {
-    public partial class Form1 : Form
+    public partial class Form_Login : Form
     {
-        public Form1()
+        public Form_Login()
         {
             InitializeComponent();
         }
@@ -20,9 +20,8 @@ namespace LibraryApp
         private void Form1_Load(object sender, EventArgs e)
         {
             panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
-            label1.Text = "Login";
-            label2.BackColor = Color.FromArgb(100, 0, 0, 0);
-            label2.Font = new Font(label2.Font, FontStyle.Underline);
+            
+            // label2.BackColor = Color.FromArgb(100, 0, 0, 0);
           
         }
 
@@ -60,6 +59,9 @@ namespace LibraryApp
 
         }
 
-   
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
