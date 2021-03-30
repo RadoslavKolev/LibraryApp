@@ -59,9 +59,14 @@ namespace LibraryApp
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+       
 
+        private void label11_Click(object sender, EventArgs e)
+        {
+            Terms term = new Terms();
+            term.Show();
         }
+
+      
     }
 }
