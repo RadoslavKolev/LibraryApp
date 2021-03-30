@@ -51,6 +51,8 @@ namespace LibraryApp
             this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +61,8 @@ namespace LibraryApp
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label5);
@@ -81,7 +85,7 @@ namespace LibraryApp
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(109, 151);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(867, 483);
+            this.panel1.Size = new System.Drawing.Size(873, 530);
             this.panel1.TabIndex = 12;
             // 
             // panel2
@@ -89,7 +93,7 @@ namespace LibraryApp
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(433, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 454);
+            this.panel2.Size = new System.Drawing.Size(10, 506);
             this.panel2.TabIndex = 13;
             // 
             // label3
@@ -186,7 +190,7 @@ namespace LibraryApp
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(478, 221);
+            this.textBox3.Location = new System.Drawing.Point(478, 289);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(350, 26);
             this.textBox3.TabIndex = 25;
@@ -198,7 +202,7 @@ namespace LibraryApp
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(478, 188);
+            this.label7.Location = new System.Drawing.Point(478, 256);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(139, 24);
             this.label7.TabIndex = 26;
@@ -207,7 +211,7 @@ namespace LibraryApp
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox5.Location = new System.Drawing.Point(478, 310);
+            this.textBox5.Location = new System.Drawing.Point(478, 368);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(350, 26);
             this.textBox5.TabIndex = 27;
@@ -219,7 +223,7 @@ namespace LibraryApp
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(478, 277);
+            this.label9.Location = new System.Drawing.Point(478, 335);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(252, 24);
             this.label9.TabIndex = 28;
@@ -230,7 +234,7 @@ namespace LibraryApp
             this.button2.BackColor = System.Drawing.SystemColors.Menu;
             this.button2.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(585, 368);
+            this.button2.Location = new System.Drawing.Point(582, 414);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(158, 41);
             this.button2.TabIndex = 29;
@@ -287,7 +291,7 @@ namespace LibraryApp
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(475, 421);
+            this.label10.Location = new System.Drawing.Point(491, 474);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(274, 18);
             this.label10.TabIndex = 38;
@@ -299,11 +303,31 @@ namespace LibraryApp
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(747, 421);
+            this.label11.Location = new System.Drawing.Point(763, 474);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(51, 18);
             this.label11.TabIndex = 39;
             this.label11.Text = "Terms";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(479, 180);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(88, 24);
+            this.label12.TabIndex = 41;
+            this.label12.Text = "EMAIL:";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox6.Location = new System.Drawing.Point(479, 216);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(350, 26);
+            this.textBox6.TabIndex = 22;
             // 
             // Form_Login
             // 
@@ -350,6 +374,8 @@ namespace LibraryApp
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }
 
