@@ -25,11 +25,6 @@ namespace LibraryApp
         private void Form1_Load(object sender, EventArgs e)
         {
             panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
-            if (Properties.Settings.Default.uname != string.Empty)
-            {
-                textBox1.Text = Properties.Settings.Default.uname;
-                textBox2.Text = Properties.Settings.Default.pass;
-            }
         }
 
         private void label_termsClick(object sender, EventArgs e)
@@ -65,12 +60,6 @@ namespace LibraryApp
 
                 if (myReader.Read() == true)
                 { 
-                    if(checkBox1.Checked)
-                    {
-                        Properties.Settings.Default.uname = textBox1.Text;
-                        Properties.Settings.Default.pass = textBox2.Text;
-                        Properties.Settings.Default.Save();
-                    }
                     if(textBox1.Text == "admin" && textBox2.Text == "admin")
                     {
                         MessageBox.Show("Admin Login Successfull!", "Login Success");
@@ -112,7 +101,7 @@ namespace LibraryApp
         {
             try
             {
-                if(textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "")
+                if(textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || textBox7.Text == "")
                     MessageBox.Show("You must fill all of the fields!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else if(!textBox4.Text.Contains("@"))
                     MessageBox.Show("Email must have \"@\" symbol!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -126,16 +115,20 @@ namespace LibraryApp
                     MessageBox.Show("Email can't have more than 50 characters!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else if (textBox5.Text.Length > 256)
                     MessageBox.Show("Password can't have more than 256 characters!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if(!textBox3.Text.Contains(" "))
+                else if (textBox7.Text.Length > 50)
+                    MessageBox.Show("Your name can't be higher than 50 characters", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if(!textBox7.Text.Contains(" "))
                     MessageBox.Show("Please enter your both names!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     myConnection = new SqlConnection(cs);
-                    myCommand = new SqlCommand("INSERT INTO Accounts VALUES('" + textBox3.Text + "','" + textBox5.Text + "','" + textBox4.Text + "')", myConnection);
+                    myCommand = new SqlCommand("INSERT INTO Accounts VALUES('" + textBox3.Text + "','" + textBox7.Text + "','" + textBox4.Text + "','" +
+                                                textBox5.Text + "')", myConnection);
                     myConnection.Open();
                     myCommand.Parameters.AddWithValue("@username", textBox3.Text);
-                    myCommand.Parameters.AddWithValue("@password", textBox5.Text);
+                    myCommand.Parameters.AddWithValue("@fullname", textBox7.Text);
                     myCommand.Parameters.AddWithValue("@email", textBox4.Text);
+                    myCommand.Parameters.AddWithValue("@password", textBox5.Text);                    
 
                     myCommand.ExecuteNonQuery();
                     myConnection.Close();
@@ -149,8 +142,11 @@ namespace LibraryApp
                     textBox4.Clear();
                     textBox5.Clear();
                     textBox6.Clear();
+                    textBox7.Clear();
                     button3.Visible = false;
                     button4.Visible = false;
+                    label9.ForeColor = Color.White;
+                    label10.ForeColor = Color.White;
                 }
             }
             catch
