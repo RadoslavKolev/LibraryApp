@@ -53,6 +53,8 @@ namespace LibraryApp
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +63,8 @@ namespace LibraryApp
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.label12);
@@ -85,7 +89,7 @@ namespace LibraryApp
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(109, 151);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(873, 530);
+            this.panel1.Size = new System.Drawing.Size(887, 530);
             this.panel1.TabIndex = 12;
             // 
             // label8
@@ -331,6 +335,24 @@ namespace LibraryApp
             this.label1.TabIndex = 14;
             this.label1.Text = "LIBRARY MEMBER LOGIN FORM";
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button6.Location = new System.Drawing.Point(837, 370);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(31, 21);
+            this.button6.TabIndex = 68;
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button5.Location = new System.Drawing.Point(837, 291);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(31, 21);
+            this.button5.TabIndex = 67;
+            this.button5.UseVisualStyleBackColor = false;
+            // 
             // Form_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,6 +400,8 @@ namespace LibraryApp
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
     }
 }
 
