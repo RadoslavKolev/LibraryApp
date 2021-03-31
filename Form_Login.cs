@@ -27,5 +27,12 @@ namespace LibraryApp
             Form_Terms terms = new Form_Terms();
             terms.Show();
         }
+
+        private void label_forgotClick(object sender, EventArgs e)
+        {
+            Form_Forgot forgot = new Form_Forgot();
+            forgot.Show();
+            this.Hide();
+        }
     }
 }

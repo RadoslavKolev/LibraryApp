@@ -144,6 +144,7 @@ namespace LibraryApp
             this.label5.Size = new System.Drawing.Size(222, 18);
             this.label5.TabIndex = 37;
             this.label5.Text = "Forgot Username or Password?";
+            this.label5.Click += new System.EventHandler(this.label_forgotClick);
             // 
             // label3
             // 
@@ -312,7 +313,7 @@ namespace LibraryApp
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.SandyBrown;
             this.panel2.Location = new System.Drawing.Point(433, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(10, 506);
@@ -324,7 +325,7 @@ namespace LibraryApp
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Lucida Handwriting", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(98, 39);
+            this.label1.Location = new System.Drawing.Point(104, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(878, 63);
             this.label1.TabIndex = 14;
@@ -334,7 +335,7 @@ namespace LibraryApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Menu;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1120, 712);

@@ -52,11 +52,11 @@
     <Compile Include="Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="Form_Forgot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Form_Forgot.Designer.cs">
+      <DependentUpon>Form_Forgot.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Terms.cs">
       <SubType>Form</SubType>
@@ -75,8 +75,8 @@
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Forgot.resx">
+      <DependentUpon>Form_Forgot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Terms.resx">
       <DependentUpon>Form_Terms.cs</DependentUpon>
