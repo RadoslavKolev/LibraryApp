@@ -126,6 +126,7 @@ namespace LibraryApp
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox4.Location = new System.Drawing.Point(479, 216);
+            this.textBox4.MaxLength = 50;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(350, 26);
             this.textBox4.TabIndex = 22;
@@ -211,11 +212,13 @@ namespace LibraryApp
             this.button2.TabIndex = 29;
             this.button2.Text = "Sign Up";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button_SignUpClick);
             // 
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox6.Location = new System.Drawing.Point(478, 368);
+            this.textBox6.MaxLength = 256;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(350, 26);
             this.textBox6.TabIndex = 27;
@@ -237,6 +240,7 @@ namespace LibraryApp
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox5.Location = new System.Drawing.Point(478, 289);
+            this.textBox5.MaxLength = 256;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(350, 26);
             this.textBox5.TabIndex = 25;
@@ -270,6 +274,7 @@ namespace LibraryApp
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox3.Location = new System.Drawing.Point(478, 138);
+            this.textBox3.MaxLength = 30;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(350, 26);
             this.textBox3.TabIndex = 21;
@@ -297,6 +302,7 @@ namespace LibraryApp
             this.button1.TabIndex = 4;
             this.button1.Text = "Sign In";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button_SignInClick);
             // 
             // checkBox1
             // 
