@@ -83,7 +83,6 @@ namespace LibraryApp
                         MessageBox.Show("Login Successfull!", "Login Success");
                         MainUser_Form user = new MainUser_Form();
                         user.Show();
-                        //this.Hide();
                     }
                 }
                 else
@@ -97,10 +96,7 @@ namespace LibraryApp
                     else if(textBox1.Text != username.ToString())
                         MessageBox.Show("Username or Password not found!", "Login Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
-                        MessageBox.Show("Login failed! Try again!", "Login Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    textBox1.Clear();
-                    textBox2.Clear();
-                    textBox1.Focus();
+                        MessageBox.Show("Login failed! Try again!", "Login Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);                   
                 }
 
                 if (myConnection.State == ConnectionState.Open)
@@ -120,6 +116,8 @@ namespace LibraryApp
                     MessageBox.Show("You must fill all of the fields!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else if(!textBox4.Text.Contains("@"))
                     MessageBox.Show("Email must have \"@\" symbol!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (textBox4.Text.EndsWith("@"))
+                    MessageBox.Show("Email must have the mail site after \"@\"!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else if (textBox5.Text != textBox6.Text)
                     MessageBox.Show("Passwords don't match!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else if (textBox3.Text.Length > 30)
@@ -128,6 +126,8 @@ namespace LibraryApp
                     MessageBox.Show("Email can't have more than 50 characters!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else if (textBox5.Text.Length > 256)
                     MessageBox.Show("Password can't have more than 256 characters!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if(!textBox3.Text.Contains(" "))
+                    MessageBox.Show("Please enter your both names!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     myConnection = new SqlConnection(cs);
@@ -149,6 +149,8 @@ namespace LibraryApp
                     textBox4.Clear();
                     textBox5.Clear();
                     textBox6.Clear();
+                    button3.Visible = false;
+                    button4.Visible = false;
                 }
             }
             catch
@@ -161,22 +163,64 @@ namespace LibraryApp
         {
             button3.Visible = true;
             button4.Visible = true;
-            button3.BackColor = Color.Red;
-            button4.BackColor = Color.Red;
+            if (textBox5.Text.Length >= 0 && textBox5.Text.Length <= 5)
+                button3.BackColor = Color.Red;
+            else if (textBox5.Text.Length > 5 && textBox5.Text.Length <= 10)
+                button3.BackColor = Color.Yellow;
+            else
+                button3.BackColor = Color.Green;
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
+            if (textBox6.Text.Length >= 0 && textBox6.Text.Length <= 5)
+                button4.BackColor = Color.Red;
+            else if (textBox6.Text.Length > 5 && textBox6.Text.Length <= 10)
+                button4.BackColor = Color.Yellow;
+            else
+                button4.BackColor = Color.Green;
+
             if (textBox5.Text == textBox6.Text && (textBox5.Text != "" || textBox6.Text != ""))
             {
-                button3.BackColor = Color.Green;
-                button4.BackColor = Color.Green;
+                label9.ForeColor = Color.LightGreen;
+                label10.ForeColor = Color.LightGreen;
             }
             if (!textBox5.Text.Equals(textBox6.Text))
             {
-                button3.BackColor = Color.Red;
-                button4.BackColor = Color.Red;
+                label9.ForeColor = Color.White;
+                label10.ForeColor = Color.White;
             }
+        }
+
+        private void button3_ShowPassword(object sender, EventArgs e)
+        {
+            if (textBox5.UseSystemPasswordChar == true)
+                textBox5.UseSystemPasswordChar = false;
+            else
+                textBox5.UseSystemPasswordChar = true;
+        }
+
+        private void button4_ShowPassword(object sender, EventArgs e)
+        {
+            if (textBox6.UseSystemPasswordChar == true)
+                textBox6.UseSystemPasswordChar = false;
+            else
+                textBox6.UseSystemPasswordChar = true;
+        }
+
+        private void button5_ShowPassword(object sender, EventArgs e)
+        {
+            if (textBox2.UseSystemPasswordChar == true)
+                textBox2.UseSystemPasswordChar = false;
+            else
+                textBox2.UseSystemPasswordChar = true;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            button5.Visible = true;
+            if(textBox2.Text == "")
+                button5.Visible = false;
         }
     }
 }
