@@ -55,6 +55,7 @@ namespace LibraryApp
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +64,7 @@ namespace LibraryApp
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.label8);
@@ -89,28 +91,30 @@ namespace LibraryApp
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(109, 151);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(887, 530);
+            this.panel1.Size = new System.Drawing.Size(933, 530);
             this.panel1.TabIndex = 12;
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button4.Location = new System.Drawing.Point(837, 370);
+            this.button4.Location = new System.Drawing.Point(890, 370);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(31, 21);
             this.button4.TabIndex = 68;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Visible = false;
+            this.button4.Click += new System.EventHandler(this.button4_ShowPassword);
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button3.Location = new System.Drawing.Point(837, 291);
+            this.button3.Location = new System.Drawing.Point(890, 291);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(31, 21);
             this.button3.TabIndex = 67;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Visible = false;
+            this.button3.Click += new System.EventHandler(this.button3_ShowPassword);
             // 
             // label8
             // 
@@ -118,7 +122,7 @@ namespace LibraryApp
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(479, 180);
+            this.label8.Location = new System.Drawing.Point(532, 180);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 24);
             this.label8.TabIndex = 41;
@@ -127,7 +131,7 @@ namespace LibraryApp
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(479, 216);
+            this.textBox4.Location = new System.Drawing.Point(532, 216);
             this.textBox4.MaxLength = 50;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(350, 26);
@@ -139,7 +143,7 @@ namespace LibraryApp
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(763, 474);
+            this.label12.Location = new System.Drawing.Point(816, 474);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(51, 18);
             this.label12.TabIndex = 39;
@@ -152,7 +156,7 @@ namespace LibraryApp
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(491, 474);
+            this.label11.Location = new System.Drawing.Point(544, 474);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(274, 18);
             this.label11.TabIndex = 38;
@@ -179,9 +183,9 @@ namespace LibraryApp
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(44, 129);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 24);
+            this.label3.Size = new System.Drawing.Size(80, 24);
             this.label3.TabIndex = 36;
-            this.label3.Text = "USERNAME:";
+            this.label3.Text = "NAME:";
             // 
             // label2
             // 
@@ -210,7 +214,7 @@ namespace LibraryApp
             this.button2.BackColor = System.Drawing.SystemColors.Menu;
             this.button2.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(582, 414);
+            this.button2.Location = new System.Drawing.Point(635, 414);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(158, 41);
             this.button2.TabIndex = 29;
@@ -221,7 +225,7 @@ namespace LibraryApp
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox6.Location = new System.Drawing.Point(478, 368);
+            this.textBox6.Location = new System.Drawing.Point(531, 368);
             this.textBox6.MaxLength = 256;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(350, 26);
@@ -235,7 +239,7 @@ namespace LibraryApp
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(478, 335);
+            this.label10.Location = new System.Drawing.Point(531, 335);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(252, 24);
             this.label10.TabIndex = 28;
@@ -244,7 +248,7 @@ namespace LibraryApp
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox5.Location = new System.Drawing.Point(478, 289);
+            this.textBox5.Location = new System.Drawing.Point(531, 289);
             this.textBox5.MaxLength = 256;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(350, 26);
@@ -258,7 +262,7 @@ namespace LibraryApp
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(478, 256);
+            this.label9.Location = new System.Drawing.Point(531, 256);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(139, 24);
             this.label9.TabIndex = 26;
@@ -270,16 +274,16 @@ namespace LibraryApp
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(478, 97);
+            this.label7.Location = new System.Drawing.Point(531, 97);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 24);
+            this.label7.Size = new System.Drawing.Size(80, 24);
             this.label7.TabIndex = 24;
-            this.label7.Text = "USERNAME:";
+            this.label7.Text = "NAME:";
             // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(478, 138);
+            this.textBox3.Location = new System.Drawing.Point(531, 138);
             this.textBox3.MaxLength = 30;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(350, 26);
@@ -291,7 +295,7 @@ namespace LibraryApp
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Lucida Handwriting", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Snow;
-            this.label6.Location = new System.Drawing.Point(547, 30);
+            this.label6.Location = new System.Drawing.Point(600, 30);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(179, 45);
             this.label6.TabIndex = 20;
@@ -332,6 +336,7 @@ namespace LibraryApp
             this.textBox2.Size = new System.Drawing.Size(350, 26);
             this.textBox2.TabIndex = 2;
             this.textBox2.UseSystemPasswordChar = true;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label4
             // 
@@ -348,9 +353,9 @@ namespace LibraryApp
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel2.Location = new System.Drawing.Point(433, 12);
+            this.panel2.Location = new System.Drawing.Point(456, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 506);
+            this.panel2.Size = new System.Drawing.Size(10, 522);
             this.panel2.TabIndex = 13;
             // 
             // label1
@@ -364,6 +369,17 @@ namespace LibraryApp
             this.label1.Size = new System.Drawing.Size(878, 63);
             this.label1.TabIndex = 14;
             this.label1.Text = "LIBRARY MEMBER LOGIN FORM";
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button5.Location = new System.Drawing.Point(403, 267);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(31, 21);
+            this.button5.TabIndex = 69;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Visible = false;
+            this.button5.Click += new System.EventHandler(this.button5_ShowPassword);
             // 
             // Login_Form
             // 
@@ -414,6 +430,7 @@ namespace LibraryApp
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button5;
     }
 }
 
