@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LibraryApp
 {
-    public partial class Form_Forgot : Form
+    public partial class Forgot_Form : Form
     {
-        public Form_Forgot()
+        public Forgot_Form()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace LibraryApp
 
         private void button_BackToLoginClick(object sender, EventArgs e)
         {
-            Form_Login login = new Form_Login();
+            Login_Form login = new Login_Form();
             login.Show();
             this.Close();
         }

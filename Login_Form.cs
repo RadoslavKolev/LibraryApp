@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LibraryApp
 {
-    public partial class Form_Login : Form
+    public partial class Login_Form : Form
     {
-        public Form_Login()
+        public Login_Form()
         {
             InitializeComponent();
         }
@@ -24,13 +24,13 @@ namespace LibraryApp
 
         private void label_termsClick(object sender, EventArgs e)
         {
-            Form_Terms terms = new Form_Terms();
+            Terms_Form terms = new Terms_Form();
             terms.Show();
         }
 
         private void label_forgotClick(object sender, EventArgs e)
         {
-            Form_Forgot forgot = new Form_Forgot();
+            Forgot_Form forgot = new Forgot_Form();
             forgot.Show();
             this.Hide();
         }

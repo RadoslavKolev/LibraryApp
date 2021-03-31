@@ -1,7 +1,7 @@
 ﻿
 namespace LibraryApp
 {
-    partial class Form_Login
+    partial class Login_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,10 @@ namespace LibraryApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_Form));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -53,8 +55,6 @@ namespace LibraryApp
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,6 +91,24 @@ namespace LibraryApp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(887, 530);
             this.panel1.TabIndex = 12;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button6.Location = new System.Drawing.Point(837, 370);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(31, 21);
+            this.button6.TabIndex = 68;
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button5.Location = new System.Drawing.Point(837, 291);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(31, 21);
+            this.button5.TabIndex = 67;
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -335,25 +353,7 @@ namespace LibraryApp
             this.label1.TabIndex = 14;
             this.label1.Text = "LIBRARY MEMBER LOGIN FORM";
             // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button6.Location = new System.Drawing.Point(837, 370);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(31, 21);
-            this.button6.TabIndex = 68;
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button5.Location = new System.Drawing.Point(837, 291);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(31, 21);
-            this.button5.TabIndex = 67;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // Form_Login
+            // Login_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -363,7 +363,7 @@ namespace LibraryApp
             this.ClientSize = new System.Drawing.Size(1120, 712);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Name = "Form_Login";
+            this.Name = "Login_Form";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

@@ -1,6 +1,6 @@
 ﻿namespace LibraryApp
 {
-    partial class Form_Terms
+    partial class Terms_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -50,7 +50,7 @@
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
-            // Form_Terms
+            // Terms_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -60,7 +60,7 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form_Terms";
+            this.Name = "Terms_Form";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Terms of use";
