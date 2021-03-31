@@ -25,6 +25,11 @@ namespace LibraryApp
         private void Form1_Load(object sender, EventArgs e)
         {
             panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
+            if (Properties.Settings.Default.uname != string.Empty)
+            {
+                textBox1.Text = Properties.Settings.Default.uname;
+                textBox2.Text = Properties.Settings.Default.pass;
+            }
         }
 
         private void label_termsClick(object sender, EventArgs e)
@@ -59,7 +64,13 @@ namespace LibraryApp
                 SqlDataReader myReader = myCommand.ExecuteReader(CommandBehavior.CloseConnection);
 
                 if (myReader.Read() == true)
-                {
+                { 
+                    if(checkBox1.Checked)
+                    {
+                        Properties.Settings.Default.uname = textBox1.Text;
+                        Properties.Settings.Default.pass = textBox2.Text;
+                        Properties.Settings.Default.Save();
+                    }
                     if(textBox1.Text == "admin" && textBox2.Text == "admin")
                     {
                         MessageBox.Show("Admin Login Successfull!", "Login Success");
@@ -72,7 +83,7 @@ namespace LibraryApp
                         MessageBox.Show("Login Successfull!", "Login Success");
                         MainUser_Form user = new MainUser_Form();
                         user.Show();
-                        this.Hide();
+                        //this.Hide();
                     }
                 }
                 else
@@ -133,11 +144,38 @@ namespace LibraryApp
 
                     if (myConnection.State == ConnectionState.Open)
                         myConnection.Dispose();
+
+                    textBox3.Clear();
+                    textBox4.Clear();
+                    textBox5.Clear();
+                    textBox6.Clear();
                 }
             }
             catch
             {
                 MessageBox.Show("Username is already taken!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            button3.Visible = true;
+            button4.Visible = true;
+            button3.BackColor = Color.Red;
+            button4.BackColor = Color.Red;
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox5.Text == textBox6.Text && (textBox5.Text != "" || textBox6.Text != ""))
+            {
+                button3.BackColor = Color.Green;
+                button4.BackColor = Color.Green;
+            }
+            if (!textBox5.Text.Equals(textBox6.Text))
+            {
+                button3.BackColor = Color.Red;
+                button4.BackColor = Color.Red;
             }
         }
     }
