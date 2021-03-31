@@ -48,7 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -73,17 +75,23 @@
     <Compile Include="Forgot_Form.Designer.cs">
       <DependentUpon>Forgot_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainAdmin_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainAdmin_Form.Designer.cs">
+      <DependentUpon>MainAdmin_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Terms_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Terms_Form.Designer.cs">
       <DependentUpon>Terms_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main_Form.cs">
+    <Compile Include="MainUser_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main_Form.Designer.cs">
-      <DependentUpon>Main_Form.cs</DependentUpon>
+    <Compile Include="MainUser_Form.Designer.cs">
+      <DependentUpon>MainUser_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,11 +101,14 @@
     <EmbeddedResource Include="Forgot_Form.resx">
       <DependentUpon>Forgot_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainAdmin_Form.resx">
+      <DependentUpon>MainAdmin_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Terms_Form.resx">
       <DependentUpon>Terms_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main_Form.resx">
-      <DependentUpon>Main_Form.cs</DependentUpon>
+    <EmbeddedResource Include="MainUser_Form.resx">
+      <DependentUpon>MainUser_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

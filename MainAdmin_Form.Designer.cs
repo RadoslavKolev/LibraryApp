@@ -1,6 +1,7 @@
-﻿namespace LibraryApp
+﻿
+namespace LibraryApp
 {
-    partial class Main_Form
+    partial class MainAdmin_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +29,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainAdmin_Form));
             this.SuspendLayout();
             // 
-            // Main_Form
+            // MainAdmin_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(976, 673);
-            this.Name = "Main_Form";
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1144, 731);
+            this.Name = "MainAdmin_Form";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu";
