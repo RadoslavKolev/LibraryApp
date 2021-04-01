@@ -158,18 +158,22 @@ namespace LibraryApp
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            button3.Visible = true;
-            button4.Visible = true;
+            button3.Visible = true;           
             if (textBox5.Text.Length >= 0 && textBox5.Text.Length <= 5)
                 button3.BackColor = Color.Red;
             else if (textBox5.Text.Length > 5 && textBox5.Text.Length <= 10)
                 button3.BackColor = Color.Yellow;
             else
                 button3.BackColor = Color.Green;
+
+            if (textBox5.Text == "")
+                button3.Visible = false;
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
+            button4.Visible = true;
+
             if (textBox6.Text.Length >= 0 && textBox6.Text.Length <= 5)
                 button4.BackColor = Color.Red;
             else if (textBox6.Text.Length > 5 && textBox6.Text.Length <= 10)
@@ -182,11 +186,15 @@ namespace LibraryApp
                 label9.ForeColor = Color.LightGreen;
                 label10.ForeColor = Color.LightGreen;
             }
+
             if (!textBox5.Text.Equals(textBox6.Text))
             {
                 label9.ForeColor = Color.White;
                 label10.ForeColor = Color.White;
             }
+
+            if (textBox6.Text == "")
+                button4.Visible = false;
         }
 
         private void button3_ShowPassword(object sender, EventArgs e)
