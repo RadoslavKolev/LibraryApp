@@ -18,7 +18,7 @@ namespace LibraryApp
             InitializeComponent();
         }
 
-        public string cs = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\ТУ Варна\Семестър 6\ТСП - проект\LibraryApp\LibraryDB.mdf;Integrated Security=True";
+        public string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\ТУ Варна\Семестър 6\ТСП - проект\LibraryApp\LibraryDB.mdf;Integrated Security=True";
         public SqlConnection myConnection = default(SqlConnection);
         public SqlCommand myCommand = default(SqlCommand);
 
@@ -44,7 +44,7 @@ namespace LibraryApp
         {
             try
             {
-                myConnection = new SqlConnection(cs);
+                myConnection = new SqlConnection(connection);
                 myCommand = new SqlCommand("SELECT * FROM Accounts WHERE username = @username AND password = @password", myConnection);
                 SqlParameter username = new SqlParameter("@username", SqlDbType.VarChar);
                 SqlParameter password = new SqlParameter("@password", SqlDbType.VarChar);
@@ -122,7 +122,7 @@ namespace LibraryApp
                     MessageBox.Show("Please enter your both names!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    myConnection = new SqlConnection(cs);
+                    myConnection = new SqlConnection(connection);
                     myCommand = new SqlCommand("INSERT INTO Accounts VALUES('" + textBox3.Text + "','" + textBox7.Text + "','" + textBox4.Text + "','" +
                                                 textBox5.Text + "')", myConnection);
                     myConnection.Open();
