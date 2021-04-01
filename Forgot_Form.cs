@@ -53,10 +53,12 @@ namespace LibraryApp
                 }
                 else 
                 {
-                    if (!textBox1.Text.Contains("@"))
-                        MessageBox.Show("Email must have \"@\" symbol!", "Email error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (textBox1.Text == "")
+                        MessageBox.Show("Email cannot be empty!", "Empty fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else if (!textBox1.Text.Contains("@"))
+                        MessageBox.Show("Email must have \"@\" symbol!", "Missing @ symbol", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else if (textBox1.Text.EndsWith("@"))
-                        MessageBox.Show("Email must have the mail site after \"@\"!", "Email error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Email must have the mail site after \"@\"!", "Missing site", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                         MessageBox.Show("Email not found!", "Email error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -67,6 +69,47 @@ namespace LibraryApp
 
             }
             catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button_ChangeUsernameClick(object sender, EventArgs e)
+        {
+            try 
+            {
+                myConnection = new SqlConnection(lf.connection);
+                myCommand = new SqlCommand("UPDATE Accounts SET username = @username WHERE email = @email", myConnection);
+                myConnection.Open();
+                
+                myCommand.Parameters.AddWithValue("@username", textBox5.Text);
+                myCommand.Parameters.AddWithValue("@email", textBox4.Text);
+
+
+                    myCommand.ExecuteNonQuery();
+                    myConnection.Close();
+
+                    if (myConnection.State == ConnectionState.Open)
+                        myConnection.Dispose();
+
+                    MessageBox.Show("Username changed successfully!");
+                
+
+                    /* if (textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "")
+                        MessageBox.Show("The fields cannot be empty!", "Empty fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else if (!textBox4.Text.Contains("@"))
+                        MessageBox.Show("Email must have \"@\" symbol!", "Missing @ symbol", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else if (textBox4.Text.EndsWith("@"))
+                        MessageBox.Show("Email must have the mail site after \"@\"!", "Missing site", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else if (textBox4.Text != rdr.GetValue(2).ToString())
+                        MessageBox.Show("Email not found!", "Email not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else if (textBox5.Text != rdr.GetValue(0).ToString())
+                        MessageBox.Show("Username not found!", "Username not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        MessageBox.Show("Username is already taken!", "Username taken", MessageBoxButtons.OK, MessageBoxIcon.Error); */                            
+                
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

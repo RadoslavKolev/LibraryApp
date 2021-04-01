@@ -31,8 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Forgot_Form));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.accountsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.libraryDBDataSet = new LibraryApp.LibraryDBDataSet();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -58,17 +61,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.accountsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryDBDataSet = new LibraryApp.LibraryDBDataSet();
             this.button7 = new System.Windows.Forms.Button();
             this.accountsTableAdapter = new LibraryApp.LibraryDBDataSetTableAdapters.AccountsTableAdapter();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -106,15 +106,62 @@
             this.panel1.Size = new System.Drawing.Size(1005, 502);
             this.panel1.TabIndex = 2;
             // 
-            // accountsBindingSource
+            // panel3
             // 
-            this.accountsBindingSource.DataMember = "Accounts";
-            this.accountsBindingSource.DataSource = this.libraryDBDataSet;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Location = new System.Drawing.Point(18, 276);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(283, 204);
+            this.panel3.TabIndex = 67;
+            this.panel3.Visible = false;
             // 
-            // libraryDBDataSet
+            // label4
             // 
-            this.libraryDBDataSet.DataSetName = "LibraryDBDataSet";
-            this.libraryDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(8, 115);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 21);
+            this.label4.TabIndex = 71;
+            this.label4.Text = "PASSWORD:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Enabled = false;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox3.Location = new System.Drawing.Point(8, 151);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(261, 26);
+            this.textBox3.TabIndex = 70;
+            this.textBox3.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(8, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 21);
+            this.label3.TabIndex = 69;
+            this.label3.Text = "USERNAME:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox2.Location = new System.Drawing.Point(8, 55);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(261, 26);
+            this.textBox2.TabIndex = 68;
+            this.textBox2.TabStop = false;
             // 
             // button6
             // 
@@ -124,6 +171,7 @@
             this.button6.Size = new System.Drawing.Size(31, 21);
             this.button6.TabIndex = 66;
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Visible = false;
             // 
             // button5
             // 
@@ -133,6 +181,7 @@
             this.button5.Size = new System.Drawing.Size(31, 21);
             this.button5.TabIndex = 65;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Visible = false;
             // 
             // button4
             // 
@@ -142,6 +191,7 @@
             this.button4.Size = new System.Drawing.Size(31, 21);
             this.button4.TabIndex = 64;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Visible = false;
             // 
             // button3
             // 
@@ -151,7 +201,7 @@
             this.button3.Location = new System.Drawing.Point(713, 391);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(158, 41);
-            this.button3.TabIndex = 63;
+            this.button3.TabIndex = 10;
             this.button3.Text = "Change";
             this.button3.UseVisualStyleBackColor = false;
             // 
@@ -173,7 +223,7 @@
             this.textBox9.Location = new System.Drawing.Point(675, 331);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(261, 26);
-            this.textBox9.TabIndex = 61;
+            this.textBox9.TabIndex = 9;
             this.textBox9.UseSystemPasswordChar = true;
             // 
             // label11
@@ -194,7 +244,7 @@
             this.textBox8.Location = new System.Drawing.Point(675, 234);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(261, 26);
-            this.textBox8.TabIndex = 59;
+            this.textBox8.TabIndex = 8;
             this.textBox8.UseSystemPasswordChar = true;
             // 
             // label10
@@ -215,7 +265,7 @@
             this.textBox7.Location = new System.Drawing.Point(675, 139);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(261, 26);
-            this.textBox7.TabIndex = 57;
+            this.textBox7.TabIndex = 7;
             this.textBox7.UseSystemPasswordChar = true;
             // 
             // label9
@@ -246,9 +296,10 @@
             this.button2.Location = new System.Drawing.Point(390, 391);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(158, 41);
-            this.button2.TabIndex = 55;
+            this.button2.TabIndex = 6;
             this.button2.Text = "Change";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button_ChangeUsernameClick);
             // 
             // label8
             // 
@@ -258,9 +309,9 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(352, 295);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(167, 21);
+            this.label8.Size = new System.Drawing.Size(218, 21);
             this.label8.TabIndex = 54;
-            this.label8.Text = "NEW USERNAME:";
+            this.label8.Text = "CONFIRM USERNAME:";
             // 
             // textBox6
             // 
@@ -268,7 +319,7 @@
             this.textBox6.Location = new System.Drawing.Point(352, 331);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(261, 26);
-            this.textBox6.TabIndex = 53;
+            this.textBox6.TabIndex = 5;
             // 
             // label7
             // 
@@ -278,9 +329,9 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(352, 198);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(120, 21);
+            this.label7.Size = new System.Drawing.Size(167, 21);
             this.label7.TabIndex = 52;
-            this.label7.Text = "USERNAME:";
+            this.label7.Text = "NEW USERNAME:";
             // 
             // textBox5
             // 
@@ -288,7 +339,7 @@
             this.textBox5.Location = new System.Drawing.Point(352, 234);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(261, 26);
-            this.textBox5.TabIndex = 51;
+            this.textBox5.TabIndex = 4;
             // 
             // label6
             // 
@@ -308,7 +359,7 @@
             this.textBox4.Location = new System.Drawing.Point(352, 139);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(261, 26);
-            this.textBox4.TabIndex = 49;
+            this.textBox4.TabIndex = 3;
             // 
             // label5
             // 
@@ -338,7 +389,7 @@
             this.button1.Location = new System.Drawing.Point(62, 198);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(158, 41);
-            this.button1.TabIndex = 45;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Recover";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button_RecoverClick);
@@ -373,7 +424,17 @@
             this.textBox1.Location = new System.Drawing.Point(26, 139);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(261, 26);
-            this.textBox1.TabIndex = 42;
+            this.textBox1.TabIndex = 1;
+            // 
+            // accountsBindingSource
+            // 
+            this.accountsBindingSource.DataMember = "Accounts";
+            this.accountsBindingSource.DataSource = this.libraryDBDataSet;
+            // 
+            // libraryDBDataSet
+            // 
+            this.libraryDBDataSet.DataSetName = "LibraryDBDataSet";
+            this.libraryDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button7
             // 
@@ -383,7 +444,7 @@
             this.button7.Location = new System.Drawing.Point(840, 555);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(194, 45);
-            this.button7.TabIndex = 67;
+            this.button7.TabIndex = 11;
             this.button7.Text = "Back to Login";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button_BackToLoginClick);
@@ -391,61 +452,6 @@
             // accountsTableAdapter
             // 
             this.accountsTableAdapter.ClearBeforeFill = true;
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.textBox3);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Location = new System.Drawing.Point(18, 276);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(283, 204);
-            this.panel3.TabIndex = 67;
-            this.panel3.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(8, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 21);
-            this.label3.TabIndex = 69;
-            this.label3.Text = "USERNAME:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(8, 55);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(261, 26);
-            this.textBox2.TabIndex = 68;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(8, 115);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 21);
-            this.label4.TabIndex = 71;
-            this.label4.Text = "PASSWORD:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(8, 151);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(261, 26);
-            this.textBox3.TabIndex = 70;
             // 
             // Forgot_Form
             // 
@@ -466,10 +472,10 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
