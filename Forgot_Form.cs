@@ -95,7 +95,7 @@ namespace LibraryApp
                     MessageBox.Show("Username changed successfully!");
                 
 
-                    /* if (textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "")
+                    if (textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "")
                         MessageBox.Show("The fields cannot be empty!", "Empty fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else if (!textBox4.Text.Contains("@"))
                         MessageBox.Show("Email must have \"@\" symbol!", "Missing @ symbol", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -106,7 +106,7 @@ namespace LibraryApp
                     else if (textBox5.Text != rdr.GetValue(0).ToString())
                         MessageBox.Show("Username not found!", "Username not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
-                        MessageBox.Show("Username is already taken!", "Username taken", MessageBoxButtons.OK, MessageBoxIcon.Error); */                            
+                        MessageBox.Show("Username is already taken!", "Username taken", MessageBoxButtons.OK, MessageBoxIcon.Error);                             
                 
             }
             catch(Exception ex)
