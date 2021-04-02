@@ -16,5 +16,6 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\LibraryDB.mdf;Integrated Security=True</Value>
     </Setting>
+
   </Settings>
 </SettingsFile>

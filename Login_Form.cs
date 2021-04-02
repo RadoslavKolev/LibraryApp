@@ -72,7 +72,6 @@ namespace LibraryApp
                         MessageBox.Show("Login Successfull!", "Login Success");
                         MainUser_Form user = new MainUser_Form();
                         user.Show();
-                        this.Hide();
                     }
                 }
                 else
@@ -122,7 +121,9 @@ namespace LibraryApp
                     MessageBox.Show("Please enter your both names!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
+
                     myConnection = new SqlConnection(connection);
+
                     myCommand = new SqlCommand("INSERT INTO Accounts VALUES('" + textBox3.Text + "','" + textBox7.Text + "','" + textBox4.Text + "','" +
                                                 textBox5.Text + "')", myConnection);
                     myConnection.Open();
@@ -158,7 +159,9 @@ namespace LibraryApp
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
+
             button3.Visible = true;           
+
             if (textBox5.Text.Length >= 0 && textBox5.Text.Length <= 5)
                 button3.BackColor = Color.Red;
             else if (textBox5.Text.Length > 5 && textBox5.Text.Length <= 10)
@@ -195,6 +198,7 @@ namespace LibraryApp
 
             if (textBox6.Text == "")
                 button4.Visible = false;
+
         }
 
         private void button3_ShowPassword(object sender, EventArgs e)
