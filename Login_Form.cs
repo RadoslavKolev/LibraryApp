@@ -18,7 +18,7 @@ namespace LibraryApp
             InitializeComponent();
         }
 
-        public string cs = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\ТУ Варна\Семестър 6\ТСП - проект\LibraryApp\LibraryDB.mdf;Integrated Security=True";
+        public string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\ТУ Варна\Семестър 6\ТСП - проект\LibraryApp\LibraryDB.mdf;Integrated Security=True";
         public SqlConnection myConnection = default(SqlConnection);
         public SqlCommand myCommand = default(SqlCommand);
 
@@ -44,7 +44,7 @@ namespace LibraryApp
         {
             try
             {
-                myConnection = new SqlConnection(cs);
+                myConnection = new SqlConnection(connection);
                 myCommand = new SqlCommand("SELECT * FROM Accounts WHERE username = @username AND password = @password", myConnection);
                 SqlParameter username = new SqlParameter("@username", SqlDbType.VarChar);
                 SqlParameter password = new SqlParameter("@password", SqlDbType.VarChar);
@@ -121,7 +121,9 @@ namespace LibraryApp
                     MessageBox.Show("Please enter your both names!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    myConnection = new SqlConnection(cs);
+
+                    myConnection = new SqlConnection(connection);
+
                     myCommand = new SqlCommand("INSERT INTO Accounts VALUES('" + textBox3.Text + "','" + textBox7.Text + "','" + textBox4.Text + "','" +
                                                 textBox5.Text + "')", myConnection);
                     myConnection.Open();
@@ -157,18 +159,24 @@ namespace LibraryApp
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            button3.Visible = true;
-            button4.Visible = true;
+
+            button3.Visible = true;           
+
             if (textBox5.Text.Length >= 0 && textBox5.Text.Length <= 5)
                 button3.BackColor = Color.Red;
             else if (textBox5.Text.Length > 5 && textBox5.Text.Length <= 10)
                 button3.BackColor = Color.Yellow;
             else
                 button3.BackColor = Color.Green;
+
+            if (textBox5.Text == "")
+                button3.Visible = false;
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
+            button4.Visible = true;
+
             if (textBox6.Text.Length >= 0 && textBox6.Text.Length <= 5)
                 button4.BackColor = Color.Red;
             else if (textBox6.Text.Length > 5 && textBox6.Text.Length <= 10)
@@ -181,11 +189,16 @@ namespace LibraryApp
                 label9.ForeColor = Color.LightGreen;
                 label10.ForeColor = Color.LightGreen;
             }
+
             if (!textBox5.Text.Equals(textBox6.Text))
             {
                 label9.ForeColor = Color.White;
                 label10.ForeColor = Color.White;
             }
+
+            if (textBox6.Text == "")
+                button4.Visible = false;
+
         }
 
         private void button3_ShowPassword(object sender, EventArgs e)
