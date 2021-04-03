@@ -27,7 +27,6 @@ namespace LibraryApp
         private void Form2_Load(object sender, EventArgs e)
         {
             panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
-            textBox7.UseSystemPasswordChar = false;
         }
 
         private void button_RecoverClick(object sender, EventArgs e)
@@ -240,8 +239,7 @@ namespace LibraryApp
 
         private void button_BackToLoginClick(object sender, EventArgs e)
         {
-            Login_Form login = new Login_Form();
-            login.Show();
+            lf.Show();
             this.Close();
         }
     }
