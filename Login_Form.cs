@@ -18,7 +18,7 @@ namespace LibraryApp
             InitializeComponent();
         }
 
-        public string connection = @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=D:\C# projects\LibraryApp\LibraryDB.mdf;Integrated Security=True;";
+        public string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\ТУ Варна\Семестър 6\ТСП - проект\LibraryApp\LibraryDB.mdf;Integrated Security=True";
         public SqlConnection myConnection = default(SqlConnection);
         public SqlCommand myCommand = default(SqlCommand);
 
@@ -178,7 +178,7 @@ namespace LibraryApp
             }
             catch
             {
-                //MessageBox.Show("Username is already taken!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Username is already taken!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
