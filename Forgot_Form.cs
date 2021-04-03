@@ -62,6 +62,7 @@ namespace LibraryApp
                     else
                         MessageBox.Show("Email not found!", "Email error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                rdr.Close();
                 myConnection.Close();
 
                 if (myConnection.State == ConnectionState.Open)
@@ -76,7 +77,7 @@ namespace LibraryApp
 
         private void button_ChangeUsernameClick(object sender, EventArgs e)
         {
-            try 
+            try
             {
                 myConnection = new SqlConnection(lf.connection);
                 myCommand = new SqlCommand("SELECT * FROM Accounts WHERE username = '" + textBox4.Text +"'", myConnection);
@@ -113,7 +114,7 @@ namespace LibraryApp
                 if (myConnection.State == ConnectionState.Open)
                     myConnection.Dispose();
             }
-            catch(Exception ex)
+            catch
             {
                 MessageBox.Show("Username is already taken!", "Username changing denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -238,8 +239,7 @@ namespace LibraryApp
 
         private void button_BackToLoginClick(object sender, EventArgs e)
         {
-            Login_Form login = new Login_Form();
-            login.Show();
+            lf.Show();
             this.Close();
         }
     }
