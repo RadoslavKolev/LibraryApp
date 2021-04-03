@@ -38,7 +38,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -61,10 +60,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.accountsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.libraryDBDataSet = new LibraryApp.LibraryDBDataSet();
-            this.button7 = new System.Windows.Forms.Button();
             this.accountsTableAdapter = new LibraryApp.LibraryDBDataSetTableAdapters.AccountsTableAdapter();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource)).BeginInit();
@@ -75,10 +75,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.textBox9);
@@ -172,6 +172,7 @@
             this.button6.TabIndex = 66;
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Visible = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -182,16 +183,7 @@
             this.button5.TabIndex = 65;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Visible = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button4.Location = new System.Drawing.Point(946, 141);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(31, 21);
-            this.button4.TabIndex = 64;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Visible = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button3
             // 
@@ -204,6 +196,7 @@
             this.button3.TabIndex = 10;
             this.button3.Text = "Change";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button_ChangePasswordClick);
             // 
             // label12
             // 
@@ -225,6 +218,7 @@
             this.textBox9.Size = new System.Drawing.Size(261, 26);
             this.textBox9.TabIndex = 9;
             this.textBox9.UseSystemPasswordChar = true;
+            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // label11
             // 
@@ -246,6 +240,7 @@
             this.textBox8.Size = new System.Drawing.Size(261, 26);
             this.textBox8.TabIndex = 8;
             this.textBox8.UseSystemPasswordChar = true;
+            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // label10
             // 
@@ -255,9 +250,9 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(675, 103);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(121, 21);
+            this.label10.Size = new System.Drawing.Size(168, 21);
             this.label10.TabIndex = 58;
-            this.label10.Text = "PASSWORD:";
+            this.label10.Text = "OLD PASSWORD:";
             // 
             // textBox7
             // 
@@ -267,6 +262,7 @@
             this.textBox7.Size = new System.Drawing.Size(261, 26);
             this.textBox7.TabIndex = 7;
             this.textBox7.UseSystemPasswordChar = true;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label9
             // 
@@ -349,9 +345,9 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(352, 103);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 21);
+            this.label6.Size = new System.Drawing.Size(167, 21);
             this.label6.TabIndex = 50;
-            this.label6.Text = "EMAIL:";
+            this.label6.Text = "OLD USERNAME:";
             // 
             // textBox4
             // 
@@ -426,6 +422,19 @@
             this.textBox1.Size = new System.Drawing.Size(261, 26);
             this.textBox1.TabIndex = 1;
             // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.SystemColors.Menu;
+            this.button7.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.Black;
+            this.button7.Location = new System.Drawing.Point(840, 546);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(194, 45);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "Back to Login";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button_BackToLoginClick);
+            // 
             // accountsBindingSource
             // 
             this.accountsBindingSource.DataMember = "Accounts";
@@ -436,22 +445,19 @@
             this.libraryDBDataSet.DataSetName = "LibraryDBDataSet";
             this.libraryDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.SystemColors.Menu;
-            this.button7.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.Location = new System.Drawing.Point(840, 555);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(194, 45);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "Back to Login";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button_BackToLoginClick);
-            // 
             // accountsTableAdapter
             // 
             this.accountsTableAdapter.ClearBeforeFill = true;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.SandyBrown;
+            this.button4.Location = new System.Drawing.Point(946, 142);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(31, 21);
+            this.button4.TabIndex = 68;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Visible = false;
             // 
             // Forgot_Form
             // 
@@ -506,7 +512,6 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button7;
         private LibraryDBDataSet libraryDBDataSet;
         private System.Windows.Forms.BindingSource accountsBindingSource;
@@ -516,5 +521,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button button4;
     }
 }

@@ -31,6 +31,8 @@ namespace LibraryApp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_Form));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -55,8 +57,6 @@ namespace LibraryApp
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,9 +96,30 @@ namespace LibraryApp
             this.panel1.Size = new System.Drawing.Size(936, 565);
             this.panel1.TabIndex = 12;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(526, 158);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(136, 24);
+            this.label13.TabIndex = 71;
+            this.label13.Text = "FULLNAME:";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox7.Location = new System.Drawing.Point(531, 187);
+            this.textBox7.MaxLength = 30;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(350, 26);
+            this.textBox7.TabIndex = 7;
+            // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button5.BackColor = System.Drawing.Color.SandyBrown;
             this.button5.Location = new System.Drawing.Point(403, 307);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(31, 21);
@@ -370,27 +391,6 @@ namespace LibraryApp
             this.label1.Size = new System.Drawing.Size(878, 63);
             this.label1.TabIndex = 14;
             this.label1.Text = "LIBRARY MEMBER LOGIN FORM";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(526, 158);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(136, 24);
-            this.label13.TabIndex = 71;
-            this.label13.Text = "FULLNAME:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox7.Location = new System.Drawing.Point(531, 187);
-            this.textBox7.MaxLength = 30;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(350, 26);
-            this.textBox7.TabIndex = 7;
             // 
             // Login_Form
             // 
