@@ -213,13 +213,7 @@ namespace LibraryApp
                 button6.Visible = false;
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (textBox7.UseSystemPasswordChar == true)
-                textBox7.UseSystemPasswordChar = false;
-            else
-                textBox7.UseSystemPasswordChar = true;
-        }
+     
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -241,6 +235,14 @@ namespace LibraryApp
         {
             lf.Show();
             this.Close();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            if (textBox7.UseSystemPasswordChar == true)
+                textBox7.UseSystemPasswordChar = false;
+            else
+                textBox7.UseSystemPasswordChar = true;
         }
     }
 }
