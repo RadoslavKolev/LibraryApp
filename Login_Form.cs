@@ -18,7 +18,7 @@ namespace LibraryApp
             InitializeComponent();
         }
 
-        public string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\ТУ Варна\Семестър 6\ТСП - проект\LibraryApp\LibraryDB.mdf;Integrated Security=True";
+        public string connection = @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=D:\C# projects\LibraryApp\LibraryDB.mdf;Integrated Security=True;";
         public SqlConnection myConnection = default(SqlConnection);
         public SqlCommand myCommand = default(SqlCommand);
 
@@ -125,21 +125,46 @@ namespace LibraryApp
                     myConnection = new SqlConnection(connection);
 
                     myCommand = new SqlCommand("INSERT INTO Accounts VALUES('" + textBox3.Text + "','" + textBox7.Text + "','" + textBox4.Text + "','" +
-                                                textBox5.Text + "')", myConnection);
+                                          textBox5.Text + "')", myConnection);
+                    SqlCommand checkEmail;
+                    checkEmail = new SqlCommand("Select *from Accounts where email = @email ", myConnection);
+             
                     myConnection.Open();
                     myCommand.Parameters.AddWithValue("@username", textBox3.Text);
                     myCommand.Parameters.AddWithValue("@fullname", textBox7.Text);
                     myCommand.Parameters.AddWithValue("@email", textBox4.Text);
-                    myCommand.Parameters.AddWithValue("@password", textBox5.Text);                    
-
+                    myCommand.Parameters.AddWithValue("@password", textBox5.Text);     
+                    checkEmail.Parameters.AddWithValue("@email", textBox4.Text);
+                   
+                    SqlDataReader p = checkEmail.ExecuteReader();
+                  
+                    if (p.HasRows)
+                    {
+                        MessageBox.Show("Email is already taken","Register Denied",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    { 
+                        p.Close();
+                    }
+                    SqlCommand checkUsername;
+                    checkUsername = new SqlCommand("Select *from Accounts where username = @username ", myConnection);
+                    checkUsername.Parameters.AddWithValue("@username", textBox3.Text);
+                    SqlDataReader f = checkUsername.ExecuteReader();
+                    if (f.HasRows)
+                    {
+                        MessageBox.Show("Username is already taken", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        f.Close();
+                    }
                     myCommand.ExecuteNonQuery();
                     myConnection.Close();
 
-                    MessageBox.Show("Account added successfully!");
+                  
 
                     if (myConnection.State == ConnectionState.Open)
                         myConnection.Dispose();
-
                     textBox3.Clear();
                     textBox4.Clear();
                     textBox5.Clear();
@@ -153,8 +178,9 @@ namespace LibraryApp
             }
             catch
             {
-                MessageBox.Show("Username is already taken!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Username is already taken!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)

@@ -38,7 +38,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -78,7 +77,6 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.textBox9);
@@ -183,16 +181,6 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Visible = false;
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button4.Location = new System.Drawing.Point(946, 141);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(31, 21);
-            this.button4.TabIndex = 64;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Visible = false;
-            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.Menu;
@@ -204,6 +192,7 @@
             this.button3.TabIndex = 10;
             this.button3.Text = "Change";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label12
             // 
@@ -225,6 +214,7 @@
             this.textBox9.Size = new System.Drawing.Size(261, 26);
             this.textBox9.TabIndex = 9;
             this.textBox9.UseSystemPasswordChar = true;
+            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // label11
             // 
@@ -246,6 +236,7 @@
             this.textBox8.Size = new System.Drawing.Size(261, 26);
             this.textBox8.TabIndex = 8;
             this.textBox8.UseSystemPasswordChar = true;
+            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // label10
             // 
@@ -255,9 +246,9 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(675, 103);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(121, 21);
+            this.label10.Size = new System.Drawing.Size(77, 21);
             this.label10.TabIndex = 58;
-            this.label10.Text = "PASSWORD:";
+            this.label10.Text = "EMAIL:";
             // 
             // textBox7
             // 
@@ -441,7 +432,7 @@
             this.button7.BackColor = System.Drawing.SystemColors.Menu;
             this.button7.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.Location = new System.Drawing.Point(840, 555);
+            this.button7.Location = new System.Drawing.Point(840, 546);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(194, 45);
             this.button7.TabIndex = 11;
@@ -506,7 +497,6 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button7;
         private LibraryDBDataSet libraryDBDataSet;
         private System.Windows.Forms.BindingSource accountsBindingSource;

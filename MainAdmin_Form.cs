@@ -16,5 +16,16 @@ namespace LibraryApp
         {
             InitializeComponent();
         }
+
+        private void MainAdmin_Form_Load(object sender, EventArgs e)
+        {
+       
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
