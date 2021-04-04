@@ -72,6 +72,7 @@ namespace LibraryApp
                         MessageBox.Show("Login Successfull!", "Login Success");
                         MainUser_Form user = new MainUser_Form();
                         user.Show();
+                        this.Hide();
                     }
                 }
                 else
