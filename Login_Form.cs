@@ -18,13 +18,8 @@ namespace LibraryApp
             InitializeComponent();
         }
 
-<<<<<<< Updated upstream
-        public string connection = @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=D:\C# projects\LibraryApp\LibraryDB.mdf;Integrated Security=True;";
-=======
-        public string connection = @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=D:\C# projects\LibraryApp\LibraryDB.mdf;Integrated Security = True";
         //public string connection = @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=D:\C# projects\LibraryApp\LibraryDB.mdf;Integrated Security = True";
-        //public string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\ТУ Варна\Семестър 6\ТСП - проект\LibraryApp\LibraryDB.mdf;Integrated Security=True";
->>>>>>> Stashed changes
+        public string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\ТУ Варна\Семестър 6\ТСП - проект\LibraryApp\LibraryDB.mdf;Integrated Security=True";
         public SqlConnection myConnection = default(SqlConnection);
         public SqlCommand myCommand = default(SqlCommand);
 
@@ -139,38 +134,33 @@ namespace LibraryApp
                     myCommand.Parameters.AddWithValue("@username", textBox3.Text);
                     myCommand.Parameters.AddWithValue("@fullname", textBox7.Text);
                     myCommand.Parameters.AddWithValue("@email", textBox4.Text);
-                    myCommand.Parameters.AddWithValue("@password", textBox5.Text);     
+                    myCommand.Parameters.AddWithValue("@password", textBox5.Text);  
+                    
                     checkEmail.Parameters.AddWithValue("@email", textBox4.Text);
                    
                     SqlDataReader p = checkEmail.ExecuteReader();
                   
-                    if (p.HasRows)
-                    {
-                        MessageBox.Show("Email is already taken","Register Denied",MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    { 
+                    if (p.HasRows)                   
+                        MessageBox.Show("Email is already taken","Register Denied",MessageBoxButtons.OK, MessageBoxIcon.Error);                  
+                    else                   
                         p.Close();
-                    }
+                    
                     SqlCommand checkUsername;
                     checkUsername = new SqlCommand("Select *from Accounts where username = @username ", myConnection);
                     checkUsername.Parameters.AddWithValue("@username", textBox3.Text);
                     SqlDataReader f = checkUsername.ExecuteReader();
-                    if (f.HasRows)
-                    {
-                        MessageBox.Show("Username is already taken", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
+
+                    if (f.HasRows)                   
+                        MessageBox.Show("Username is already taken", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);                   
+                    else                    
                         f.Close();
-                    }
+                    
                     myCommand.ExecuteNonQuery();
                     myConnection.Close();
-
                   
-
                     if (myConnection.State == ConnectionState.Open)
                         myConnection.Dispose();
+
                     textBox3.Clear();
                     textBox4.Clear();
                     textBox5.Clear();
@@ -182,11 +172,11 @@ namespace LibraryApp
                     label10.ForeColor = Color.White;
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                //MessageBox.Show("Username is already taken!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
