@@ -154,7 +154,7 @@ namespace LibraryApp
 
             string filePath = "D:\\ТУ Варна\\Семестър 6\\ТСП - проект\\LibraryApp\\Справки\\Accounts.txt";
             DataTableToTextFile(dt, filePath);
-            MessageBox.Show("Data saved!");
+            MessageBox.Show("Data saved successfully!", "Data saved!");
         }
 
         private void DataTableToTextFile(DataTable dt, string outputFilePath)
