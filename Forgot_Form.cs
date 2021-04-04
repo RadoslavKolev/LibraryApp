@@ -32,7 +32,7 @@ namespace LibraryApp
         private void button_RecoverClick(object sender, EventArgs e)
         {            
             try
-            {              
+            {
                 myConnection = new SqlConnection(lf.connection);
                 myCommand = new SqlCommand("SELECT username, password FROM Accounts WHERE email = @email", myConnection);
                 myConnection.Open();
