@@ -106,6 +106,7 @@ namespace LibraryApp
             this.manageAccountsToolStripMenuItem.Name = "manageAccountsToolStripMenuItem";
             this.manageAccountsToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.manageAccountsToolStripMenuItem.Text = "Manage Accounts";
+            this.manageAccountsToolStripMenuItem.Click += new System.EventHandler(this.accountsToolStripMenuItem_Click);
             // 
             // borrowedBooksToolStripMenuItem
             // 

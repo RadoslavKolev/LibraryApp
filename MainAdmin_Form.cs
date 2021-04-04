@@ -30,5 +30,12 @@ namespace LibraryApp
                 Application.Exit();
             
         }
+
+        private void accountsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Account_Form account = new Account_Form();
+            account.Show();
+            this.Hide();
+        }
     }
 }
