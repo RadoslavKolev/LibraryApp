@@ -154,6 +154,9 @@ namespace LibraryApp
 
                 if (myConnection.State == ConnectionState.Open)
                     myConnection.Dispose();
+
+                textBox5.Clear();
+                textBox6.Clear();
             }
             catch (Exception ex)
             {
@@ -178,6 +181,8 @@ namespace LibraryApp
 
                 if (myConnection.State == ConnectionState.Open)
                     myConnection.Dispose();
+
+                textBox7.Clear();
             }
             catch (Exception ex)
             {
