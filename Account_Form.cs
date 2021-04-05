@@ -22,7 +22,6 @@ namespace LibraryApp
         public SqlConnection myConnection = default(SqlConnection);
         public SqlCommand myCommand = default(SqlCommand);
         public SqlDataAdapter adapter;
-        public SqlDataReader rdr;
         Login_Form lf = new Login_Form();
 
         private void Account_Form_Load(object sender, EventArgs e)
@@ -192,6 +191,8 @@ namespace LibraryApp
             textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            textBox5.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textBox7.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
 
         private void button_SaveToTxtClick(object sender, EventArgs e)
