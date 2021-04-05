@@ -104,6 +104,8 @@ namespace LibraryApp
             {
                 if(textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || textBox7.Text == "")
                     MessageBox.Show("You must fill all of the fields!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (textBox3.Text.Length < 5 || textBox4.Text.Length < 5 || textBox5.Text.Length < 5 || textBox6.Text.Length < 5 || textBox7.Text.Length < 5)
+                    MessageBox.Show("The fields can't be lower than 5 symbols!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else if(!textBox4.Text.Contains("@"))
                     MessageBox.Show("Email must have \"@\" symbol!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else if (textBox4.Text.EndsWith("@"))
@@ -125,44 +127,40 @@ namespace LibraryApp
 
                     myConnection = new SqlConnection(connection);
 
-                    myCommand = new SqlCommand("INSERT INTO Accounts VALUES('" + textBox3.Text + "','" + textBox7.Text + "','" + textBox4.Text + "','" +
-                                          textBox5.Text + "')", myConnection);
-                    SqlCommand checkEmail;
-                    checkEmail = new SqlCommand("Select *from Accounts where email = @email ", myConnection);
-             
+                    myCommand = new SqlCommand("INSERT INTO Accounts VALUES(@username, @fullname, @email, @password)", myConnection);
+                    SqlCommand checkEmail = new SqlCommand("SELECT * FROM Accounts WHERE email = @email ", myConnection);
+                    SqlCommand checkUsername = new SqlCommand("SELECT * FROM Accounts WHERE username = @username ", myConnection);
+
                     myConnection.Open();
                     myCommand.Parameters.AddWithValue("@username", textBox3.Text);
                     myCommand.Parameters.AddWithValue("@fullname", textBox7.Text);
                     myCommand.Parameters.AddWithValue("@email", textBox4.Text);
-                    myCommand.Parameters.AddWithValue("@password", textBox5.Text);     
+                    myCommand.Parameters.AddWithValue("@password", textBox5.Text); 
+                    
                     checkEmail.Parameters.AddWithValue("@email", textBox4.Text);
-                   
-                    SqlDataReader p = checkEmail.ExecuteReader();
+                    checkUsername.Parameters.AddWithValue("@username", textBox2.Text);
+
+                    SqlDataReader sdr = checkEmail.ExecuteReader();
+
+                    if (sdr.HasRows)
+                        MessageBox.Show("Email is already taken", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        sdr.Close();
                   
-                    if (p.HasRows)
-                    {
-                        MessageBox.Show("Email is already taken","Register Denied",MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    { 
-                        p.Close();
-                    }
-                    SqlCommand checkUsername;
-                    checkUsername = new SqlCommand("Select *from Accounts where username = @username ", myConnection);
-                    checkUsername.Parameters.AddWithValue("@username", textBox3.Text);
-                    SqlDataReader f = checkUsername.ExecuteReader();
-                    if (f.HasRows)
-                    {
+                    SqlDataReader sdr2 = checkUsername.ExecuteReader();
+
+                    if (sdr2.HasRows)
                         MessageBox.Show("Username is already taken", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
                     else
-                    {
-                        f.Close();
-                    }
+                        sdr2.Close();
+
                     myCommand.ExecuteNonQuery();
                     myConnection.Close();
 
-                  
+                    MessageBox.Show("Account inserted successfully!");
+
+                    if (myConnection.State == ConnectionState.Open)
+                        myConnection.Dispose();
 
                     if (myConnection.State == ConnectionState.Open)
                         myConnection.Dispose();
@@ -177,11 +175,11 @@ namespace LibraryApp
                     label10.ForeColor = Color.White;
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Username is already taken!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
