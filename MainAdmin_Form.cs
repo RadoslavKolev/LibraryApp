@@ -37,5 +37,12 @@ namespace LibraryApp
             account.Show();
             this.Hide();
         }
+
+        private void readersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Readers_Form readers = new Readers_Form();
+            readers.Show();
+            this.Hide();
+        }
     }
 }

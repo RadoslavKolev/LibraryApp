@@ -32,15 +32,15 @@ namespace LibraryApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainAdmin_Form));
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.manageAccountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.readersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.booksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.genreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageAccountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrowedBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.readerInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.catalogueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.readerInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +73,13 @@ namespace LibraryApp
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // manageAccountsToolStripMenuItem
+            // 
+            this.manageAccountsToolStripMenuItem.Name = "manageAccountsToolStripMenuItem";
+            this.manageAccountsToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
+            this.manageAccountsToolStripMenuItem.Text = "Manage Accounts";
+            this.manageAccountsToolStripMenuItem.Click += new System.EventHandler(this.accountsToolStripMenuItem_Click);
+            // 
             // tablesToolStripMenuItem
             // 
             this.tablesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -88,6 +95,7 @@ namespace LibraryApp
             this.readersToolStripMenuItem.Name = "readersToolStripMenuItem";
             this.readersToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.readersToolStripMenuItem.Text = "Readers";
+            this.readersToolStripMenuItem.Click += new System.EventHandler(this.readersToolStripMenuItem_Click);
             // 
             // booksToolStripMenuItem
             // 
@@ -101,18 +109,17 @@ namespace LibraryApp
             this.genreToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.genreToolStripMenuItem.Text = "Genre";
             // 
-            // manageAccountsToolStripMenuItem
-            // 
-            this.manageAccountsToolStripMenuItem.Name = "manageAccountsToolStripMenuItem";
-            this.manageAccountsToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
-            this.manageAccountsToolStripMenuItem.Text = "Manage Accounts";
-            this.manageAccountsToolStripMenuItem.Click += new System.EventHandler(this.accountsToolStripMenuItem_Click);
-            // 
             // borrowedBooksToolStripMenuItem
             // 
             this.borrowedBooksToolStripMenuItem.Name = "borrowedBooksToolStripMenuItem";
             this.borrowedBooksToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.borrowedBooksToolStripMenuItem.Text = "Borrowed Books";
+            // 
+            // readerInfoToolStripMenuItem
+            // 
+            this.readerInfoToolStripMenuItem.Name = "readerInfoToolStripMenuItem";
+            this.readerInfoToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.readerInfoToolStripMenuItem.Text = "Reader Info";
             // 
             // catalogueToolStripMenuItem
             // 
@@ -126,12 +133,6 @@ namespace LibraryApp
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // readerInfoToolStripMenuItem
-            // 
-            this.readerInfoToolStripMenuItem.Name = "readerInfoToolStripMenuItem";
-            this.readerInfoToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
-            this.readerInfoToolStripMenuItem.Text = "Reader Info";
             // 
             // MainAdmin_Form
             // 

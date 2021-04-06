@@ -92,6 +92,17 @@
     <Compile Include="MainAdmin_Form.Designer.cs">
       <DependentUpon>MainAdmin_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReadersDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReadersDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Readers_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Readers_Form.Designer.cs">
+      <DependentUpon>Readers_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Terms_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainAdmin_Form.resx">
       <DependentUpon>MainAdmin_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Readers_Form.resx">
+      <DependentUpon>Readers_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Terms_Form.resx">
       <DependentUpon>Terms_Form.cs</DependentUpon>
@@ -153,6 +167,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ReadersDataSet1.xsc">
+      <DependentUpon>ReadersDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ReadersDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReadersDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReadersDataSet1.xss">
+      <DependentUpon>ReadersDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
