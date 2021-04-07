@@ -21,15 +21,13 @@ namespace LibraryApp
 
         public SqlConnection myConnection = default(SqlConnection);
         public SqlCommand myCommand = default(SqlCommand);
-        public SqlDataAdapter adapter, adapter2;
+        public SqlDataAdapter adapter;
         Form_Login lf = new Form_Login();
 
         private void Readers_Form_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'libraryDBDataSet.Accounts' table. You can move, or remove it, as needed.
-            this.accountsTableAdapter.Fill(this.libraryDBDataSet.Accounts);
-            // TODO: This line of code loads data into the 'readersDataSet1.Readers' table. You can move, or remove it, as needed.
-            this.readersTableAdapter.Fill(this.readersDataSet1.Readers);
+            // TODO: This line of code loads data into the 'accountsDataSet.Accounts' table. You can move, or remove it, as needed.
+            this.accountsTableAdapter.Fill(this.accountsDataSet.Accounts);
             panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
         }
 
@@ -37,12 +35,9 @@ namespace LibraryApp
         {
             myConnection.Open();
             DataTable dataTable = new DataTable();
-            adapter = new SqlDataAdapter("SELECT * FROM Readers", myConnection);
+            adapter = new SqlDataAdapter("SELECT * FROM Accounts", myConnection);
             adapter.Fill(dataTable);
             dataGridView1.DataSource = dataTable;
-
-            adapter2 = new SqlDataAdapter("SELECT * FROM Accounts", myConnection);
-            adapter2.Fill(dataTable);
             dataGridView2.DataSource = dataTable;
             myConnection.Close();
         }
@@ -58,24 +53,21 @@ namespace LibraryApp
         {
             try
             {
-                if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "")
-                    MessageBox.Show("You must fill all of the fields!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if (!textBox2.Text.Contains(" "))
+                if (!textBox1.Text.Contains(" "))
                     MessageBox.Show("Please enter your both names!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else if (textBox5.Text.Length != 10)
                     MessageBox.Show("Phone number must be 10 symbols, not more or less", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     myConnection = new SqlConnection(lf.connection);
-                    myCommand = new SqlCommand("INSERT INTO Readers VALUES (@reader_code,@reader_fullname,@reader_city,@reader_address, @reader_phone, @reader_sex,@reader_username)", myConnection);
-                    SqlCommand checkUsername = new SqlCommand("SELECT * FROM Accounts WHERE username = @reader_username ", myConnection);                  
+                    myCommand = new SqlCommand("INSERT INTO Accounts VALUES (@fullname, @email, @city, @address, @phone, @sex)", myConnection);                  
 
                     myConnection.Open();
-                    myCommand.Parameters.AddWithValue("@reader_code", textBox1.Text);
-                    myCommand.Parameters.AddWithValue("@reader_fullname", textBox2.Text);
-                    myCommand.Parameters.AddWithValue("@reader_city", textBox3.Text);
-                    myCommand.Parameters.AddWithValue("@reader_address", textBox4.Text);
-                    myCommand.Parameters.AddWithValue("@reader_phone", textBox5.Text);
+                    myCommand.Parameters.AddWithValue("@fullname", textBox1.Text);
+                    myCommand.Parameters.AddWithValue("@email", textBox2.Text);                   
+                    myCommand.Parameters.AddWithValue("@city", textBox3.Text);
+                    myCommand.Parameters.AddWithValue("@address", textBox4.Text);
+                    myCommand.Parameters.AddWithValue("@phone", textBox5.Text);
 
                     bool check;
                     if (radioButton1.Checked)
@@ -83,21 +75,6 @@ namespace LibraryApp
                     else
                         check = false;
                     myCommand.Parameters.AddWithValue("@reader_sex", check);
-                    myCommand.Parameters.AddWithValue("@reader_username", textBox6.Text);
-
-                    checkUsername.Parameters.AddWithValue("@reader_username", textBox6.Text);
-                    SqlDataReader sdr = checkUsername.ExecuteReader();
-
-                    if (sdr.HasRows)
-                    {
-                        MessageBox.Show("Reader inserted successfully!");
-                    }
-                       
-                    else
-                    {
-                        MessageBox.Show("Username is already taken", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                sdr.Close();
 
                     myCommand.ExecuteNonQuery();
                     myConnection.Close();
@@ -106,12 +83,11 @@ namespace LibraryApp
                     if (myConnection.State == ConnectionState.Open)
                         myConnection.Dispose();
 
-                    textBox1.Clear();
                     textBox2.Clear();
+                    textBox1.Clear();
                     textBox3.Clear();
                     textBox4.Clear();
                     textBox5.Clear();
-                    textBox6.Clear();
                 }
             }
             catch (Exception ex)
@@ -124,29 +100,29 @@ namespace LibraryApp
         {
             try
             {
-                
+
                 myConnection = new SqlConnection(lf.connection);
-                myCommand = new SqlCommand("SELECT * FROM Readers WHERE reader_username = '" + textBox6.Text + "'", myConnection);
+                myCommand = new SqlCommand("SELECT * FROM Accounts WHERE code = '" + textBox6.Text + "'", myConnection);
                 myConnection.Open();
+
                 SqlDataAdapter sda = new SqlDataAdapter(myCommand);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
-                bool check;
-                if (radioButton1.Checked)
-                    check = true;
-                else
-                    check = false;
-                if (dt.Rows.Count > 0)
+                myCommand.ExecuteNonQuery();
+
+                if (textBox1.Text == "" || textBox6.Text == "")
+                    MessageBox.Show("The fields cannot be empty!", "Empty fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (dt.Rows.Count > 0)
                 {
-                    SqlCommand myCommand2 = new SqlCommand("UPDATE Readers SET reader_code = '" + textBox1.Text + "',reader_fullname='" + textBox2.Text + "',reader_city='" + textBox3.Text + "',reader_address='" + textBox4.Text + "',reader_phone='" + textBox1.Text + "',reader_sex='"+check+"' WHERE reader_username = '" + textBox6.Text + "'", myConnection);
-                    SqlDataAdapter sda2 = new SqlDataAdapter(myCommand2);
+                    SqlCommand updateCommand = new SqlCommand("UPDATE Accounts SET fullname = '" + textBox1.Text + "' WHERE code = '" + textBox6.Text + "'", myConnection);
+                    SqlDataAdapter sda2 = new SqlDataAdapter(updateCommand);
                     DataTable dt2 = new DataTable();
                     sda2.Fill(dt2);
-                    myCommand2.ExecuteNonQuery();
-                    MessageBox.Show("Update changed successfully!");
+                    updateCommand.ExecuteNonQuery();
+                    MessageBox.Show("Username changed successfully!");
                 }
                 else
-                    MessageBox.Show("Update is not successful!", "UpdateError", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Username not found!", "Username not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
                 myConnection.Close();
@@ -154,16 +130,13 @@ namespace LibraryApp
 
                 if (myConnection.State == ConnectionState.Open)
                     myConnection.Dispose();
+
                 textBox1.Clear();
-                textBox2.Clear();
-                textBox3.Clear();
-                textBox4.Clear();
-                textBox5.Clear();
                 textBox6.Clear();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Please go back in borrow and delete all saves with that code", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -172,9 +145,9 @@ namespace LibraryApp
             try
             {
                 myConnection = new SqlConnection(lf.connection);
-                myCommand = new SqlCommand("DELETE Readers WHERE reader_username = @username", myConnection);
+                myCommand = new SqlCommand("DELETE Accounts WHERE code = @code", myConnection);
                 myConnection.Open();
-                myCommand.Parameters.AddWithValue("@username", textBox6.Text);
+                myCommand.Parameters.AddWithValue("@code", textBox6.Text);
 
                 myCommand.ExecuteNonQuery();
                 myConnection.Close();
@@ -184,8 +157,8 @@ namespace LibraryApp
 
                 if (myConnection.State == ConnectionState.Open)
                     myConnection.Dispose();
-                textBox1.Clear();
                 textBox2.Clear();
+                textBox1.Clear();
                 textBox3.Clear();
                 textBox4.Clear();
                 textBox5.Clear();
@@ -193,7 +166,7 @@ namespace LibraryApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Please go back in borrow and delete all saves with that code", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -264,17 +237,17 @@ namespace LibraryApp
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             textBox5.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-            textBox6.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+            textBox6.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
         }
 
         private void dataGridView2_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            textBox2.Text = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
+            textBox1.Text = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
             textBox6.Text = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
     }

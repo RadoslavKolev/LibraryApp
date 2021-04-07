@@ -46,7 +46,7 @@ namespace LibraryApp
             try
             {
                 myConnection = new SqlConnection(connection);
-                myCommand = new SqlCommand("SELECT * FROM Accounts WHERE username = @username AND password = @password", myConnection);
+                myCommand = new SqlCommand("SELECT username, password FROM Accounts WHERE username = @username AND password = @password", myConnection);
                 SqlParameter username = new SqlParameter("@username", SqlDbType.VarChar);
                 SqlParameter password = new SqlParameter("@password", SqlDbType.VarChar);
 
@@ -105,7 +105,7 @@ namespace LibraryApp
             {
                 if(textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || textBox7.Text == "")
                     MessageBox.Show("You must fill all of the fields!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if (textBox3.Text.Length < 5 || textBox4.Text.Length < 5 || textBox5.Text.Length < 5 || textBox6.Text.Length < 5 || textBox7.Text.Length < 5)
+                else if (textBox4.Text.Length < 5 || textBox5.Text.Length < 5 || textBox6.Text.Length < 5 || textBox7.Text.Length < 5)
                     MessageBox.Show("The fields can't be lower than 5 symbols!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else if(!textBox4.Text.Contains("@"))
                     MessageBox.Show("Email must have \"@\" symbol!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -128,18 +128,18 @@ namespace LibraryApp
 
                     myConnection = new SqlConnection(connection);
 
-                    myCommand = new SqlCommand("INSERT INTO Accounts VALUES(@username, @fullname, @email, @password)", myConnection);
-                    SqlCommand checkEmail = new SqlCommand("SELECT * FROM Accounts WHERE email = @email ", myConnection);
-                    SqlCommand checkUsername = new SqlCommand("SELECT * FROM Accounts WHERE username = @username ", myConnection);
+                    myCommand = new SqlCommand("INSERT INTO Accounts(fullname, email, username, password) VALUES(@fullname, @email, @username, @password)", myConnection);
+                    SqlCommand checkEmail = new SqlCommand("SELECT email FROM Accounts WHERE email = @email ", myConnection);
+                    SqlCommand checkUsername = new SqlCommand("SELECT username FROM Accounts WHERE username = @username ", myConnection);
 
                     myConnection.Open();
-                    myCommand.Parameters.AddWithValue("@username", textBox3.Text);
                     myCommand.Parameters.AddWithValue("@fullname", textBox7.Text);
                     myCommand.Parameters.AddWithValue("@email", textBox4.Text);
+                    myCommand.Parameters.AddWithValue("@username", textBox3.Text);                   
                     myCommand.Parameters.AddWithValue("@password", textBox5.Text); 
                     
                     checkEmail.Parameters.AddWithValue("@email", textBox4.Text);
-                    checkUsername.Parameters.AddWithValue("@username", textBox2.Text);
+                    checkUsername.Parameters.AddWithValue("@username", textBox3.Text);
 
                     SqlDataReader sdr = checkEmail.ExecuteReader();
 
@@ -165,6 +165,7 @@ namespace LibraryApp
 
                     if (myConnection.State == ConnectionState.Open)
                         myConnection.Dispose();
+
                     textBox3.Clear();
                     textBox4.Clear();
                     textBox5.Clear();

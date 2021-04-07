@@ -80,7 +80,7 @@ namespace LibraryApp
             try
             { 
                 myConnection = new SqlConnection(lf.connection);
-                myCommand = new SqlCommand("SELECT * FROM Accounts WHERE username = '" + textBox4.Text + "'", myConnection);
+                myCommand = new SqlCommand("SELECT username FROM Accounts WHERE username = '" + textBox4.Text + "'", myConnection);
                 myConnection.Open();
 
                 SqlDataAdapter sda = new SqlDataAdapter(myCommand);
@@ -98,16 +98,11 @@ namespace LibraryApp
                         MessageBox.Show("Usernames dont't match!", "Usernames don't match", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                     {
-                        SqlCommand myCommand3 = new SqlCommand("UPDATE Readers SET reader_username = '" + textBox5.Text + "' WHERE reader_username = '" + textBox4.Text + "'", myConnection);
-                        SqlDataAdapter sda3 = new SqlDataAdapter(myCommand3);
-                        DataTable dt3 = new DataTable();
-                        sda3.Fill(dt3);
-                        myCommand3.ExecuteNonQuery();
-                        SqlCommand myCommand2 = new SqlCommand("UPDATE Accounts SET username = '" + textBox5.Text + "' WHERE username = '" + textBox4.Text + "'", myConnection);
-                        SqlDataAdapter sda2 = new SqlDataAdapter(myCommand2);
+                        SqlCommand updateCommand = new SqlCommand("UPDATE Accounts SET username = '" + textBox5.Text + "' WHERE username = '" + textBox4.Text + "'", myConnection);
+                        SqlDataAdapter sda2 = new SqlDataAdapter(updateCommand);
                         DataTable dt2 = new DataTable();
                         sda2.Fill(dt2);
-                        myCommand2.ExecuteNonQuery();
+                        updateCommand.ExecuteNonQuery();
                         MessageBox.Show("Username changed successfully!");
                     }
                 }
@@ -135,7 +130,7 @@ namespace LibraryApp
             try
             {
                 myConnection = new SqlConnection(lf.connection);
-                myCommand = new SqlCommand("SELECT * FROM Accounts WHERE password = '" + textBox7.Text + "'", myConnection);
+                myCommand = new SqlCommand("SELECT password FROM Accounts WHERE password = '" + textBox7.Text + "'", myConnection);
                 myConnection.Open();
                 SqlDataAdapter sda = new SqlDataAdapter(myCommand);
                 DataTable dt = new DataTable();
@@ -152,11 +147,11 @@ namespace LibraryApp
                         MessageBox.Show("Passwords dont't match!", "Passwords don't match", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                     {
-                        SqlCommand myCommand2 = new SqlCommand("UPDATE Accounts SET password = '" + textBox8.Text + "' WHERE password = '" + textBox7.Text + "'", myConnection);
-                        SqlDataAdapter sda2 = new SqlDataAdapter(myCommand2);
+                        SqlCommand updateCommand = new SqlCommand("UPDATE Accounts SET password = '" + textBox8.Text + "' WHERE password = '" + textBox7.Text + "'", myConnection);
+                        SqlDataAdapter sda2 = new SqlDataAdapter(updateCommand);
                         DataTable dt2 = new DataTable();
                         sda2.Fill(dt2);
-                        myCommand2.ExecuteNonQuery();
+                        updateCommand.ExecuteNonQuery();
                         MessageBox.Show("Password changed successfully!");
                     }
                 }

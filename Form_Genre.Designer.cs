@@ -44,25 +44,25 @@ namespace LibraryApp
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.genreidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genrenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genreBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.genreDBDataSet1 = new LibraryApp.GenreDBDataSet1();
             this.accountsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.libraryDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.libraryDBDataSet = new LibraryApp.LibraryDBDataSet();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.readersTableAdapter = new LibraryApp.ReadersDataSet1TableAdapters.ReadersTableAdapter();
-            this.genreDBDataSet1 = new LibraryApp.GenreDBDataSet1();
-            this.genreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.genreTableAdapter = new LibraryApp.GenreDBDataSet1TableAdapters.GenreTableAdapter();
-            this.genreidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genrenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersDataSet1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genreDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.genreDBDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // readersBindingSource
@@ -206,6 +206,42 @@ namespace LibraryApp
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.genreidDataGridViewTextBoxColumn,
+            this.genrenameDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.genreBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(519, 29);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(244, 209);
+            this.dataGridView1.TabIndex = 28;
+            // 
+            // genreidDataGridViewTextBoxColumn
+            // 
+            this.genreidDataGridViewTextBoxColumn.DataPropertyName = "genre_id";
+            this.genreidDataGridViewTextBoxColumn.HeaderText = "genre_id";
+            this.genreidDataGridViewTextBoxColumn.Name = "genreidDataGridViewTextBoxColumn";
+            // 
+            // genrenameDataGridViewTextBoxColumn
+            // 
+            this.genrenameDataGridViewTextBoxColumn.DataPropertyName = "genre_name";
+            this.genrenameDataGridViewTextBoxColumn.HeaderText = "genre_name";
+            this.genrenameDataGridViewTextBoxColumn.Name = "genrenameDataGridViewTextBoxColumn";
+            // 
+            // genreBindingSource
+            // 
+            this.genreBindingSource.DataMember = "Genre";
+            this.genreBindingSource.DataSource = this.genreDBDataSet1;
+            // 
+            // genreDBDataSet1
+            // 
+            this.genreDBDataSet1.DataSetName = "GenreDBDataSet1";
+            this.genreDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // accountsBindingSource
             // 
             this.accountsBindingSource.DataMember = "Accounts";
@@ -221,69 +257,33 @@ namespace LibraryApp
             this.libraryDBDataSet.DataSetName = "LibraryDBDataSet";
             this.libraryDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.genreidDataGridViewTextBoxColumn,
-            this.genrenameDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.genreBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(519, 29);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(611, 245);
-            this.dataGridView1.TabIndex = 28;
-            // 
             // readersTableAdapter
             // 
             this.readersTableAdapter.ClearBeforeFill = true;
-            // 
-            // genreDBDataSet1
-            // 
-            this.genreDBDataSet1.DataSetName = "GenreDBDataSet1";
-            this.genreDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // genreBindingSource
-            // 
-            this.genreBindingSource.DataMember = "Genre";
-            this.genreBindingSource.DataSource = this.genreDBDataSet1;
             // 
             // genreTableAdapter
             // 
             this.genreTableAdapter.ClearBeforeFill = true;
             // 
-            // genreidDataGridViewTextBoxColumn
-            // 
-            this.genreidDataGridViewTextBoxColumn.DataPropertyName = "genre_id";
-            this.genreidDataGridViewTextBoxColumn.HeaderText = "genre_id";
-            this.genreidDataGridViewTextBoxColumn.Name = "genreidDataGridViewTextBoxColumn";
-            // 
-            // genrenameDataGridViewTextBoxColumn
-            // 
-            this.genrenameDataGridViewTextBoxColumn.DataPropertyName = "genre_name";
-            this.genrenameDataGridViewTextBoxColumn.HeaderText = "genre_name";
-            this.genrenameDataGridViewTextBoxColumn.Name = "genrenameDataGridViewTextBoxColumn";
-            // 
-            // Genre
+            // Form_Genre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1256, 383);
+            this.ClientSize = new System.Drawing.Size(1264, 491);
             this.Controls.Add(this.panel1);
-            this.Name = "Genre";
+            this.Name = "Form_Genre";
             this.Text = "Genre";
             this.Load += new System.EventHandler(this.Genre_Load);
             ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersDataSet1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genreDBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.genreDBDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

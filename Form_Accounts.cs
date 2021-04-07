@@ -51,39 +51,31 @@ namespace LibraryApp
         {
             try
             {
-                if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "")
-                    MessageBox.Show("You must fill all of the fields!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if (textBox1.Text.Length < 5 || textBox2.Text.Length < 5 || textBox3.Text.Length < 5 || textBox4.Text.Length < 5)
+                if (textBox3.Text == "" || textBox4.Text == "")
+                    MessageBox.Show("Username and Password cannot be empty!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (textBox1.Text.Length < 5 || textBox2.Text.Length < 5 || textBox4.Text.Length < 5)
                     MessageBox.Show("The fields can't be lower than 5 symbols!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if (!textBox4.Text.Contains("@"))
+                else if (!textBox2.Text.Contains("@"))
                     MessageBox.Show("Email must have \"@\" symbol!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if (textBox4.Text.EndsWith("@"))
-                    MessageBox.Show("Email must have the mail site after \"@\"!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if (textBox2.Text.Length > 30)
-                    MessageBox.Show("Username can't have more than 30 characters!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if (textBox4.Text.Length > 50)
-                    MessageBox.Show("Email can't have more than 50 characters!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if (textBox3.Text.Length > 256)
-                    MessageBox.Show("Password can't have more than 256 characters!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if (textBox1.Text.Length > 50)
-                    MessageBox.Show("Your name can't be higher than 50 characters", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (textBox2.Text.EndsWith("@"))
+                    MessageBox.Show("Email must have the mail site after \"@\"!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);             
                 else if (!textBox1.Text.Contains(" "))
                     MessageBox.Show("Please enter your both names!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 { 
                     myConnection = new SqlConnection(lf.connection);
-                    myCommand = new SqlCommand("INSERT INTO Accounts VALUES (@username, @fullname, @email, @password)", myConnection);
-                    SqlCommand checkEmail = new SqlCommand("SELECT * FROM Accounts WHERE email = @email ", myConnection);
-                    SqlCommand checkUsername = new SqlCommand("SELECT * FROM Accounts WHERE username = @username ", myConnection);
+                    myCommand = new SqlCommand("INSERT INTO Accounts(fullname, email, username, password) VALUES (@fullname, @email, @username, @password)", myConnection);
+                    SqlCommand checkEmail = new SqlCommand("SELECT email FROM Accounts WHERE email = @email ", myConnection);
+                    SqlCommand checkUsername = new SqlCommand("SELECT username FROM Accounts WHERE username = @username ", myConnection);
 
                     myConnection.Open();
-                    myCommand.Parameters.AddWithValue("@username", textBox2.Text);
+                    myCommand.Parameters.AddWithValue("@username", textBox3.Text);
                     myCommand.Parameters.AddWithValue("@fullname", textBox1.Text);
-                    myCommand.Parameters.AddWithValue("@email", textBox4.Text);
-                    myCommand.Parameters.AddWithValue("@password", textBox3.Text);
+                    myCommand.Parameters.AddWithValue("@email", textBox2.Text);
+                    myCommand.Parameters.AddWithValue("@password", textBox4.Text);
 
-                    checkEmail.Parameters.AddWithValue("@email", textBox4.Text);
-                    checkUsername.Parameters.AddWithValue("@username", textBox2.Text);
+                    checkEmail.Parameters.AddWithValue("@email", textBox2.Text);
+                    checkUsername.Parameters.AddWithValue("@username", textBox3.Text);
 
                     SqlDataReader sdr = checkEmail.ExecuteReader();
 
@@ -102,16 +94,16 @@ namespace LibraryApp
                     myCommand.ExecuteNonQuery();
                     myConnection.Close();
 
-                    MessageBox.Show("Account inserted successfully!");
+                    MessageBox.Show("Account added successfully!");
                     DisplayData();
 
                     if (myConnection.State == ConnectionState.Open)
                         myConnection.Dispose();
 
                     textBox1.Clear();
-                    textBox2.Clear();
                     textBox3.Clear();
-                    textBox4.Clear(); 
+                    textBox4.Clear();
+                    textBox2.Clear(); 
                 }
             }
             catch (Exception ex)
@@ -125,7 +117,7 @@ namespace LibraryApp
             try
             {
                 myConnection = new SqlConnection(lf.connection);
-                myCommand = new SqlCommand("SELECT * FROM Accounts WHERE username = '" + textBox5.Text + "'", myConnection);
+                myCommand = new SqlCommand("SELECT username FROM Accounts WHERE username = '" + textBox5.Text + "'", myConnection);
                 myConnection.Open();
 
                 SqlDataAdapter sda = new SqlDataAdapter(myCommand);
@@ -138,18 +130,12 @@ namespace LibraryApp
                 else if (textBox5.Text == textBox6.Text)
                     MessageBox.Show("Username is still the same!", "Same username", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else if (dt.Rows.Count > 0)
-                {                   
-                    SqlCommand myCommand3 = new SqlCommand("UPDATE Readers SET reader_username = '" + textBox6.Text + "' WHERE reader_username = '" + textBox5.Text + "'", myConnection);
-                    SqlDataAdapter sda3 = new SqlDataAdapter(myCommand3);
-                    DataTable dt3 = new DataTable();
-                    sda3.Fill(dt3);
-                    //myCommand3.ExecuteNonQuery(); 
-                    SqlCommand myCommand2 = new SqlCommand("UPDATE Accounts SET username = '" + textBox6.Text + "' WHERE username = '" + textBox5.Text + "'", myConnection);
-                    SqlDataAdapter sda2 = new SqlDataAdapter(myCommand2);
+                {                    
+                    SqlCommand updateCommand = new SqlCommand("UPDATE Accounts SET username = '" + textBox6.Text + "' WHERE username = '" + textBox5.Text + "'", myConnection);
+                    SqlDataAdapter sda2 = new SqlDataAdapter(updateCommand);
                     DataTable dt2 = new DataTable();
                     sda2.Fill(dt2);
-                    myCommand3.ExecuteNonQuery();
-                    myCommand2.ExecuteNonQuery(); 
+                    updateCommand.ExecuteNonQuery(); 
                     MessageBox.Show("Username changed successfully!");
                 }
                 else
@@ -188,16 +174,11 @@ namespace LibraryApp
                     MessageBox.Show("The field cannot be empty!", "Empty fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else if (dt.Rows.Count > 0)
                 {
-                    SqlCommand myCommand3 = new SqlCommand("DELETE Readers WHERE reader_username = '" + textBox7.Text + "'", myConnection);
-                    SqlDataAdapter sda3 = new SqlDataAdapter(myCommand3);
-                    DataTable dt3 = new DataTable();
-                    sda3.Fill(dt3);
-                    myCommand3.ExecuteNonQuery();
-                    SqlCommand myCommand2 = new SqlCommand("DELETE Accounts WHERE username = '" + textBox7.Text + "'", myConnection);
-                    SqlDataAdapter sda2 = new SqlDataAdapter(myCommand2);
+                    SqlCommand updateCommand = new SqlCommand("DELETE Accounts WHERE username = '" + textBox7.Text + "'", myConnection);
+                    SqlDataAdapter sda2 = new SqlDataAdapter(updateCommand);
                     DataTable dt2 = new DataTable();
                     sda2.Fill(dt2);
-                    myCommand2.ExecuteNonQuery();
+                    updateCommand.ExecuteNonQuery();
                     MessageBox.Show("Username deleted successfully!");
                 }
                 else
@@ -221,9 +202,9 @@ namespace LibraryApp
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             textBox5.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             textBox7.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
