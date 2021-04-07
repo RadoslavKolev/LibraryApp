@@ -63,17 +63,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account_Form.cs">
+    <Compile Include="Form_Accounts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Account_Form.Designer.cs">
-      <DependentUpon>Account_Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Genre.cs">
+    <Compile Include=".Designer.cs">
+      <DependentUpon>Form_Accounts.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Genre.Designer.cs">
-      <DependentUpon>Genre.cs</DependentUpon>
+    <Compile Include="Form_Books.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Books.Designer.cs">
+      <DependentUpon>Form_Books.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Genre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Genre.Designer.cs">
+      <DependentUpon>Form_Genre.cs</DependentUpon>
     </Compile>
     <Compile Include="GenreDBDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -85,72 +92,75 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LibraryDBDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Login_Form.cs">
+    <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login_Form.Designer.cs">
-      <DependentUpon>Login_Form.cs</DependentUpon>
+    <Compile Include="Form_Login.Designer.cs">
+      <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forgot_Form.cs">
+    <Compile Include="Form_Forgot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forgot_Form.Designer.cs">
-      <DependentUpon>Forgot_Form.cs</DependentUpon>
+    <Compile Include="Form_Forgot.Designer.cs">
+      <DependentUpon>Form_Forgot.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainAdmin_Form.cs">
+    <Compile Include="Form_MainAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainAdmin_Form.Designer.cs">
-      <DependentUpon>MainAdmin_Form.cs</DependentUpon>
+    <Compile Include="Form_MainAdmin.Designer.cs">
+      <DependentUpon>Form_MainAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="ReadersDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReadersDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Readers_Form.cs">
+    <Compile Include="Form_Readers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Readers_Form.Designer.cs">
-      <DependentUpon>Readers_Form.cs</DependentUpon>
+    <Compile Include="Form_Readers.Designer.cs">
+      <DependentUpon>Form_Readers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Terms_Form.cs">
+    <Compile Include="Form_Terms.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Terms_Form.Designer.cs">
-      <DependentUpon>Terms_Form.cs</DependentUpon>
+    <Compile Include="Form_Terms.Designer.cs">
+      <DependentUpon>Form_Terms.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainUser_Form.cs">
+    <Compile Include="Form_MainUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainUser_Form.Designer.cs">
-      <DependentUpon>MainUser_Form.cs</DependentUpon>
+    <Compile Include="Form_MainUser.Designer.cs">
+      <DependentUpon>Form_MainUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Account_Form.resx">
-      <DependentUpon>Account_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Accounts.resx">
+      <DependentUpon>Form_Accounts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Genre.resx">
-      <DependentUpon>Genre.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Books.resx">
+      <DependentUpon>Form_Books.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login_Form.resx">
-      <DependentUpon>Login_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Genre.resx">
+      <DependentUpon>Form_Genre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forgot_Form.resx">
-      <DependentUpon>Forgot_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Login.resx">
+      <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainAdmin_Form.resx">
-      <DependentUpon>MainAdmin_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Forgot.resx">
+      <DependentUpon>Form_Forgot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Readers_Form.resx">
-      <DependentUpon>Readers_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Form_MainAdmin.resx">
+      <DependentUpon>Form_MainAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Terms_Form.resx">
-      <DependentUpon>Terms_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Readers.resx">
+      <DependentUpon>Form_Readers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainUser_Form.resx">
-      <DependentUpon>MainUser_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Terms.resx">
+      <DependentUpon>Form_Terms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_MainUser.resx">
+      <DependentUpon>Form_MainUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,6 +1,6 @@
 ﻿namespace LibraryApp
 {
-    partial class Terms_Form
+    partial class Form_Terms
     {
         /// <summary>
         /// Required designer variable.

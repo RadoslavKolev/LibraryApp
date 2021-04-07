@@ -12,9 +12,9 @@ using System.IO;
 
 namespace LibraryApp
 {
-    public partial class Account_Form : Form
+    public partial class Form_Accounts : Form
     {
-        public Account_Form()
+        public Form_Accounts()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace LibraryApp
         public SqlConnection myConnection = default(SqlConnection);
         public SqlCommand myCommand = default(SqlCommand);
         public SqlDataAdapter adapter;
-        Login_Form lf = new Login_Form();
+        Form_Login lf = new Form_Login();
 
         private void Account_Form_Load(object sender, EventArgs e)
         {
@@ -42,7 +42,7 @@ namespace LibraryApp
 
         private void backToMainButton_Click(object sender, EventArgs e)
         {
-            MainAdmin_Form admin = new MainAdmin_Form();
+            Form_MainAdmin admin = new Form_MainAdmin();
             admin.Show();
             this.Close();
         }
@@ -138,7 +138,12 @@ namespace LibraryApp
                 else if (textBox5.Text == textBox6.Text)
                     MessageBox.Show("Username is still the same!", "Same username", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else if (dt.Rows.Count > 0)
-                {
+                {                   
+                    SqlCommand myCommand3 = new SqlCommand("UPDATE Readers SET reader_username = '" + textBox6.Text + "' WHERE reader_username = '" + textBox5.Text + "'", myConnection);
+                    SqlDataAdapter sda3 = new SqlDataAdapter(myCommand3);
+                    DataTable dt3 = new DataTable();
+                    sda3.Fill(dt3);
+                    myCommand3.ExecuteNonQuery();
                     SqlCommand myCommand2 = new SqlCommand("UPDATE Accounts SET username = '" + textBox6.Text + "' WHERE username = '" + textBox5.Text + "'", myConnection);
                     SqlDataAdapter sda2 = new SqlDataAdapter(myCommand2);
                     DataTable dt2 = new DataTable();
@@ -161,7 +166,7 @@ namespace LibraryApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Please go back in Readers and delete username", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -170,14 +175,35 @@ namespace LibraryApp
             try
             {
                 myConnection = new SqlConnection(lf.connection);
-                myCommand = new SqlCommand("DELETE Accounts WHERE username = @username", myConnection);              
+                myCommand = new SqlCommand("SELECT * FROM Accounts WHERE username = '" + textBox7.Text + "'", myConnection);
                 myConnection.Open();
-                myCommand.Parameters.AddWithValue("@username", textBox7.Text);
 
+                SqlDataAdapter sda = new SqlDataAdapter(myCommand);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
                 myCommand.ExecuteNonQuery();
-                myConnection.Close();
 
-                MessageBox.Show("Account deleted successfully!");
+                if (textBox7.Text == "")
+                    MessageBox.Show("The field cannot be empty!", "Empty fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (dt.Rows.Count > 0)
+                {
+                    SqlCommand myCommand3 = new SqlCommand("DELETE Readers WHERE reader_username = '" + textBox7.Text + "'", myConnection);
+                    SqlDataAdapter sda3 = new SqlDataAdapter(myCommand3);
+                    DataTable dt3 = new DataTable();
+                    sda3.Fill(dt3);
+                    myCommand3.ExecuteNonQuery();
+                    SqlCommand myCommand2 = new SqlCommand("DELETE Accounts WHERE username = '" + textBox7.Text + "'", myConnection);
+                    SqlDataAdapter sda2 = new SqlDataAdapter(myCommand2);
+                    DataTable dt2 = new DataTable();
+                    sda2.Fill(dt2);
+                    myCommand2.ExecuteNonQuery();
+                    MessageBox.Show("Username deleted successfully!");
+                }
+                else
+                    MessageBox.Show("Username not found!", "Username not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                myConnection.Close();
                 DisplayData();
 
                 if (myConnection.State == ConnectionState.Open)

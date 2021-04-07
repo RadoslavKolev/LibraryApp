@@ -1,7 +1,7 @@
 ﻿
 namespace LibraryApp
 {
-    partial class Genre
+    partial class Form_Genre
     {
         /// <summary>
         /// Required designer variable.

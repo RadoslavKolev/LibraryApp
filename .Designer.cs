@@ -1,7 +1,7 @@
 ﻿
 namespace LibraryApp
 {
-    partial class Account_Form
+    partial class Form_Accounts
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,9 @@ namespace LibraryApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Account_Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Accounts));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -41,10 +42,18 @@ namespace LibraryApp
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accountsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.libraryDBDataSet = new LibraryApp.LibraryDBDataSet();
-            this.accountsTableAdapter = new LibraryApp.LibraryDBDataSetTableAdapters.AccountsTableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -54,17 +63,8 @@ namespace LibraryApp
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.accountsTableAdapter = new LibraryApp.LibraryDBDataSetTableAdapters.AccountsTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource)).BeginInit();
@@ -105,6 +105,14 @@ namespace LibraryApp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1071, 483);
             this.panel1.TabIndex = 0;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(316, 376);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(229, 24);
+            this.textBox7.TabIndex = 9;
             // 
             // button5
             // 
@@ -185,21 +193,6 @@ namespace LibraryApp
             this.libraryDBDataSet.DataSetName = "LibraryDBDataSet";
             this.libraryDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // accountsTableAdapter
-            // 
-            this.accountsTableAdapter.ClearBeforeFill = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lucida Handwriting", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(48, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 31);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Add Account";
-            // 
             // button3
             // 
             this.button3.AccessibleDescription = "";
@@ -214,6 +207,71 @@ namespace LibraryApp
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button_DeleteClick);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(311, 349);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(138, 24);
+            this.label10.TabIndex = 54;
+            this.label10.Text = "USERNAME:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Lucida Handwriting", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(319, 298);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(231, 31);
+            this.label9.TabIndex = 53;
+            this.label9.Text = "Delete Account";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.SandyBrown;
+            this.panel4.Location = new System.Drawing.Point(571, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(10, 461);
+            this.panel4.TabIndex = 48;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.SandyBrown;
+            this.panel3.Location = new System.Drawing.Point(301, 278);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(273, 10);
+            this.panel3.TabIndex = 48;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(316, 186);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(229, 24);
+            this.textBox6.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(312, 159);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(193, 24);
+            this.label8.TabIndex = 51;
+            this.label8.Text = "NEW USERNAME:";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(316, 112);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(229, 24);
+            this.textBox5.TabIndex = 6;
+            // 
             // button2
             // 
             this.button2.AccessibleDescription = "";
@@ -227,6 +285,36 @@ namespace LibraryApp
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button_UpdateClick);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(312, 85);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(192, 24);
+            this.label7.TabIndex = 49;
+            this.label7.Text = "OLD USERNAME:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Lucida Handwriting", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(310, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(245, 31);
+            this.label6.TabIndex = 48;
+            this.label6.Text = "Update Account";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.SandyBrown;
+            this.panel2.Location = new System.Drawing.Point(292, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(10, 460);
+            this.panel2.TabIndex = 47;
             // 
             // button1
             // 
@@ -318,110 +406,22 @@ namespace LibraryApp
             this.label5.TabIndex = 14;
             this.label5.Text = "USERNAME:";
             // 
-            // panel2
+            // label1
             // 
-            this.panel2.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel2.Location = new System.Drawing.Point(292, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 460);
-            this.panel2.TabIndex = 47;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Lucida Handwriting", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(48, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(200, 31);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Add Account";
             // 
-            // label6
+            // accountsTableAdapter
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Lucida Handwriting", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(310, 20);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(245, 31);
-            this.label6.TabIndex = 48;
-            this.label6.Text = "Update Account";
+            this.accountsTableAdapter.ClearBeforeFill = true;
             // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(316, 112);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(229, 24);
-            this.textBox5.TabIndex = 6;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(312, 85);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(192, 24);
-            this.label7.TabIndex = 49;
-            this.label7.Text = "OLD USERNAME:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(316, 186);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(229, 24);
-            this.textBox6.TabIndex = 7;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(312, 159);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(193, 24);
-            this.label8.TabIndex = 51;
-            this.label8.Text = "NEW USERNAME:";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel4.Location = new System.Drawing.Point(571, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 461);
-            this.panel4.TabIndex = 48;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Lucida Handwriting", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(319, 298);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(231, 31);
-            this.label9.TabIndex = 53;
-            this.label9.Text = "Delete Account";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(316, 376);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(229, 24);
-            this.textBox7.TabIndex = 9;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Lucida Handwriting", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(311, 349);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(138, 24);
-            this.label10.TabIndex = 54;
-            this.label10.Text = "USERNAME:";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel3.Location = new System.Drawing.Point(301, 278);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(273, 10);
-            this.panel3.TabIndex = 48;
-            // 
-            // Account_Form
+            // Form_Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -429,7 +429,7 @@ namespace LibraryApp
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1157, 553);
             this.Controls.Add(this.panel1);
-            this.Name = "Account_Form";
+            this.Name = "Form_Account";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accounts";

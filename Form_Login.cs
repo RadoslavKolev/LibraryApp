@@ -11,14 +11,15 @@ using System.Data.SqlClient;
 
 namespace LibraryApp
 {
-    public partial class Login_Form : Form
+    public partial class Form_Login : Form
     {
-        public Login_Form()
+        public Form_Login()
         {
             InitializeComponent();
         }
-        public string connection = @" Data Source = (localdb)\MSSQLLocalDB;AttachDbFilename=D:\C# projects\LibraryApp\LibraryDB.mdf;Integrated Security = True";
-       // public string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\ТУ Варна\Семестър 6\ТСП - проект\LibraryApp\LibraryDB.mdf;Integrated Security=True";
+
+        //public string connection = @" Data Source = (localdb)\MSSQLLocalDB;AttachDbFilename=D:\C# projects\LibraryApp\LibraryDB.mdf;Integrated Security = True";
+        public string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\ТУ Варна\Семестър 6\ТСП - проект\LibraryApp\LibraryDB.mdf;Integrated Security=True";
         public SqlConnection myConnection = default(SqlConnection);
         public SqlCommand myCommand = default(SqlCommand);
 
@@ -29,13 +30,13 @@ namespace LibraryApp
 
         private void label_termsClick(object sender, EventArgs e)
         {
-            Terms_Form terms = new Terms_Form();
+            Form_Terms terms = new Form_Terms();
             terms.Show();
         }
 
         private void label_forgotClick(object sender, EventArgs e)
         {
-            Forgot_Form forgot = new Forgot_Form();
+            Form_Forgot forgot = new Form_Forgot();
             forgot.Show();
             this.Hide();
         }
@@ -63,14 +64,14 @@ namespace LibraryApp
                     if(textBox1.Text == "admin" && textBox2.Text == "admin")
                     {
                         MessageBox.Show("Admin Login Successfull!", "Login Success");
-                        MainAdmin_Form admin = new MainAdmin_Form();
+                        Form_MainAdmin admin = new Form_MainAdmin();
                         admin.Show();
                         this.Hide();
                     }
                     else
                     {
                         MessageBox.Show("Login Successfull!", "Login Success");
-                        MainUser_Form user = new MainUser_Form();
+                        Form_MainUser user = new Form_MainUser();
                         user.Show();
                         this.Hide();
                     }
@@ -157,7 +158,7 @@ namespace LibraryApp
                     myCommand.ExecuteNonQuery();
                     myConnection.Close();
 
-                    MessageBox.Show("Account inserted successfully!");
+                    MessageBox.Show("Account created successfully!");
 
                     if (myConnection.State == ConnectionState.Open)
                         myConnection.Dispose();

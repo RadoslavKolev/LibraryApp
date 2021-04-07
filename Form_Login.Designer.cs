@@ -1,7 +1,7 @@
 ﻿
 namespace LibraryApp
 {
-    partial class Login_Form
+    partial class Form_Login
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace LibraryApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Login));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();

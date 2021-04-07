@@ -1,7 +1,7 @@
 ﻿
 namespace LibraryApp
 {
-    partial class Readers_Form
+    partial class Form_Readers
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace LibraryApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Readers_Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Readers));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -44,13 +44,6 @@ namespace LibraryApp
             this.libraryDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.libraryDBDataSet = new LibraryApp.LibraryDBDataSet();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.readercodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.readerfullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.readercityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.readeraddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.readerphoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.readersexDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.readerusernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.readersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.readersDataSet1 = new LibraryApp.ReadersDataSet1();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -71,6 +64,12 @@ namespace LibraryApp
             this.label1 = new System.Windows.Forms.Label();
             this.readersTableAdapter = new LibraryApp.ReadersDataSet1TableAdapters.ReadersTableAdapter();
             this.accountsTableAdapter = new LibraryApp.LibraryDBDataSetTableAdapters.AccountsTableAdapter();
+            this.readercodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.readerfullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.readercityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.readeraddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.readerphoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.readerusernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource)).BeginInit();
@@ -163,7 +162,7 @@ namespace LibraryApp
             this.button5.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button5.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(876, 604);
+            this.button5.Location = new System.Drawing.Point(850, 585);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(254, 33);
             this.button5.TabIndex = 30;
@@ -180,10 +179,11 @@ namespace LibraryApp
             this.fullnameDataGridViewTextBoxColumn,
             this.usernameDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.accountsBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(880, 385);
+            this.dataGridView2.Location = new System.Drawing.Point(844, 362);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(250, 181);
+            this.dataGridView2.Size = new System.Drawing.Size(260, 178);
             this.dataGridView2.TabIndex = 29;
+            this.dataGridView2.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseClick);
             // 
             // fullnameDataGridViewTextBoxColumn
             // 
@@ -225,61 +225,13 @@ namespace LibraryApp
             this.readercityDataGridViewTextBoxColumn,
             this.readeraddressDataGridViewTextBoxColumn,
             this.readerphoneDataGridViewTextBoxColumn,
-            this.readersexDataGridViewCheckBoxColumn,
             this.readerusernameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.readersBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(519, 29);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(611, 245);
+            this.dataGridView1.Size = new System.Drawing.Size(575, 259);
             this.dataGridView1.TabIndex = 28;
-            // 
-            // readercodeDataGridViewTextBoxColumn
-            // 
-            this.readercodeDataGridViewTextBoxColumn.DataPropertyName = "reader_code";
-            this.readercodeDataGridViewTextBoxColumn.HeaderText = "Code";
-            this.readercodeDataGridViewTextBoxColumn.Name = "readercodeDataGridViewTextBoxColumn";
-            this.readercodeDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // readerfullnameDataGridViewTextBoxColumn
-            // 
-            this.readerfullnameDataGridViewTextBoxColumn.DataPropertyName = "reader_fullname";
-            this.readerfullnameDataGridViewTextBoxColumn.FillWeight = 120F;
-            this.readerfullnameDataGridViewTextBoxColumn.HeaderText = "Fullname";
-            this.readerfullnameDataGridViewTextBoxColumn.Name = "readerfullnameDataGridViewTextBoxColumn";
-            // 
-            // readercityDataGridViewTextBoxColumn
-            // 
-            this.readercityDataGridViewTextBoxColumn.DataPropertyName = "reader_city";
-            this.readercityDataGridViewTextBoxColumn.HeaderText = "City";
-            this.readercityDataGridViewTextBoxColumn.Name = "readercityDataGridViewTextBoxColumn";
-            this.readercityDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // readeraddressDataGridViewTextBoxColumn
-            // 
-            this.readeraddressDataGridViewTextBoxColumn.DataPropertyName = "reader_address";
-            this.readeraddressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.readeraddressDataGridViewTextBoxColumn.Name = "readeraddressDataGridViewTextBoxColumn";
-            // 
-            // readerphoneDataGridViewTextBoxColumn
-            // 
-            this.readerphoneDataGridViewTextBoxColumn.DataPropertyName = "reader_phone";
-            this.readerphoneDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.readerphoneDataGridViewTextBoxColumn.Name = "readerphoneDataGridViewTextBoxColumn";
-            this.readerphoneDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // readersexDataGridViewCheckBoxColumn
-            // 
-            this.readersexDataGridViewCheckBoxColumn.DataPropertyName = "reader_sex";
-            this.readersexDataGridViewCheckBoxColumn.HeaderText = "Male";
-            this.readersexDataGridViewCheckBoxColumn.Name = "readersexDataGridViewCheckBoxColumn";
-            this.readersexDataGridViewCheckBoxColumn.Width = 40;
-            // 
-            // readerusernameDataGridViewTextBoxColumn
-            // 
-            this.readerusernameDataGridViewTextBoxColumn.DataPropertyName = "reader_username";
-            this.readerusernameDataGridViewTextBoxColumn.HeaderText = "Username";
-            this.readerusernameDataGridViewTextBoxColumn.Name = "readerusernameDataGridViewTextBoxColumn";
-            this.readerusernameDataGridViewTextBoxColumn.Width = 90;
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // readersBindingSource
             // 
@@ -459,7 +411,48 @@ namespace LibraryApp
             // 
             this.accountsTableAdapter.ClearBeforeFill = true;
             // 
-            // Readers_Form
+            // readercodeDataGridViewTextBoxColumn
+            // 
+            this.readercodeDataGridViewTextBoxColumn.DataPropertyName = "reader_code";
+            this.readercodeDataGridViewTextBoxColumn.HeaderText = "Code";
+            this.readercodeDataGridViewTextBoxColumn.Name = "readercodeDataGridViewTextBoxColumn";
+            this.readercodeDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // readerfullnameDataGridViewTextBoxColumn
+            // 
+            this.readerfullnameDataGridViewTextBoxColumn.DataPropertyName = "reader_fullname";
+            this.readerfullnameDataGridViewTextBoxColumn.FillWeight = 120F;
+            this.readerfullnameDataGridViewTextBoxColumn.HeaderText = "Fullname";
+            this.readerfullnameDataGridViewTextBoxColumn.Name = "readerfullnameDataGridViewTextBoxColumn";
+            // 
+            // readercityDataGridViewTextBoxColumn
+            // 
+            this.readercityDataGridViewTextBoxColumn.DataPropertyName = "reader_city";
+            this.readercityDataGridViewTextBoxColumn.HeaderText = "City";
+            this.readercityDataGridViewTextBoxColumn.Name = "readercityDataGridViewTextBoxColumn";
+            this.readercityDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // readeraddressDataGridViewTextBoxColumn
+            // 
+            this.readeraddressDataGridViewTextBoxColumn.DataPropertyName = "reader_address";
+            this.readeraddressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.readeraddressDataGridViewTextBoxColumn.Name = "readeraddressDataGridViewTextBoxColumn";
+            // 
+            // readerphoneDataGridViewTextBoxColumn
+            // 
+            this.readerphoneDataGridViewTextBoxColumn.DataPropertyName = "reader_phone";
+            this.readerphoneDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.readerphoneDataGridViewTextBoxColumn.Name = "readerphoneDataGridViewTextBoxColumn";
+            this.readerphoneDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // readerusernameDataGridViewTextBoxColumn
+            // 
+            this.readerusernameDataGridViewTextBoxColumn.DataPropertyName = "reader_username";
+            this.readerusernameDataGridViewTextBoxColumn.HeaderText = "Username";
+            this.readerusernameDataGridViewTextBoxColumn.Name = "readerusernameDataGridViewTextBoxColumn";
+            this.readerusernameDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // Form_Readers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -468,7 +461,7 @@ namespace LibraryApp
             this.ClientSize = new System.Drawing.Size(1256, 739);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
-            this.Name = "Readers_Form";
+            this.Name = "Form_Readers";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Readers";
@@ -518,17 +511,16 @@ namespace LibraryApp
         private LibraryDBDataSetTableAdapters.AccountsTableAdapter accountsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn readercodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn readerfullnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn readercityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn readeraddressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn readerphoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn readersexDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn readerusernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn readercodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn readerfullnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn readercityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn readeraddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn readerphoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn readerusernameDataGridViewTextBoxColumn;
     }
 }

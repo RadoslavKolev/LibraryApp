@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LibraryApp
 {
-    public partial class MainAdmin_Form : Form
+    public partial class Form_MainAdmin : Form
     {
-        public MainAdmin_Form()
+        public Form_MainAdmin()
         {
             InitializeComponent();
         }
@@ -33,22 +33,29 @@ namespace LibraryApp
 
         private void accountsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Account_Form account = new Account_Form();
+            Form_Accounts account = new Form_Accounts();
             account.Show();
             this.Hide();
         }
 
         private void readersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Readers_Form readers = new Readers_Form();
+            Form_Readers readers = new Form_Readers();
             readers.Show();
             this.Hide();
         }
 
         private void genreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Genre genre = new Genre();
+            Form_Genre genre = new Form_Genre();
             genre.Show();
+            this.Hide();
+        }
+
+        private void booksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Books book = new Form_Books();
+            book.Show();
             this.Hide();
         }
     }

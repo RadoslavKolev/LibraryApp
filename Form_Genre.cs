@@ -10,16 +10,16 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace LibraryApp
 {
-    public partial class Genre : Form
+    public partial class Form_Genre : Form
     {
-        public Genre()
+        public Form_Genre()
         {
             InitializeComponent();
         }
         public SqlConnection myConnection = default(SqlConnection);
         public SqlCommand myCommand = default(SqlCommand);
         public SqlDataAdapter adapter;
-        Login_Form lf = new Login_Form();
+        Form_Login lf = new Form_Login();
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -134,7 +134,7 @@ namespace LibraryApp
         }
         private void button5_Click(object sender, EventArgs e)
         {
-            MainAdmin_Form admin = new MainAdmin_Form();
+            Form_MainAdmin admin = new Form_MainAdmin();
             admin.Show();
             this.Close();
         }
