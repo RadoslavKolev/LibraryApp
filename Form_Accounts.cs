@@ -143,12 +143,13 @@ namespace LibraryApp
                     SqlDataAdapter sda3 = new SqlDataAdapter(myCommand3);
                     DataTable dt3 = new DataTable();
                     sda3.Fill(dt3);
-                    myCommand3.ExecuteNonQuery();
+                    //myCommand3.ExecuteNonQuery(); 
                     SqlCommand myCommand2 = new SqlCommand("UPDATE Accounts SET username = '" + textBox6.Text + "' WHERE username = '" + textBox5.Text + "'", myConnection);
                     SqlDataAdapter sda2 = new SqlDataAdapter(myCommand2);
                     DataTable dt2 = new DataTable();
                     sda2.Fill(dt2);
-                    myCommand2.ExecuteNonQuery();
+                    myCommand3.ExecuteNonQuery();
+                    myCommand2.ExecuteNonQuery(); 
                     MessageBox.Show("Username changed successfully!");
                 }
                 else
