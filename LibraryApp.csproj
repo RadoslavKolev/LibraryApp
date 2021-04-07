@@ -68,6 +68,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BooksDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BooksDBDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form_Accounts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +191,17 @@
     </None>
     <None Include="AccountsDataSet.xss">
       <DependentUpon>AccountsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BooksDBDataSet1.xsc">
+      <DependentUpon>BooksDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BooksDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BooksDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BooksDBDataSet1.xss">
+      <DependentUpon>BooksDBDataSet1.xsd</DependentUpon>
     </None>
     <None Include="GenreDBDataSet1.xsc">
       <DependentUpon>GenreDBDataSet1.xsd</DependentUpon>
