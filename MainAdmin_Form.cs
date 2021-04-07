@@ -44,5 +44,12 @@ namespace LibraryApp
             readers.Show();
             this.Hide();
         }
+
+        private void genreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Genre genre = new Genre();
+            genre.Show();
+            this.Hide();
+        }
     }
 }

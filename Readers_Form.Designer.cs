@@ -32,7 +32,25 @@ namespace LibraryApp
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Readers_Form));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.fullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryDBDataSet = new LibraryApp.LibraryDBDataSet();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.readercodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.readerfullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.readercityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.readeraddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.readerphoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.readersexDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.readerusernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.readersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.readersDataSet1 = new LibraryApp.ReadersDataSet1();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -51,35 +69,17 @@ namespace LibraryApp
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.libraryDBDataSet = new LibraryApp.LibraryDBDataSet();
-            this.libraryDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.readersTableAdapter = new LibraryApp.ReadersDataSet1TableAdapters.ReadersTableAdapter();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.accountsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.accountsTableAdapter = new LibraryApp.LibraryDBDataSetTableAdapters.AccountsTableAdapter();
-            this.readercodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.readerfullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.readercityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.readeraddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.readerphoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.readersexDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.readerusernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersDataSet1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -111,6 +111,109 @@ namespace LibraryApp
             this.panel1.Size = new System.Drawing.Size(1164, 666);
             this.panel1.TabIndex = 0;
             // 
+            // button4
+            // 
+            this.button4.AccessibleDescription = "";
+            this.button4.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(17, 585);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(352, 33);
+            this.button4.TabIndex = 34;
+            this.button4.Text = "Save to .txt";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button_SaveToTxtClick);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(274, 532);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(95, 35);
+            this.button3.TabIndex = 33;
+            this.button3.Text = "Delete";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button_DeleteClick);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(144, 533);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(98, 33);
+            this.button2.TabIndex = 32;
+            this.button2.Text = "Update";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button_UpdateClick);
+            // 
+            // button1
+            // 
+            this.button1.AccessibleDescription = "";
+            this.button1.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(17, 533);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(96, 33);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Insert";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button_InsertClick);
+            // 
+            // button5
+            // 
+            this.button5.AccessibleDescription = "";
+            this.button5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button5.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(876, 604);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(254, 33);
+            this.button5.TabIndex = 30;
+            this.button5.Text = "Back to Main";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.backToMainButton_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fullnameDataGridViewTextBoxColumn,
+            this.usernameDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.accountsBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(880, 385);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(250, 181);
+            this.dataGridView2.TabIndex = 29;
+            // 
+            // fullnameDataGridViewTextBoxColumn
+            // 
+            this.fullnameDataGridViewTextBoxColumn.DataPropertyName = "fullname";
+            this.fullnameDataGridViewTextBoxColumn.HeaderText = "Fullname";
+            this.fullnameDataGridViewTextBoxColumn.Name = "fullnameDataGridViewTextBoxColumn";
+            this.fullnameDataGridViewTextBoxColumn.Width = 115;
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            this.usernameDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // accountsBindingSource
+            // 
+            this.accountsBindingSource.DataMember = "Accounts";
+            this.accountsBindingSource.DataSource = this.libraryDBDataSetBindingSource;
+            // 
+            // libraryDBDataSetBindingSource
+            // 
+            this.libraryDBDataSetBindingSource.DataSource = this.libraryDBDataSet;
+            this.libraryDBDataSetBindingSource.Position = 0;
+            // 
+            // libraryDBDataSet
+            // 
+            this.libraryDBDataSet.DataSetName = "LibraryDBDataSet";
+            this.libraryDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
@@ -129,6 +232,54 @@ namespace LibraryApp
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(611, 245);
             this.dataGridView1.TabIndex = 28;
+            // 
+            // readercodeDataGridViewTextBoxColumn
+            // 
+            this.readercodeDataGridViewTextBoxColumn.DataPropertyName = "reader_code";
+            this.readercodeDataGridViewTextBoxColumn.HeaderText = "Code";
+            this.readercodeDataGridViewTextBoxColumn.Name = "readercodeDataGridViewTextBoxColumn";
+            this.readercodeDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // readerfullnameDataGridViewTextBoxColumn
+            // 
+            this.readerfullnameDataGridViewTextBoxColumn.DataPropertyName = "reader_fullname";
+            this.readerfullnameDataGridViewTextBoxColumn.FillWeight = 120F;
+            this.readerfullnameDataGridViewTextBoxColumn.HeaderText = "Fullname";
+            this.readerfullnameDataGridViewTextBoxColumn.Name = "readerfullnameDataGridViewTextBoxColumn";
+            // 
+            // readercityDataGridViewTextBoxColumn
+            // 
+            this.readercityDataGridViewTextBoxColumn.DataPropertyName = "reader_city";
+            this.readercityDataGridViewTextBoxColumn.HeaderText = "City";
+            this.readercityDataGridViewTextBoxColumn.Name = "readercityDataGridViewTextBoxColumn";
+            this.readercityDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // readeraddressDataGridViewTextBoxColumn
+            // 
+            this.readeraddressDataGridViewTextBoxColumn.DataPropertyName = "reader_address";
+            this.readeraddressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.readeraddressDataGridViewTextBoxColumn.Name = "readeraddressDataGridViewTextBoxColumn";
+            // 
+            // readerphoneDataGridViewTextBoxColumn
+            // 
+            this.readerphoneDataGridViewTextBoxColumn.DataPropertyName = "reader_phone";
+            this.readerphoneDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.readerphoneDataGridViewTextBoxColumn.Name = "readerphoneDataGridViewTextBoxColumn";
+            this.readerphoneDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // readersexDataGridViewCheckBoxColumn
+            // 
+            this.readersexDataGridViewCheckBoxColumn.DataPropertyName = "reader_sex";
+            this.readersexDataGridViewCheckBoxColumn.HeaderText = "Male";
+            this.readersexDataGridViewCheckBoxColumn.Name = "readersexDataGridViewCheckBoxColumn";
+            this.readersexDataGridViewCheckBoxColumn.Width = 40;
+            // 
+            // readerusernameDataGridViewTextBoxColumn
+            // 
+            this.readerusernameDataGridViewTextBoxColumn.DataPropertyName = "reader_username";
+            this.readerusernameDataGridViewTextBoxColumn.HeaderText = "Username";
+            this.readerusernameDataGridViewTextBoxColumn.Name = "readerusernameDataGridViewTextBoxColumn";
+            this.readerusernameDataGridViewTextBoxColumn.Width = 90;
             // 
             // readersBindingSource
             // 
@@ -300,164 +451,13 @@ namespace LibraryApp
             this.label1.TabIndex = 14;
             this.label1.Text = "Add Reader";
             // 
-            // libraryDBDataSet
-            // 
-            this.libraryDBDataSet.DataSetName = "LibraryDBDataSet";
-            this.libraryDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // libraryDBDataSetBindingSource
-            // 
-            this.libraryDBDataSetBindingSource.DataSource = this.libraryDBDataSet;
-            this.libraryDBDataSetBindingSource.Position = 0;
-            // 
             // readersTableAdapter
             // 
             this.readersTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fullnameDataGridViewTextBoxColumn,
-            this.usernameDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.accountsBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(880, 385);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(250, 181);
-            this.dataGridView2.TabIndex = 29;
-            // 
-            // accountsBindingSource
-            // 
-            this.accountsBindingSource.DataMember = "Accounts";
-            this.accountsBindingSource.DataSource = this.libraryDBDataSetBindingSource;
-            // 
             // accountsTableAdapter
             // 
             this.accountsTableAdapter.ClearBeforeFill = true;
-            // 
-            // readercodeDataGridViewTextBoxColumn
-            // 
-            this.readercodeDataGridViewTextBoxColumn.DataPropertyName = "reader_code";
-            this.readercodeDataGridViewTextBoxColumn.HeaderText = "Code";
-            this.readercodeDataGridViewTextBoxColumn.Name = "readercodeDataGridViewTextBoxColumn";
-            this.readercodeDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // readerfullnameDataGridViewTextBoxColumn
-            // 
-            this.readerfullnameDataGridViewTextBoxColumn.DataPropertyName = "reader_fullname";
-            this.readerfullnameDataGridViewTextBoxColumn.FillWeight = 120F;
-            this.readerfullnameDataGridViewTextBoxColumn.HeaderText = "Fullname";
-            this.readerfullnameDataGridViewTextBoxColumn.Name = "readerfullnameDataGridViewTextBoxColumn";
-            // 
-            // readercityDataGridViewTextBoxColumn
-            // 
-            this.readercityDataGridViewTextBoxColumn.DataPropertyName = "reader_city";
-            this.readercityDataGridViewTextBoxColumn.HeaderText = "City";
-            this.readercityDataGridViewTextBoxColumn.Name = "readercityDataGridViewTextBoxColumn";
-            this.readercityDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // readeraddressDataGridViewTextBoxColumn
-            // 
-            this.readeraddressDataGridViewTextBoxColumn.DataPropertyName = "reader_address";
-            this.readeraddressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.readeraddressDataGridViewTextBoxColumn.Name = "readeraddressDataGridViewTextBoxColumn";
-            // 
-            // readerphoneDataGridViewTextBoxColumn
-            // 
-            this.readerphoneDataGridViewTextBoxColumn.DataPropertyName = "reader_phone";
-            this.readerphoneDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.readerphoneDataGridViewTextBoxColumn.Name = "readerphoneDataGridViewTextBoxColumn";
-            this.readerphoneDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // readersexDataGridViewCheckBoxColumn
-            // 
-            this.readersexDataGridViewCheckBoxColumn.DataPropertyName = "reader_sex";
-            this.readersexDataGridViewCheckBoxColumn.HeaderText = "Male";
-            this.readersexDataGridViewCheckBoxColumn.Name = "readersexDataGridViewCheckBoxColumn";
-            this.readersexDataGridViewCheckBoxColumn.Width = 40;
-            // 
-            // readerusernameDataGridViewTextBoxColumn
-            // 
-            this.readerusernameDataGridViewTextBoxColumn.DataPropertyName = "reader_username";
-            this.readerusernameDataGridViewTextBoxColumn.HeaderText = "Username";
-            this.readerusernameDataGridViewTextBoxColumn.Name = "readerusernameDataGridViewTextBoxColumn";
-            this.readerusernameDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // fullnameDataGridViewTextBoxColumn
-            // 
-            this.fullnameDataGridViewTextBoxColumn.DataPropertyName = "fullname";
-            this.fullnameDataGridViewTextBoxColumn.HeaderText = "Fullname";
-            this.fullnameDataGridViewTextBoxColumn.Name = "fullnameDataGridViewTextBoxColumn";
-            this.fullnameDataGridViewTextBoxColumn.Width = 115;
-            // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            this.usernameDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // button5
-            // 
-            this.button5.AccessibleDescription = "";
-            this.button5.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button5.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(876, 604);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(254, 33);
-            this.button5.TabIndex = 30;
-            this.button5.Text = "Back to Main";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.backToMainButton_Click);
-            // 
-            // button4
-            // 
-            this.button4.AccessibleDescription = "";
-            this.button4.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(17, 585);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(352, 33);
-            this.button4.TabIndex = 34;
-            this.button4.Text = "Save to .txt";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button_SaveToTxtClick);
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(274, 532);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 35);
-            this.button3.TabIndex = 33;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button_DeleteClick);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(144, 533);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 33);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button_UpdateClick);
-            // 
-            // button1
-            // 
-            this.button1.AccessibleDescription = "";
-            this.button1.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(17, 533);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 33);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Insert";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button_InsertClick);
             // 
             // Readers_Form
             // 
@@ -465,7 +465,7 @@ namespace LibraryApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1256, 734);
+            this.ClientSize = new System.Drawing.Size(1256, 739);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Name = "Readers_Form";
@@ -475,15 +475,15 @@ namespace LibraryApp
             this.Load += new System.EventHandler(this.Readers_Form_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersDataSet1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

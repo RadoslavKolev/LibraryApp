@@ -69,6 +69,17 @@
     <Compile Include="Account_Form.Designer.cs">
       <DependentUpon>Account_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Genre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Genre.Designer.cs">
+      <DependentUpon>Genre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenreDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenreDBDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LibraryDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -120,6 +131,9 @@
     <EmbeddedResource Include="Account_Form.resx">
       <DependentUpon>Account_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Genre.resx">
+      <DependentUpon>Genre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +161,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="GenreDBDataSet1.xsc">
+      <DependentUpon>GenreDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GenreDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GenreDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GenreDBDataSet1.xss">
+      <DependentUpon>GenreDBDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="LibraryDBDataSet.xsc">
       <DependentUpon>LibraryDBDataSet.xsd</DependentUpon>
     </None>

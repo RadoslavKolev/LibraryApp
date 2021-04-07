@@ -108,6 +108,7 @@ namespace LibraryApp
             this.genreToolStripMenuItem.Name = "genreToolStripMenuItem";
             this.genreToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.genreToolStripMenuItem.Text = "Genre";
+            this.genreToolStripMenuItem.Click += new System.EventHandler(this.genreToolStripMenuItem_Click);
             // 
             // borrowedBooksToolStripMenuItem
             // 

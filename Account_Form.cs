@@ -149,8 +149,9 @@ namespace LibraryApp
                 else
                     MessageBox.Show("Username not found!", "Username not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                DisplayData();
+           
                 myConnection.Close();
+                DisplayData();
 
                 if (myConnection.State == ConnectionState.Open)
                     myConnection.Dispose();
@@ -160,7 +161,7 @@ namespace LibraryApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please go back in Readers and delete username", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
