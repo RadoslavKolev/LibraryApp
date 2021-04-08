@@ -28,10 +28,12 @@ namespace LibraryApp
         {
             this.accountsTableAdapter.Fill(this.libraryDBDataSet.Accounts);
             panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
+            DisplayData();
         }
 
         private void DisplayData()
         {
+            myConnection = new SqlConnection(lf.connection);
             myConnection.Open();
             DataTable dataTable = new DataTable();
             adapter = new SqlDataAdapter("SELECT * FROM Accounts", myConnection);

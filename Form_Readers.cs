@@ -29,10 +29,12 @@ namespace LibraryApp
             // TODO: This line of code loads data into the 'accountsDataSet.Accounts' table. You can move, or remove it, as needed.
             this.accountsTableAdapter.Fill(this.accountsDataSet.Accounts);
             panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
+            DisplayData();
         }
 
         public void DisplayData()
         {
+            myConnection = new SqlConnection(lf.connection);
             myConnection.Open();
             DataTable dataTable = new DataTable();
             adapter = new SqlDataAdapter("SELECT * FROM Accounts", myConnection);
@@ -53,18 +55,14 @@ namespace LibraryApp
         {
             try
             {
-                if (!textBox1.Text.Contains(" "))
-                    MessageBox.Show("Please enter your both names!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if (textBox5.Text.Length != 10)
+                if (textBox5.Text.Length != 10)
                     MessageBox.Show("Phone number must be 10 symbols, not more or less", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     myConnection = new SqlConnection(lf.connection);
-                    myCommand = new SqlCommand("INSERT INTO Accounts VALUES (@fullname, @email, @city, @address, @phone, @sex)", myConnection);                  
+                    myCommand = new SqlCommand("UPDATE Accounts SET city = @city, address = @address, phone = @phone, sex = @sex WHERE code = @code", myConnection);                  
 
-                    myConnection.Open();
-                    myCommand.Parameters.AddWithValue("@fullname", textBox1.Text);
-                    myCommand.Parameters.AddWithValue("@email", textBox2.Text);                   
+                    myConnection.Open();                   
                     myCommand.Parameters.AddWithValue("@city", textBox3.Text);
                     myCommand.Parameters.AddWithValue("@address", textBox4.Text);
                     myCommand.Parameters.AddWithValue("@phone", textBox5.Text);
@@ -74,20 +72,24 @@ namespace LibraryApp
                         check = true;
                     else
                         check = false;
-                    myCommand.Parameters.AddWithValue("@reader_sex", check);
+                    myCommand.Parameters.AddWithValue("@sex", check);
+                    myCommand.Parameters.AddWithValue("@code", textBox6.Text);
 
                     myCommand.ExecuteNonQuery();
+                    MessageBox.Show("Info added successfully!");
+
                     myConnection.Close();
                     DisplayData();
 
                     if (myConnection.State == ConnectionState.Open)
                         myConnection.Dispose();
 
-                    textBox2.Clear();
                     textBox1.Clear();
+                    textBox2.Clear();                   
                     textBox3.Clear();
                     textBox4.Clear();
                     textBox5.Clear();
+                    textBox6.Clear();
                 }
             }
             catch (Exception ex)
@@ -98,40 +100,46 @@ namespace LibraryApp
 
         private void button_UpdateClick(object sender, EventArgs e)
         {
+
             try
             {
-
                 myConnection = new SqlConnection(lf.connection);
-                myCommand = new SqlCommand("SELECT * FROM Accounts WHERE code = '" + textBox6.Text + "'", myConnection);
+                myCommand = new SqlCommand("UPDATE Accounts SET fullname = @fullname, city = @city, address = @address, phone = @phone WHERE code = @code", myConnection);
+                SqlCommand checkCode = new SqlCommand("SELECT code FROM Accounts WHERE code = @code", myConnection);
                 myConnection.Open();
+                myCommand.Parameters.AddWithValue("@code", textBox6.Text);
+                myCommand.Parameters.AddWithValue("@fullname", textBox1.Text);
+                myCommand.Parameters.AddWithValue("@city", textBox3.Text);
+                myCommand.Parameters.AddWithValue("@address", textBox4.Text);
+                myCommand.Parameters.AddWithValue("@phone", textBox5.Text);
+                checkCode.Parameters.AddWithValue("@code", textBox6.Text);
 
-                SqlDataAdapter sda = new SqlDataAdapter(myCommand);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                myCommand.ExecuteNonQuery();
+                SqlDataReader sdr = checkCode.ExecuteReader();
+
+                if (!sdr.HasRows)
+                    MessageBox.Show("Code not found", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    sdr.Close();
 
                 if (textBox1.Text == "" || textBox6.Text == "")
                     MessageBox.Show("The fields cannot be empty!", "Empty fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if (dt.Rows.Count > 0)
-                {
-                    SqlCommand updateCommand = new SqlCommand("UPDATE Accounts SET fullname = '" + textBox1.Text + "' WHERE code = '" + textBox6.Text + "'", myConnection);
-                    SqlDataAdapter sda2 = new SqlDataAdapter(updateCommand);
-                    DataTable dt2 = new DataTable();
-                    sda2.Fill(dt2);
-                    updateCommand.ExecuteNonQuery();
-                    MessageBox.Show("Username changed successfully!");
-                }
                 else
-                    MessageBox.Show("Username not found!", "Username not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                {
+                    myCommand.ExecuteNonQuery();
+                    myConnection.Close();
 
-
-                myConnection.Close();
-                DisplayData();
+                    MessageBox.Show("Info updated successfully!");
+                    DisplayData();
+                }
 
                 if (myConnection.State == ConnectionState.Open)
                     myConnection.Dispose();
 
                 textBox1.Clear();
+                textBox2.Clear();
+                textBox3.Clear();
+                textBox4.Clear();
+                textBox5.Clear();
                 textBox6.Clear();
             }
             catch (Exception ex)
@@ -157,6 +165,7 @@ namespace LibraryApp
 
                 if (myConnection.State == ConnectionState.Open)
                     myConnection.Dispose();
+
                 textBox2.Clear();
                 textBox1.Clear();
                 textBox3.Clear();
@@ -237,18 +246,18 @@ namespace LibraryApp
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            textBox6.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            textBox5.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-            textBox6.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+            textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            textBox5.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
         }
 
         private void dataGridView2_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             textBox1.Text = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
-            textBox6.Text = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textBox2.Text = dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString();
         }
     }
 }
