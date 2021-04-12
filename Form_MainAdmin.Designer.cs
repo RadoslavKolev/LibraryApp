@@ -38,9 +38,9 @@ namespace LibraryApp
             this.booksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.genreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrowedBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.readerInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.catalogueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backToLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,8 +64,8 @@ namespace LibraryApp
             this.manageAccountsToolStripMenuItem,
             this.tablesToolStripMenuItem,
             this.borrowedBooksToolStripMenuItem,
-            this.readerInfoToolStripMenuItem,
             this.catalogueToolStripMenuItem,
+            this.backToLoginToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -93,21 +93,21 @@ namespace LibraryApp
             // readersToolStripMenuItem
             // 
             this.readersToolStripMenuItem.Name = "readersToolStripMenuItem";
-            this.readersToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.readersToolStripMenuItem.Size = new System.Drawing.Size(153, 24);
             this.readersToolStripMenuItem.Text = "Readers";
             this.readersToolStripMenuItem.Click += new System.EventHandler(this.readersToolStripMenuItem_Click);
             // 
             // booksToolStripMenuItem
             // 
             this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
-            this.booksToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.booksToolStripMenuItem.Size = new System.Drawing.Size(153, 24);
             this.booksToolStripMenuItem.Text = "Books";
             this.booksToolStripMenuItem.Click += new System.EventHandler(this.booksToolStripMenuItem_Click);
             // 
             // genreToolStripMenuItem
             // 
             this.genreToolStripMenuItem.Name = "genreToolStripMenuItem";
-            this.genreToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.genreToolStripMenuItem.Size = new System.Drawing.Size(153, 24);
             this.genreToolStripMenuItem.Text = "Genre";
             this.genreToolStripMenuItem.Click += new System.EventHandler(this.genreToolStripMenuItem_Click);
             // 
@@ -116,12 +116,6 @@ namespace LibraryApp
             this.borrowedBooksToolStripMenuItem.Name = "borrowedBooksToolStripMenuItem";
             this.borrowedBooksToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.borrowedBooksToolStripMenuItem.Text = "Borrowed Books";
-            // 
-            // readerInfoToolStripMenuItem
-            // 
-            this.readerInfoToolStripMenuItem.Name = "readerInfoToolStripMenuItem";
-            this.readerInfoToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
-            this.readerInfoToolStripMenuItem.Text = "Reader Info";
             // 
             // catalogueToolStripMenuItem
             // 
@@ -136,7 +130,13 @@ namespace LibraryApp
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // MainAdmin_Form
+            // backToLoginToolStripMenuItem
+            // 
+            this.backToLoginToolStripMenuItem.Name = "backToLoginToolStripMenuItem";
+            this.backToLoginToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.backToLoginToolStripMenuItem.Text = "Back to Login";
+            // 
+            // Form_MainAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -146,7 +146,7 @@ namespace LibraryApp
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "MainAdmin_Form";
+            this.Name = "Form_MainAdmin";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu";
@@ -168,8 +168,8 @@ namespace LibraryApp
         private System.Windows.Forms.ToolStripMenuItem genreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageAccountsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem borrowedBooksToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem readerInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem catalogueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backToLoginToolStripMenuItem;
     }
 }

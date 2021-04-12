@@ -32,12 +32,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.yourAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yourBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.catalogueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrowABookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnABookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.yourAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.yourBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backToLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,12 +75,25 @@
             this.catalogueToolStripMenuItem,
             this.borrowABookToolStripMenuItem,
             this.returnABookToolStripMenuItem,
+            this.backToLoginToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1151, 28);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // yourAccountToolStripMenuItem
+            // 
+            this.yourAccountToolStripMenuItem.Name = "yourAccountToolStripMenuItem";
+            this.yourAccountToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
+            this.yourAccountToolStripMenuItem.Text = "Your account";
+            // 
+            // yourBooksToolStripMenuItem
+            // 
+            this.yourBooksToolStripMenuItem.Name = "yourBooksToolStripMenuItem";
+            this.yourBooksToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
+            this.yourBooksToolStripMenuItem.Text = "Your books";
             // 
             // catalogueToolStripMenuItem
             // 
@@ -106,19 +120,13 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // yourAccountToolStripMenuItem
+            // backToLoginToolStripMenuItem
             // 
-            this.yourAccountToolStripMenuItem.Name = "yourAccountToolStripMenuItem";
-            this.yourAccountToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
-            this.yourAccountToolStripMenuItem.Text = "Your account";
+            this.backToLoginToolStripMenuItem.Name = "backToLoginToolStripMenuItem";
+            this.backToLoginToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.backToLoginToolStripMenuItem.Text = "Back to Login";
             // 
-            // yourBooksToolStripMenuItem
-            // 
-            this.yourBooksToolStripMenuItem.Name = "yourBooksToolStripMenuItem";
-            this.yourBooksToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
-            this.yourBooksToolStripMenuItem.Text = "Your books";
-            // 
-            // MainUser_Form
+            // Form_MainUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -129,7 +137,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "MainUser_Form";
+            this.Name = "Form_MainUser";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu";
@@ -152,5 +160,6 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yourAccountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yourBooksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backToLoginToolStripMenuItem;
     }
 }

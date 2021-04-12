@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace LibraryApp
 {
@@ -51,17 +52,132 @@ namespace LibraryApp
 
         private void button_InsertClick(object sender, EventArgs e)
         {
+            try
+            {
+                string check = "[A-Za-z]";
+                if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "")
+                    MessageBox.Show("The first 4 fields cannot be empty", "Empty fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if(!Regex.IsMatch(textBox1.Text, check))
+                    MessageBox.Show("The book code must contains only numbers!", "Code error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    myConnection = new SqlConnection(lf.connection);
+                    myCommand = new SqlCommand("INSERT INTO Books VALUES(@code, @name, @genre, @pieces, @available, @author, @publisher, @year, @summary)", myConnection);
 
+                    myConnection.Open();
+                    myCommand.Parameters.AddWithValue("@code", textBox1.Text);
+                    myCommand.Parameters.AddWithValue("@name", textBox2.Text);
+                    myCommand.Parameters.AddWithValue("@genre", textBox3.Text);
+                    myCommand.Parameters.AddWithValue("@pieces", textBox4.Text);
+                    string checkIfAvailable = "";
+                    if (radioButton1.Checked)
+                        checkIfAvailable = "Yes".ToString();
+                    else
+                        checkIfAvailable = "No".ToString();
+                    myCommand.Parameters.AddWithValue("@available", checkIfAvailable);
+                    myCommand.Parameters.AddWithValue("@author", textBox5.Text);               
+                    myCommand.Parameters.AddWithValue("@publisher", textBox6.Text);
+                    myCommand.Parameters.AddWithValue("@year", textBox7.Text);
+                    myCommand.Parameters.AddWithValue("@summary", richTextBox1.Text);
+
+                    myCommand.ExecuteNonQuery();
+                    MessageBox.Show("Book added successfully!");
+
+                    myConnection.Close();
+                    DisplayData();
+
+                    if (myConnection.State == ConnectionState.Open)
+                        myConnection.Dispose();
+
+                    textBox1.Clear();
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    textBox4.Clear();
+                    textBox5.Clear();
+                    textBox6.Clear();
+                    textBox7.Clear();
+                    richTextBox1.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button_UpdateClick(object sender, EventArgs e)
         {
+            try
+            {
+                myConnection = new SqlConnection(lf.connection);
+                myCommand = new SqlCommand("UPDATE Books SET book_pieces = @pieces, book_available = @available WHERE book_code = @code", myConnection);
+                SqlCommand checkCode = new SqlCommand("SELECT book_code FROM Books WHERE book_code = @code", myConnection);
+                myConnection.Open();
+                myCommand.Parameters.AddWithValue("@code", textBox1.Text);
+                myCommand.Parameters.AddWithValue("@pieces", textBox4.Text);
+                string checkIfAvailable = "";
+                if (radioButton1.Checked)
+                    checkIfAvailable = "Yes".ToString();
+                else
+                    checkIfAvailable = "No".ToString();
+                myCommand.Parameters.AddWithValue("@available", checkIfAvailable);
 
+                checkCode.Parameters.AddWithValue("@code", textBox1.Text);
+
+                SqlDataReader sdr = checkCode.ExecuteReader();
+
+                if (!sdr.HasRows)
+                    MessageBox.Show("Code not found", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    sdr.Close();
+
+                if (textBox1.Text == "" || textBox4.Text == "")
+                    MessageBox.Show("The fields cannot be empty!", "Empty fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    myCommand.ExecuteNonQuery();
+                    myConnection.Close();
+
+                    MessageBox.Show("Book availability updated successfully!");
+                    DisplayData();
+                }
+
+                if (myConnection.State == ConnectionState.Open)
+                    myConnection.Dispose();
+
+                textBox1.Clear();
+                textBox4.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button_DeleteClick(object sender, EventArgs e)
         {
+            try
+            {
+                myConnection = new SqlConnection(lf.connection);
+                myCommand = new SqlCommand("DELETE Books WHERE code = @code", myConnection);
+                myConnection.Open();
+                myCommand.Parameters.AddWithValue("@code", textBox1.Text);
 
+                myCommand.ExecuteNonQuery();
+                myConnection.Close();
+
+                MessageBox.Show("Book deleted successfully!");
+                DisplayData();
+
+                if (myConnection.State == ConnectionState.Open)
+                    myConnection.Dispose();
+
+                textBox1.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button_SaveToTxtClick(object sender, EventArgs e)

@@ -143,7 +143,6 @@ namespace LibraryApp
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(198, 278);
             this.dataGridView2.TabIndex = 88;
-            this.dataGridView2.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseClick);
             // 
             // genreidDataGridViewTextBoxColumn
             // 
