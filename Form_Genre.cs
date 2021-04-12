@@ -45,18 +45,9 @@ namespace LibraryApp
             {
                 myConnection = new SqlConnection(lf.connection);
                 myCommand = new SqlCommand("INSERT INTO Genre(genre_name) VALUES(@genre)", myConnection);
-                SqlCommand checkGenre = new SqlCommand("SELECT genre_name FROM Accounts WHERE genre_name = @genre", myConnection);
 
                 myConnection.Open();
                 myCommand.Parameters.AddWithValue("@genre", textBox2.Text);
-                checkGenre.Parameters.AddWithValue("@genre", textBox2.Text);
-
-                SqlDataReader sdr = checkGenre.ExecuteReader();
-
-                if (sdr.HasRows)
-                    MessageBox.Show("Genre already exists!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
-                    sdr.Close();
 
                 if (textBox2.Text == "")
                     MessageBox.Show("Genre cannot be empty!", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
