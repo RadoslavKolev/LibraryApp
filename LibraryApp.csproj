@@ -68,6 +68,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Books.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Books.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BooksDBDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -196,6 +201,17 @@
     </None>
     <None Include="AccountsDataSet.xss">
       <DependentUpon>AccountsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Books.xsc">
+      <DependentUpon>Books.xsd</DependentUpon>
+    </None>
+    <None Include="Books.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Books.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Books.xss">
+      <DependentUpon>Books.xsd</DependentUpon>
     </None>
     <None Include="BooksDBDataSet1.xsc">
       <DependentUpon>BooksDBDataSet1.xsd</DependentUpon>

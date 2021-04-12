@@ -78,18 +78,10 @@ namespace LibraryApp
             {
                 myConnection = new SqlConnection(lf.connection);
                 myCommand = new SqlCommand("UPDATE Genre SET genre_name = @genre_name WHERE genre_id = @genre_id", myConnection);
-                SqlCommand checkID = new SqlCommand("SELECT genre_id FROM Accounts WHERE genre_id = @genre_id", myConnection);
+
                 myConnection.Open();
                 myCommand.Parameters.AddWithValue("@genre_id", textBox1.Text);
                 myCommand.Parameters.AddWithValue("@genre_name", textBox2.Text);
-                checkID.Parameters.AddWithValue("@genre_id", textBox1.Text);
-
-                SqlDataReader sdr = checkID.ExecuteReader();
-
-                if (!sdr.HasRows)               
-                    MessageBox.Show("ID not found!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);                
-                else
-                    sdr.Close();
 
                 if (textBox1.Text == "" || textBox2.Text == "")
                     MessageBox.Show("The fields cannot be empty!", "Empty fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -120,17 +112,9 @@ namespace LibraryApp
             {
                 myConnection = new SqlConnection(lf.connection);
                 myCommand = new SqlCommand("DELETE Genre WHERE genre_id = @genre_id", myConnection);
-                SqlCommand checkID = new SqlCommand("SELECT genre_id FROM Accounts WHERE genre_id = @genre_id", myConnection);
+
                 myConnection.Open();
                 myCommand.Parameters.AddWithValue("@genre_id", textBox1.Text);
-                checkID.Parameters.AddWithValue("@genre_id", textBox1.Text);
-
-                SqlDataReader sdr = checkID.ExecuteReader();
-
-                if (!sdr.HasRows)
-                    MessageBox.Show("ID not found!", "Register Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
-                    sdr.Close();
 
                 if (textBox1.Text == "")
                     MessageBox.Show("ID cannot be empty!", "Empty fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
