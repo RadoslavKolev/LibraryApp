@@ -39,7 +39,17 @@ namespace LibraryApp
             this.genreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.genreDBDataSet1 = new LibraryApp.GenreDBDataSet1();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.booksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bookcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.booknameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookauthorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookgenreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.book_available = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookpiecesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookpublisherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookyearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.booksummaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.booksBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.books = new LibraryApp.Books();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -64,23 +74,13 @@ namespace LibraryApp
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.booksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.booksDBDataSet1 = new LibraryApp.BooksDBDataSet1();
             this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.booksTableAdapter = new LibraryApp.BooksDBDataSet1TableAdapters.BooksTableAdapter();
             this.genreTableAdapter = new LibraryApp.GenreDBDataSet1TableAdapters.GenreTableAdapter();
             this.booksTableAdapter1 = new LibraryApp.LibraryDBDataSet1TableAdapters.BooksTableAdapter();
             this.booksBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.bookcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.booknameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookauthorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookgenreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.book_available = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookpiecesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookpublisherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookyearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.booksummaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.books = new LibraryApp.Books();
-            this.booksBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.booksTableAdapter2 = new LibraryApp.BooksTableAdapters.BooksTableAdapter();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -89,13 +89,13 @@ namespace LibraryApp
             ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.genreDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.books)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.books)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -188,6 +188,82 @@ namespace LibraryApp
             this.dataGridView1.Size = new System.Drawing.Size(791, 278);
             this.dataGridView1.TabIndex = 87;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            // 
+            // bookcodeDataGridViewTextBoxColumn
+            // 
+            this.bookcodeDataGridViewTextBoxColumn.DataPropertyName = "book_code";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bookcodeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.bookcodeDataGridViewTextBoxColumn.HeaderText = "Book code";
+            this.bookcodeDataGridViewTextBoxColumn.Name = "bookcodeDataGridViewTextBoxColumn";
+            this.bookcodeDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // booknameDataGridViewTextBoxColumn
+            // 
+            this.booknameDataGridViewTextBoxColumn.DataPropertyName = "book_name";
+            this.booknameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.booknameDataGridViewTextBoxColumn.Name = "booknameDataGridViewTextBoxColumn";
+            this.booknameDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // bookauthorDataGridViewTextBoxColumn
+            // 
+            this.bookauthorDataGridViewTextBoxColumn.DataPropertyName = "book_author";
+            this.bookauthorDataGridViewTextBoxColumn.HeaderText = "Author";
+            this.bookauthorDataGridViewTextBoxColumn.Name = "bookauthorDataGridViewTextBoxColumn";
+            this.bookauthorDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // bookgenreDataGridViewTextBoxColumn
+            // 
+            this.bookgenreDataGridViewTextBoxColumn.DataPropertyName = "book_genre";
+            this.bookgenreDataGridViewTextBoxColumn.HeaderText = "Genre";
+            this.bookgenreDataGridViewTextBoxColumn.Name = "bookgenreDataGridViewTextBoxColumn";
+            this.bookgenreDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // book_available
+            // 
+            this.book_available.DataPropertyName = "book_available";
+            this.book_available.HeaderText = "Available";
+            this.book_available.Name = "book_available";
+            this.book_available.Width = 70;
+            // 
+            // bookpiecesDataGridViewTextBoxColumn
+            // 
+            this.bookpiecesDataGridViewTextBoxColumn.DataPropertyName = "book_pieces";
+            this.bookpiecesDataGridViewTextBoxColumn.HeaderText = "Pieces";
+            this.bookpiecesDataGridViewTextBoxColumn.Name = "bookpiecesDataGridViewTextBoxColumn";
+            this.bookpiecesDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // bookpublisherDataGridViewTextBoxColumn
+            // 
+            this.bookpublisherDataGridViewTextBoxColumn.DataPropertyName = "book_publisher";
+            this.bookpublisherDataGridViewTextBoxColumn.HeaderText = "Publisher";
+            this.bookpublisherDataGridViewTextBoxColumn.Name = "bookpublisherDataGridViewTextBoxColumn";
+            this.bookpublisherDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // bookyearDataGridViewTextBoxColumn
+            // 
+            this.bookyearDataGridViewTextBoxColumn.DataPropertyName = "book_year";
+            this.bookyearDataGridViewTextBoxColumn.HeaderText = "Year";
+            this.bookyearDataGridViewTextBoxColumn.Name = "bookyearDataGridViewTextBoxColumn";
+            this.bookyearDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // booksummaryDataGridViewTextBoxColumn
+            // 
+            this.booksummaryDataGridViewTextBoxColumn.DataPropertyName = "book_summary";
+            this.booksummaryDataGridViewTextBoxColumn.HeaderText = "Summary";
+            this.booksummaryDataGridViewTextBoxColumn.Name = "booksummaryDataGridViewTextBoxColumn";
+            // 
+            // booksBindingSource3
+            // 
+            this.booksBindingSource3.DataMember = "Books";
+            this.booksBindingSource3.DataSource = this.books;
+            // 
+            // books
+            // 
+            this.books.DataSetName = "Books";
+            this.books.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button3
             // 
@@ -459,82 +535,6 @@ namespace LibraryApp
             this.booksBindingSource2.DataMember = "Books";
             this.booksBindingSource2.DataSource = this.booksDBDataSet1;
             // 
-            // bookcodeDataGridViewTextBoxColumn
-            // 
-            this.bookcodeDataGridViewTextBoxColumn.DataPropertyName = "book_code";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = null;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bookcodeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.bookcodeDataGridViewTextBoxColumn.HeaderText = "Book code";
-            this.bookcodeDataGridViewTextBoxColumn.Name = "bookcodeDataGridViewTextBoxColumn";
-            this.bookcodeDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // booknameDataGridViewTextBoxColumn
-            // 
-            this.booknameDataGridViewTextBoxColumn.DataPropertyName = "book_name";
-            this.booknameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.booknameDataGridViewTextBoxColumn.Name = "booknameDataGridViewTextBoxColumn";
-            this.booknameDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // bookauthorDataGridViewTextBoxColumn
-            // 
-            this.bookauthorDataGridViewTextBoxColumn.DataPropertyName = "book_author";
-            this.bookauthorDataGridViewTextBoxColumn.HeaderText = "Author";
-            this.bookauthorDataGridViewTextBoxColumn.Name = "bookauthorDataGridViewTextBoxColumn";
-            this.bookauthorDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // bookgenreDataGridViewTextBoxColumn
-            // 
-            this.bookgenreDataGridViewTextBoxColumn.DataPropertyName = "book_genre";
-            this.bookgenreDataGridViewTextBoxColumn.HeaderText = "Genre";
-            this.bookgenreDataGridViewTextBoxColumn.Name = "bookgenreDataGridViewTextBoxColumn";
-            this.bookgenreDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // book_available
-            // 
-            this.book_available.DataPropertyName = "book_available";
-            this.book_available.HeaderText = "Available";
-            this.book_available.Name = "book_available";
-            this.book_available.Width = 70;
-            // 
-            // bookpiecesDataGridViewTextBoxColumn
-            // 
-            this.bookpiecesDataGridViewTextBoxColumn.DataPropertyName = "book_pieces";
-            this.bookpiecesDataGridViewTextBoxColumn.HeaderText = "Pieces";
-            this.bookpiecesDataGridViewTextBoxColumn.Name = "bookpiecesDataGridViewTextBoxColumn";
-            this.bookpiecesDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // bookpublisherDataGridViewTextBoxColumn
-            // 
-            this.bookpublisherDataGridViewTextBoxColumn.DataPropertyName = "book_publisher";
-            this.bookpublisherDataGridViewTextBoxColumn.HeaderText = "Publisher";
-            this.bookpublisherDataGridViewTextBoxColumn.Name = "bookpublisherDataGridViewTextBoxColumn";
-            this.bookpublisherDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // bookyearDataGridViewTextBoxColumn
-            // 
-            this.bookyearDataGridViewTextBoxColumn.DataPropertyName = "book_year";
-            this.bookyearDataGridViewTextBoxColumn.HeaderText = "Year";
-            this.bookyearDataGridViewTextBoxColumn.Name = "bookyearDataGridViewTextBoxColumn";
-            this.bookyearDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // booksummaryDataGridViewTextBoxColumn
-            // 
-            this.booksummaryDataGridViewTextBoxColumn.DataPropertyName = "book_summary";
-            this.booksummaryDataGridViewTextBoxColumn.HeaderText = "Summary";
-            this.booksummaryDataGridViewTextBoxColumn.Name = "booksummaryDataGridViewTextBoxColumn";
-            // 
-            // books
-            // 
-            this.books.DataSetName = "Books";
-            this.books.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // booksBindingSource3
-            // 
-            this.booksBindingSource3.DataMember = "Books";
-            this.booksBindingSource3.DataSource = this.books;
-            // 
             // booksTableAdapter2
             // 
             this.booksTableAdapter2.ClearBeforeFill = true;
@@ -569,9 +569,10 @@ namespace LibraryApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1238, 795);
+            this.ClientSize = new System.Drawing.Size(1238, 753);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.panel1);
@@ -586,14 +587,14 @@ namespace LibraryApp
             ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.genreDBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.books)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksDBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.books)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource3)).EndInit();
             this.ResumeLayout(false);
 
         }

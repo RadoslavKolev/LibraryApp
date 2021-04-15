@@ -39,8 +39,8 @@ namespace LibraryApp
             this.genreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrowedBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.catalogueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backToLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,12 +116,21 @@ namespace LibraryApp
             this.borrowedBooksToolStripMenuItem.Name = "borrowedBooksToolStripMenuItem";
             this.borrowedBooksToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.borrowedBooksToolStripMenuItem.Text = "Borrowed Books";
+            this.borrowedBooksToolStripMenuItem.Click += new System.EventHandler(this.borrowedBooksToolStripMenuItem_Click);
             // 
             // catalogueToolStripMenuItem
             // 
             this.catalogueToolStripMenuItem.Name = "catalogueToolStripMenuItem";
             this.catalogueToolStripMenuItem.Size = new System.Drawing.Size(120, 24);
             this.catalogueToolStripMenuItem.Text = "Catalogue";
+            this.catalogueToolStripMenuItem.Click += new System.EventHandler(this.catalogueToolStripMenuItem_Click);
+            // 
+            // backToLoginToolStripMenuItem
+            // 
+            this.backToLoginToolStripMenuItem.Name = "backToLoginToolStripMenuItem";
+            this.backToLoginToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.backToLoginToolStripMenuItem.Text = "Back to Login";
+            this.backToLoginToolStripMenuItem.Click += new System.EventHandler(this.backToLoginToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -129,12 +138,6 @@ namespace LibraryApp
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // backToLoginToolStripMenuItem
-            // 
-            this.backToLoginToolStripMenuItem.Name = "backToLoginToolStripMenuItem";
-            this.backToLoginToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.backToLoginToolStripMenuItem.Text = "Back to Login";
             // 
             // Form_MainAdmin
             // 

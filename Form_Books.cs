@@ -57,7 +57,7 @@ namespace LibraryApp
                 string check = "[A-Za-z]";
                 if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "")
                     MessageBox.Show("The first 4 fields cannot be empty", "Empty fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if(!Regex.IsMatch(textBox1.Text, check))
+                else if(Regex.IsMatch(textBox1.Text, check))
                     MessageBox.Show("The book code must contains only numbers!", "Code error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
@@ -69,11 +69,11 @@ namespace LibraryApp
                     myCommand.Parameters.AddWithValue("@name", textBox2.Text);
                     myCommand.Parameters.AddWithValue("@genre", textBox3.Text);
                     myCommand.Parameters.AddWithValue("@pieces", textBox4.Text);
-                    string checkIfAvailable = "";
+                    int checkIfAvailable;
                     if (radioButton1.Checked)
-                        checkIfAvailable = "Yes".ToString();
+                        checkIfAvailable = 1;
                     else
-                        checkIfAvailable = "No".ToString();
+                        checkIfAvailable = 0;
                     myCommand.Parameters.AddWithValue("@available", checkIfAvailable);
                     myCommand.Parameters.AddWithValue("@author", textBox5.Text);               
                     myCommand.Parameters.AddWithValue("@publisher", textBox6.Text);
@@ -115,11 +115,11 @@ namespace LibraryApp
                 myConnection.Open();
                 myCommand.Parameters.AddWithValue("@code", textBox1.Text);
                 myCommand.Parameters.AddWithValue("@pieces", textBox4.Text);
-                string checkIfAvailable = "";
+                int checkIfAvailable;
                 if (radioButton1.Checked)
-                    checkIfAvailable = "Yes".ToString();
+                    checkIfAvailable = 1;
                 else
-                    checkIfAvailable = "No".ToString();
+                    checkIfAvailable = 0;
                 myCommand.Parameters.AddWithValue("@available", checkIfAvailable);
 
                 checkCode.Parameters.AddWithValue("@code", textBox1.Text);
@@ -159,7 +159,7 @@ namespace LibraryApp
             try
             {
                 myConnection = new SqlConnection(lf.connection);
-                myCommand = new SqlCommand("DELETE Books WHERE code = @code", myConnection);
+                myCommand = new SqlCommand("DELETE Books WHERE book_code = @code", myConnection);
                 myConnection.Open();
                 myCommand.Parameters.AddWithValue("@code", textBox1.Text);
 
