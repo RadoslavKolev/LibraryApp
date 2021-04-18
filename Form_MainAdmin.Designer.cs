@@ -63,8 +63,8 @@ namespace LibraryApp
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.manageAccountsToolStripMenuItem,
             this.tablesToolStripMenuItem,
-            this.borrowedBooksToolStripMenuItem,
             this.catalogueToolStripMenuItem,
+            this.borrowedBooksToolStripMenuItem,
             this.backToLoginToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -93,21 +93,21 @@ namespace LibraryApp
             // readersToolStripMenuItem
             // 
             this.readersToolStripMenuItem.Name = "readersToolStripMenuItem";
-            this.readersToolStripMenuItem.Size = new System.Drawing.Size(153, 24);
+            this.readersToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.readersToolStripMenuItem.Text = "Readers";
             this.readersToolStripMenuItem.Click += new System.EventHandler(this.readersToolStripMenuItem_Click);
             // 
             // booksToolStripMenuItem
             // 
             this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
-            this.booksToolStripMenuItem.Size = new System.Drawing.Size(153, 24);
+            this.booksToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.booksToolStripMenuItem.Text = "Books";
             this.booksToolStripMenuItem.Click += new System.EventHandler(this.booksToolStripMenuItem_Click);
             // 
             // genreToolStripMenuItem
             // 
             this.genreToolStripMenuItem.Name = "genreToolStripMenuItem";
-            this.genreToolStripMenuItem.Size = new System.Drawing.Size(153, 24);
+            this.genreToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.genreToolStripMenuItem.Text = "Genre";
             this.genreToolStripMenuItem.Click += new System.EventHandler(this.genreToolStripMenuItem_Click);
             // 
