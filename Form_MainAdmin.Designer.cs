@@ -38,7 +38,6 @@ namespace LibraryApp
             this.booksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.genreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrowedBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.catalogueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backToLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -63,7 +62,6 @@ namespace LibraryApp
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.manageAccountsToolStripMenuItem,
             this.tablesToolStripMenuItem,
-            this.catalogueToolStripMenuItem,
             this.borrowedBooksToolStripMenuItem,
             this.backToLoginToolStripMenuItem,
             this.exitToolStripMenuItem});
@@ -118,13 +116,6 @@ namespace LibraryApp
             this.borrowedBooksToolStripMenuItem.Text = "Borrowed Books";
             this.borrowedBooksToolStripMenuItem.Click += new System.EventHandler(this.borrowedBooksToolStripMenuItem_Click);
             // 
-            // catalogueToolStripMenuItem
-            // 
-            this.catalogueToolStripMenuItem.Name = "catalogueToolStripMenuItem";
-            this.catalogueToolStripMenuItem.Size = new System.Drawing.Size(120, 24);
-            this.catalogueToolStripMenuItem.Text = "Catalogue";
-            this.catalogueToolStripMenuItem.Click += new System.EventHandler(this.catalogueToolStripMenuItem_Click);
-            // 
             // backToLoginToolStripMenuItem
             // 
             this.backToLoginToolStripMenuItem.Name = "backToLoginToolStripMenuItem";
@@ -171,7 +162,6 @@ namespace LibraryApp
         private System.Windows.Forms.ToolStripMenuItem genreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageAccountsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem borrowedBooksToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem catalogueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backToLoginToolStripMenuItem;
     }

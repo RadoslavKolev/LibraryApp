@@ -153,10 +153,13 @@ namespace LibraryApp
             try
             {
                 myConnection = new SqlConnection(lf.connection);
-                myCommand = new SqlCommand("DELETE Accounts WHERE code = @code", myConnection);
+                SqlCommand deleteCommand = new SqlCommand("DELETE Borrowed WHERE reader_code = @code", myConnection);               
                 myConnection.Open();
-                myCommand.Parameters.AddWithValue("@code", textBox6.Text);
+                deleteCommand.Parameters.AddWithValue("@code", textBox6.Text);
+                deleteCommand.ExecuteNonQuery();
 
+                myCommand = new SqlCommand("DELETE Accounts WHERE code = @code", myConnection);
+                myCommand.Parameters.AddWithValue("@code", textBox6.Text);
                 myCommand.ExecuteNonQuery();
                 myConnection.Close();
 

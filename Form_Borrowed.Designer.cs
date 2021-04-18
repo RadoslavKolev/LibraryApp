@@ -40,10 +40,6 @@ namespace LibraryApp
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.readercodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loandateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.borrowreturnedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -55,6 +51,10 @@ namespace LibraryApp
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.readercodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loandateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borrowreturnedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.borrowedBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDBDataSet2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -99,7 +99,7 @@ namespace LibraryApp
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(520, 672);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 33);
+            this.button1.Size = new System.Drawing.Size(157, 33);
             this.button1.TabIndex = 94;
             this.button1.Text = "Save to .txt";
             this.button1.UseVisualStyleBackColor = false;
@@ -165,38 +165,11 @@ namespace LibraryApp
             this.dataGridView1.TabIndex = 113;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
-            // readercodeDataGridViewTextBoxColumn
-            // 
-            this.readercodeDataGridViewTextBoxColumn.DataPropertyName = "reader_code";
-            this.readercodeDataGridViewTextBoxColumn.HeaderText = "Reader code";
-            this.readercodeDataGridViewTextBoxColumn.Name = "readercodeDataGridViewTextBoxColumn";
-            // 
-            // bookcodeDataGridViewTextBoxColumn
-            // 
-            this.bookcodeDataGridViewTextBoxColumn.DataPropertyName = "book_code";
-            this.bookcodeDataGridViewTextBoxColumn.HeaderText = "Book code";
-            this.bookcodeDataGridViewTextBoxColumn.Name = "bookcodeDataGridViewTextBoxColumn";
-            this.bookcodeDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // loandateDataGridViewTextBoxColumn
-            // 
-            this.loandateDataGridViewTextBoxColumn.DataPropertyName = "loan_date";
-            this.loandateDataGridViewTextBoxColumn.HeaderText = "Loan date";
-            this.loandateDataGridViewTextBoxColumn.Name = "loandateDataGridViewTextBoxColumn";
-            this.loandateDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // borrowreturnedDataGridViewTextBoxColumn
-            // 
-            this.borrowreturnedDataGridViewTextBoxColumn.DataPropertyName = "borrow_returned";
-            this.borrowreturnedDataGridViewTextBoxColumn.HeaderText = "Returned";
-            this.borrowreturnedDataGridViewTextBoxColumn.Name = "borrowreturnedDataGridViewTextBoxColumn";
-            this.borrowreturnedDataGridViewTextBoxColumn.Width = 80;
-            // 
             // button2
             // 
             this.button2.AccessibleDescription = "";
             this.button2.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(186, 516);
+            this.button2.Location = new System.Drawing.Point(186, 517);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(96, 33);
             this.button2.TabIndex = 112;
@@ -302,6 +275,33 @@ namespace LibraryApp
             this.label5.TabIndex = 102;
             this.label5.Text = "Find a book by its code";
             // 
+            // readercodeDataGridViewTextBoxColumn
+            // 
+            this.readercodeDataGridViewTextBoxColumn.DataPropertyName = "reader_code";
+            this.readercodeDataGridViewTextBoxColumn.HeaderText = "Reader code";
+            this.readercodeDataGridViewTextBoxColumn.Name = "readercodeDataGridViewTextBoxColumn";
+            // 
+            // bookcodeDataGridViewTextBoxColumn
+            // 
+            this.bookcodeDataGridViewTextBoxColumn.DataPropertyName = "book_code";
+            this.bookcodeDataGridViewTextBoxColumn.HeaderText = "Book code";
+            this.bookcodeDataGridViewTextBoxColumn.Name = "bookcodeDataGridViewTextBoxColumn";
+            this.bookcodeDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // loandateDataGridViewTextBoxColumn
+            // 
+            this.loandateDataGridViewTextBoxColumn.DataPropertyName = "loan_date";
+            this.loandateDataGridViewTextBoxColumn.HeaderText = "Loan date";
+            this.loandateDataGridViewTextBoxColumn.Name = "loandateDataGridViewTextBoxColumn";
+            this.loandateDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // borrowreturnedDataGridViewTextBoxColumn
+            // 
+            this.borrowreturnedDataGridViewTextBoxColumn.DataPropertyName = "borrow_returned";
+            this.borrowreturnedDataGridViewTextBoxColumn.HeaderText = "Returned";
+            this.borrowreturnedDataGridViewTextBoxColumn.Name = "borrowreturnedDataGridViewTextBoxColumn";
+            this.borrowreturnedDataGridViewTextBoxColumn.Width = 80;
+            // 
             // Form_Borrowed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,10 +347,10 @@ namespace LibraryApp
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn readercodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bookcodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn loandateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn borrowreturnedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Panel panel2;
     }
 }

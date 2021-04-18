@@ -69,11 +69,11 @@ namespace LibraryApp
                     myCommand.Parameters.AddWithValue("@name", textBox2.Text);
                     myCommand.Parameters.AddWithValue("@genre", textBox3.Text);
                     myCommand.Parameters.AddWithValue("@pieces", textBox4.Text);
-                    int checkIfAvailable;
+                    string checkIfAvailable = "";
                     if (radioButton1.Checked)
-                        checkIfAvailable = 1;
+                        checkIfAvailable = "Yes";
                     else
-                        checkIfAvailable = 0;
+                        checkIfAvailable = "No";
                     myCommand.Parameters.AddWithValue("@available", checkIfAvailable);
                     myCommand.Parameters.AddWithValue("@author", textBox5.Text);               
                     myCommand.Parameters.AddWithValue("@publisher", textBox6.Text);
@@ -115,11 +115,11 @@ namespace LibraryApp
                 myConnection.Open();
                 myCommand.Parameters.AddWithValue("@code", textBox1.Text);
                 myCommand.Parameters.AddWithValue("@pieces", textBox4.Text);
-                int checkIfAvailable;
+                string checkIfAvailable = "";
                 if (radioButton1.Checked)
-                    checkIfAvailable = 1;
+                    checkIfAvailable = "Yes";
                 else
-                    checkIfAvailable = 0;
+                    checkIfAvailable = "No";
                 myCommand.Parameters.AddWithValue("@available", checkIfAvailable);
 
                 checkCode.Parameters.AddWithValue("@code", textBox1.Text);

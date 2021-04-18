@@ -20,7 +20,7 @@ namespace LibraryApp
         }
         public SqlConnection myConnection = default(SqlConnection);
         public SqlCommand myCommand = default(SqlCommand);
-        public SqlDataAdapter adapter, adapter2;
+        public SqlDataAdapter adapter;
         Form_Login lf = new Form_Login();
 
         private void DisplayData()
