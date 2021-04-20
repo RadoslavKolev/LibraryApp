@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LibraryApp
 {
-    public partial class Terms_Form : Form
+    public partial class Form_Terms : Form
     {
-        public Terms_Form()
+        public Form_Terms()
         {
             InitializeComponent();
         }

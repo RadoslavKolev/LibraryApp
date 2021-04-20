@@ -1,0 +1,10 @@
+readercodeDataGridViewTextBoxColumn  bookcodeDataGridViewTextBoxColumn  loandateDataGridViewTextBoxColumn  borrowreturnedDataGridViewTextBoxColumn  
+1001                                 23424234464654                     3.2.2021 г. 0:00:00                Yes                                      
+1001                                 32437472421                        7.4.2021 г. 0:00:00                No                                       
+1002                                 32437472421                        7.4.2021 г. 0:00:00                No                                       
+1002                                 9786191511655                      14.3.2021 г. 0:00:00               Yes                                      
+1004                                 9789545155222                      22.3.2021 г. 0:00:00               Yes                                      
+1004                                 9789547391468                      13.4.2021 г. 0:00:00               No                                       
+1004                                 9789545973390                      14.4.2021 г. 0:00:00               No                                       
+1001                                 9786191570836                      16.4.2021 г. 0:00:00               No                                       
+                                                                                                                                                    

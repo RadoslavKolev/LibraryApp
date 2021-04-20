@@ -1,6 +1,6 @@
 ﻿namespace LibraryApp
 {
-    partial class Forgot_Form
+    partial class Form_Forgot
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Forgot_Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Forgot));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -115,7 +115,7 @@
             this.button4.TabIndex = 68;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Visible = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel3
             // 
@@ -460,7 +460,7 @@
             // 
             this.accountsTableAdapter.ClearBeforeFill = true;
             // 
-            // Forgot_Form
+            // Form_Forgot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -472,7 +472,7 @@
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Forgot_Form";
+            this.Name = "Form_Forgot";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Forgot Username or Password";

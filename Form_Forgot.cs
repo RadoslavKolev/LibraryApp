@@ -12,14 +12,14 @@ using System.IO;
 
 namespace LibraryApp
 {
-    public partial class Forgot_Form : Form
+    public partial class Form_Forgot : Form
     {
-        public Forgot_Form()
+        public Form_Forgot()
         {
             InitializeComponent();
         }
 
-        Login_Form lf = new Login_Form();
+        Form_Login lf = new Form_Login();
         public SqlConnection myConnection = default(SqlConnection);
         public SqlCommand myCommand = default(SqlCommand);
         public SqlDataReader rdr;
@@ -32,7 +32,7 @@ namespace LibraryApp
         private void button_RecoverClick(object sender, EventArgs e)
         {            
             try
-            {              
+            {
                 myConnection = new SqlConnection(lf.connection);
                 myCommand = new SqlCommand("SELECT username, password FROM Accounts WHERE email = @email", myConnection);
                 myConnection.Open();
@@ -78,10 +78,11 @@ namespace LibraryApp
         private void button_ChangeUsernameClick(object sender, EventArgs e)
         {
             try
-            {
+            { 
                 myConnection = new SqlConnection(lf.connection);
-                myCommand = new SqlCommand("SELECT * FROM Accounts WHERE username = '" + textBox4.Text +"'", myConnection);
+                myCommand = new SqlCommand("SELECT username FROM Accounts WHERE username = '" + textBox4.Text + "'", myConnection);
                 myConnection.Open();
+
                 SqlDataAdapter sda = new SqlDataAdapter(myCommand);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
@@ -89,35 +90,39 @@ namespace LibraryApp
 
                 if (textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "")
                     MessageBox.Show("The fields cannot be empty!", "Empty fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if(textBox4.Text == textBox5.Text || textBox4.Text == textBox6.Text)
+                else if (textBox4.Text == textBox5.Text || textBox4.Text == textBox6.Text)
                     MessageBox.Show("Username is still the same!", "Same username", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                 else if (dt.Rows.Count > 0)
-                {                   
+                {
                     if (textBox5.Text != textBox6.Text)
                         MessageBox.Show("Usernames dont't match!", "Usernames don't match", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                     {
-                        SqlCommand myCommand2 = new SqlCommand("UPDATE Accounts SET username = '" + textBox5.Text + "' WHERE username = '" + textBox4.Text + "'", myConnection);
-                        SqlDataAdapter sda2 = new SqlDataAdapter(myCommand2);
+                        SqlCommand updateCommand = new SqlCommand("UPDATE Accounts SET username = '" + textBox5.Text + "' WHERE username = '" + textBox4.Text + "'", myConnection);
+                        SqlDataAdapter sda2 = new SqlDataAdapter(updateCommand);
                         DataTable dt2 = new DataTable();
                         sda2.Fill(dt2);
-                        myCommand2.ExecuteNonQuery();
+                        updateCommand.ExecuteNonQuery();
                         MessageBox.Show("Username changed successfully!");
                     }
                 }
-                else        
+                else
                     MessageBox.Show("Username not found!", "Username not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 
                 myConnection.Close();
 
                 if (myConnection.State == ConnectionState.Open)
                     myConnection.Dispose();
+
+                textBox5.Clear();
+                textBox6.Clear();
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Username is already taken!", "Username changing denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void button_ChangePasswordClick(object sender, EventArgs e)
@@ -125,7 +130,7 @@ namespace LibraryApp
             try
             {
                 myConnection = new SqlConnection(lf.connection);
-                myCommand = new SqlCommand("SELECT * FROM Accounts WHERE password = '" + textBox7.Text + "'", myConnection);
+                myCommand = new SqlCommand("SELECT password FROM Accounts WHERE password = '" + textBox7.Text + "'", myConnection);
                 myConnection.Open();
                 SqlDataAdapter sda = new SqlDataAdapter(myCommand);
                 DataTable dt = new DataTable();
@@ -142,11 +147,11 @@ namespace LibraryApp
                         MessageBox.Show("Passwords dont't match!", "Passwords don't match", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
                     {
-                        SqlCommand myCommand2 = new SqlCommand("UPDATE Accounts SET password = '" + textBox8.Text + "' WHERE password = '" + textBox7.Text + "'", myConnection);
-                        SqlDataAdapter sda2 = new SqlDataAdapter(myCommand2);
+                        SqlCommand updateCommand = new SqlCommand("UPDATE Accounts SET password = '" + textBox8.Text + "' WHERE password = '" + textBox7.Text + "'", myConnection);
+                        SqlDataAdapter sda2 = new SqlDataAdapter(updateCommand);
                         DataTable dt2 = new DataTable();
                         sda2.Fill(dt2);
-                        myCommand2.ExecuteNonQuery();
+                        updateCommand.ExecuteNonQuery();
                         MessageBox.Show("Password changed successfully!");
                     }
                 }
