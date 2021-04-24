@@ -94,6 +94,7 @@
             this.yourBooksToolStripMenuItem.Name = "yourBooksToolStripMenuItem";
             this.yourBooksToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
             this.yourBooksToolStripMenuItem.Text = "Your books";
+            this.yourBooksToolStripMenuItem.Click += new System.EventHandler(this.yourBooksToolStripMenuItem_Click);
             // 
             // catalogueToolStripMenuItem
             // 
@@ -107,12 +108,14 @@
             this.borrowABookToolStripMenuItem.Name = "borrowABookToolStripMenuItem";
             this.borrowABookToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
             this.borrowABookToolStripMenuItem.Text = "Borrow a book";
+            this.borrowABookToolStripMenuItem.Click += new System.EventHandler(this.borrowABookToolStripMenuItem_Click);
             // 
             // returnABookToolStripMenuItem
             // 
             this.returnABookToolStripMenuItem.Name = "returnABookToolStripMenuItem";
             this.returnABookToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
             this.returnABookToolStripMenuItem.Text = "Return a book";
+            this.returnABookToolStripMenuItem.Click += new System.EventHandler(this.returnABookToolStripMenuItem_Click);
             // 
             // backToLoginToolStripMenuItem
             // 
