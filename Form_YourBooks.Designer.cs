@@ -29,6 +29,7 @@ namespace LibraryApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_YourBooks));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -39,7 +40,7 @@ namespace LibraryApp
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.PeachPuff;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(178, 100);
+            this.dataGridView1.Location = new System.Drawing.Point(233, 134);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(445, 315);
             this.dataGridView1.TabIndex = 3;
@@ -47,11 +48,11 @@ namespace LibraryApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lucida Handwriting", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Lucida Handwriting", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(301, 46);
+            this.label1.Location = new System.Drawing.Point(318, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 31);
+            this.label1.Size = new System.Drawing.Size(234, 44);
             this.label1.TabIndex = 65;
             this.label1.Text = "Your books";
             // 
@@ -61,7 +62,7 @@ namespace LibraryApp
             this.button4.BackColor = System.Drawing.Color.PeachPuff;
             this.button4.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(595, 421);
+            this.button4.Location = new System.Drawing.Point(683, 531);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(186, 34);
             this.button4.TabIndex = 66;
@@ -73,11 +74,13 @@ namespace LibraryApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 458);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(893, 577);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form_YourBooks";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_YourBooks";
             this.Load += new System.EventHandler(this.Form_YourBooks_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

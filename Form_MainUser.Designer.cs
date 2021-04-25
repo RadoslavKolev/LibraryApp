@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.yourAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yourBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.catalogueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrowABookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,7 +69,6 @@
             this.menuStrip1.BackColor = System.Drawing.Color.PeachPuff;
             this.menuStrip1.Font = new System.Drawing.Font("Lucida Handwriting", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.yourAccountToolStripMenuItem,
             this.yourBooksToolStripMenuItem,
             this.catalogueToolStripMenuItem,
             this.borrowABookToolStripMenuItem,
@@ -82,12 +80,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1151, 28);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // yourAccountToolStripMenuItem
-            // 
-            this.yourAccountToolStripMenuItem.Name = "yourAccountToolStripMenuItem";
-            this.yourAccountToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
-            this.yourAccountToolStripMenuItem.Text = "Your account";
             // 
             // yourBooksToolStripMenuItem
             // 
@@ -163,7 +155,6 @@
         private System.Windows.Forms.ToolStripMenuItem borrowABookToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem returnABookToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem yourAccountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yourBooksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backToLoginToolStripMenuItem;
     }
