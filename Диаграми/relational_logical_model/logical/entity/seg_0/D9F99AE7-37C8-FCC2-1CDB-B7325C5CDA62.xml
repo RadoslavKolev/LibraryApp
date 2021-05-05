@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D9F99AE7-37C8-FCC2-1CDB-B7325C5CDA62" name="Genre">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>56DE2DBF-86CE-B356-70B9-B57711F3BDB0</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id genre" id="EE006396-E18E-D3F8-8759-8F124136169A">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>20E41E03-4D67-BA12-FF4F-975A2CEAF40E</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="genre" id="8BA9ED1E-FB3C-2148-E954-6A309B95219F">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>BC68B3D7-ACD9-0DD6-9FB0-C85DC53BEAB5</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="BF45D75A-88DE-1258-506F-A0E2BB317685" name="Genre PK">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>8660C9F6-5E51-349F-3C95-AFE8783ED2A5</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>EE006396-E18E-D3F8-8759-8F124136169A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

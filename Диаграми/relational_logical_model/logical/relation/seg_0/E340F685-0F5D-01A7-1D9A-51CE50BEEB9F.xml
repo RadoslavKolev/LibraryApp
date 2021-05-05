@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Borrowed_Àccounts_FK" directorySegmentName="seg_0" id="E340F685-0F5D-01A7-1D9A-51CE50BEEB9F">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>50183B30-335C-CEF5-3F74-98BE7AADB450</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<sourcePk>3D07A022-5C6B-6B46-5D69-F9C49CB1087D</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>A6F3863E-81E1-8322-4903-8531FEDCB00A</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>1D1DDBFC-0BBA-7D4E-9BB2-640B74E04AAA</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

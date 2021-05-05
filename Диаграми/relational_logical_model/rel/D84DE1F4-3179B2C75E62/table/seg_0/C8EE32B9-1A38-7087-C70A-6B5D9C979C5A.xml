@@ -1,0 +1,135 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C8EE32B9-1A38-7087-C70A-6B5D9C979C5A" name="Books">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:44:32 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="book_code" id="A3BECF37-6997-5472-7911-85E98B997463">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:46:48 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="book_name" id="64698596-40D6-7099-E0E7-E828C062AD6E">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:46:48 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="book_genre" id="AC5C2D3E-FE1D-F166-395F-4DA00060907C">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:46:48 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="96459266-1407-C2F6-F25B-B2F26FE5AA36" referredColumn="20E41E03-4D67-BA12-FF4F-975A2CEAF40E"/>
+</associations>
+</Column>
+<Column name="book_pieces" id="5F866DAF-B9DC-4349-DE79-C0767D3C93BB">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:46:48 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="book_available" id="2DBB3663-478E-9818-57E3-EFA3C743C280">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:46:48 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="book_author" id="D8641271-D5C7-47DD-BFC2-18AE43122407">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:46:48 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="book_publisher" id="91B846A4-74AF-543E-4F47-6093397C1541">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:46:48 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="book_year" id="64A7FE2F-1481-0E71-9D4F-045E9D4825B1">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:46:48 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="book_summary" id="EDB24F2E-DEF4-84FC-B89A-60CB429EC831">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:46:48 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="483355AD-18F1-DD22-CB6D-D4A91C93D327" name="Books_PK">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:46:48 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A3BECF37-6997-5472-7911-85E98B997463"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="96335D28-C8AB-5EE4-4E7C-DEA47FB7FA01" name="Books_Genre_FK">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:50:19 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AC5C2D3E-FE1D-F166-395F-4DA00060907C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

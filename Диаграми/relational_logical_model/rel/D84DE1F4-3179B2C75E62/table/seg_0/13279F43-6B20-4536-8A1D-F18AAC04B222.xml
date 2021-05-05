@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="13279F43-6B20-4536-8A1D-F18AAC04B222" name="Borrowed">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:46:55 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="borrow_id" id="BC9E56B6-4E1B-EB6F-E5C3-03A45CD97D46">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:48:19 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="reader_code" id="175E4A04-D5CB-CFFD-6DEF-C79FDE3CA4FC">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:48:19 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="50183B30-335C-CEF5-3F74-98BE7AADB450" referredColumn="75045510-264C-1143-D09E-8E833EE9758E"/>
+</associations>
+</Column>
+<Column name="book_code" id="373F2406-6F54-F38D-9D25-93F9ADFACF5A">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:48:19 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DD51F385-FB6E-1BCB-23F4-9BE1D626C2A3" referredColumn="A3BECF37-6997-5472-7911-85E98B997463"/>
+</associations>
+</Column>
+<Column name="loan_date" id="91DD6871-5783-C720-05E6-07A439EA8C1E">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:48:19 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="borrow_returned" id="78B46C54-DCC5-DE4D-D7DC-41EA24487686">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:48:19 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E9B647CB-2518-3474-167E-078FD5897777" name="Borrowed_PK">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:48:19 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC9E56B6-4E1B-EB6F-E5C3-03A45CD97D46"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0A7C0495-E955-1BBD-5C23-5EC7BE344A88" name="Borrowed_Àccounts_FK">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:49:15 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="175E4A04-D5CB-CFFD-6DEF-C79FDE3CA4FC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2ED0ADB6-3DC6-48F5-DB5F-9A796242D25E" name="Borrowed_Books_FK">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:49:52 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="373F2406-6F54-F38D-9D25-93F9ADFACF5A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

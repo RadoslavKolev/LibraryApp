@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Borrowed_Books_FK" directorySegmentName="seg_0" id="6F21B36A-01C6-A467-C710-519EB43F65E7">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>DD51F385-FB6E-1BCB-23F4-9BE1D626C2A3</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<sourcePk>017EDA63-598C-DF4A-5DFD-70DA01030D5C</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>DE164090-6552-DD18-2A53-3F530A97B21F</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>1D1DDBFC-0BBA-7D4E-9BB2-640B74E04AAA</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

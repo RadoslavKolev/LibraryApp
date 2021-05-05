@@ -1,0 +1,161 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A6F3863E-81E1-8322-4903-8531FEDCB00A" name="Àccounts">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>9D414E2A-6197-77B8-29F3-512538135B9D</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="code" id="738F5FE0-54D8-0BA3-240A-7A59718AFD40">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>75045510-264C-1143-D09E-8E833EE9758E</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fullname" id="6FD1886F-6A93-30D0-C1F7-3176B9D8B923">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>CF28E065-666B-FCB0-661B-3083D4DB1143</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email" id="3208ED18-09F3-9BE6-3184-2436722922B3">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>08593FCD-B476-BF2E-EB82-088AEAD3E85E</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="city" id="2076FFF7-2C01-727C-8918-2B7AADC41313">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>49ECF83D-84A7-8EFB-14E3-07D705C24A0E</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="address" id="95DAFE7D-6C31-5D99-F535-C38A5EE06A20">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>B9DFECF5-2529-479D-0C22-C27F1B7EE6D9</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="phone" id="56A10574-61E7-1CBA-B418-0F7A857FBBD4">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>B88699EB-65AB-2574-9359-BB03E70C7618</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="sex" id="00668D1D-4B36-3A2E-D4A6-F94B607FA093">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>D28C37A9-E603-D0BD-88AB-3E0CDD9C2895</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT034</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="username" id="952052F9-D90A-E940-0E94-87413DF40C36">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>FA82DAB0-3C1E-391F-52C1-E871477AB07F</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="password" id="799B8979-D945-5E1C-8A26-C41CB541E048">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>A0CD7A80-EF5E-AE2E-F34E-C2BAF9DE48A5</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="3D07A022-5C6B-6B46-5D69-F9C49CB1087D" name="Àccounts PK">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>1DEB8EC1-09D1-030D-63F5-6CBBA5358529</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>738F5FE0-54D8-0BA3-240A-7A59718AFD40</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

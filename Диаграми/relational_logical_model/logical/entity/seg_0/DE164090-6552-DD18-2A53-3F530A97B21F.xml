@@ -1,0 +1,160 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DE164090-6552-DD18-2A53-3F530A97B21F" name="Books">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>C8EE32B9-1A38-7087-C70A-6B5D9C979C5A</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="book code" id="0719E3D5-2E07-9419-5427-94A4D629AB65">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>A3BECF37-6997-5472-7911-85E98B997463</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="book name" id="E85FA40B-F9C2-D255-016D-636864576F97">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>64698596-40D6-7099-E0E7-E828C062AD6E</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="book genre" id="C6DD3783-23E3-9EFE-4A03-6C9910697043">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>775A1032-748F-345C-1DC7-CFD6B5723F19</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<referedAttribute>EE006396-E18E-D3F8-8759-8F124136169A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="book pieces" id="62D9631A-24B2-A35D-CB69-4E873549EFFE">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>5F866DAF-B9DC-4349-DE79-C0767D3C93BB</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="book available" id="7A5DD7E0-9C93-3CC6-D3CD-0CEAE329039E">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>2DBB3663-478E-9818-57E3-EFA3C743C280</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="book author" id="629137DA-6CE4-2924-90E9-24427523D3BD">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>D8641271-D5C7-47DD-BFC2-18AE43122407</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="book publisher" id="71965C24-68BF-E508-BBC3-60C79100B65E">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>91B846A4-74AF-543E-4F47-6093397C1541</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="book year" id="3A15576B-03E8-B3C7-1AAE-C7EAC8B671A0">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>64A7FE2F-1481-0E71-9D4F-045E9D4825B1</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="book summary" id="142A19D7-D2D1-7FDC-8EDF-A2CFAE2C8C6B">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>EDB24F2E-DEF4-84FC-B89A-60CB429EC831</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="017EDA63-598C-DF4A-5DFD-70DA01030D5C" name="Books PK">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>483355AD-18F1-DD22-CB6D-D4A91C93D327</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0719E3D5-2E07-9419-5427-94A4D629AB65</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

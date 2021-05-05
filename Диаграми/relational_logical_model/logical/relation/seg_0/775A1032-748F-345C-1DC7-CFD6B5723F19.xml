@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Books_Genre_FK" directorySegmentName="seg_0" id="775A1032-748F-345C-1DC7-CFD6B5723F19">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:51:03 UTC</createdTime>
+<generatorID>96459266-1407-C2F6-F25B-B2F26FE5AA36</generatorID>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<engineerTo>
+<item key="D84DE1F4-A7F0-9718-7FC6-3179B2C75E62" value="true"/>
+</engineerTo>
+<sourcePk>BF45D75A-88DE-1258-506F-A0E2BB317685</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>D9F99AE7-37C8-FCC2-1CDB-B7325C5CDA62</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>DE164090-6552-DD18-2A53-3F530A97B21F</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

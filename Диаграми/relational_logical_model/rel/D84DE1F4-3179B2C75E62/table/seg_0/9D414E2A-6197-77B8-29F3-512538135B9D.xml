@@ -1,0 +1,124 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9D414E2A-6197-77B8-29F3-512538135B9D" name="Àccounts">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:40:54 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="code" id="75045510-264C-1143-D09E-8E833EE9758E">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:42:50 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fullname" id="CF28E065-666B-FCB0-661B-3083D4DB1143">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:42:50 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="08593FCD-B476-BF2E-EB82-088AEAD3E85E">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:42:50 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="city" id="49ECF83D-84A7-8EFB-14E3-07D705C24A0E">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:42:50 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="address" id="B9DFECF5-2529-479D-0C22-C27F1B7EE6D9">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:42:50 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="phone" id="B88699EB-65AB-2574-9359-BB03E70C7618">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:42:50 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="sex" id="D28C37A9-E603-D0BD-88AB-3E0CDD9C2895">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:42:50 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT034</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="username" id="FA82DAB0-3C1E-391F-52C1-E871477AB07F">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:42:50 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="password" id="A0CD7A80-EF5E-AE2E-F34E-C2BAF9DE48A5">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:42:50 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1DEB8EC1-09D1-030D-63F5-6CBBA5358529" name="Àccounts_PK">
+<createdBy>user</createdBy>
+<createdTime>2021-05-01 20:42:50 UTC</createdTime>
+<ownerDesignName>relational_logical_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="75045510-264C-1143-D09E-8E833EE9758E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
