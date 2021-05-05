@@ -43,5 +43,26 @@ namespace LibraryApp
             catalog.Show();
             this.Hide();
         }
+
+        private void borrowABookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_BorrowedClient borrow = new Form_BorrowedClient();
+            borrow.Show();
+            this.Hide();
+        }
+
+        private void returnABookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Return ret = new Form_Return();
+            ret.Show();
+            this.Hide();
+        }
+
+        private void yourBooksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_YourBooks book = new Form_YourBooks();
+            book.Show();
+            this.Hide();
+        }
     }
 }

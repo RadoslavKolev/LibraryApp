@@ -13,16 +13,16 @@ namespace LibraryApp
 {
     public partial class Form_Login : Form
     {
+        public static String LoginName { get; set; }
         public Form_Login()
         {
             InitializeComponent();
         }
 
-        // public string connection = @" Data Source = (localdb)\MSSQLLocalDB;AttachDbFilename=D:\C# projects\LibraryApp\LibraryDB.mdf;Integrated Security = True";
+        //public string connection = @" Data Source = (localdb)\MSSQLLocalDB;AttachDbFilename=D:\C# projects\LibraryApp\LibraryDB.mdf;Integrated Security = True";
         public string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\ТУ Варна\Семестър 6\ТСП - проект\LibraryApp\LibraryDB.mdf;Integrated Security=True";
         public SqlConnection myConnection = default(SqlConnection);
         public SqlCommand myCommand = default(SqlCommand);
-
         private void Form1_Load(object sender, EventArgs e)
         {
             panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
@@ -71,6 +71,7 @@ namespace LibraryApp
                     else
                     {
                         MessageBox.Show("Login Successfull!", "Login Success");
+                        Form_Login.LoginName = textBox1.Text;
                         Form_MainUser user = new Form_MainUser();
                         user.Show();
                         this.Hide();
@@ -258,5 +259,6 @@ namespace LibraryApp
             if(textBox2.Text == "")
                 button5.Visible = false;
         }
+   
     }
 }

@@ -97,6 +97,12 @@
     <Compile Include="Form_Borrowed.Designer.cs">
       <DependentUpon>Form_Borrowed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_BorrowedClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_BorrowedClient.Designer.cs">
+      <DependentUpon>Form_BorrowedClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Catalogue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,18 @@
     </Compile>
     <Compile Include="Form_Genre.Designer.cs">
       <DependentUpon>Form_Genre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Return.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Return.Designer.cs">
+      <DependentUpon>Form_Return.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_YourBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_YourBooks.Designer.cs">
+      <DependentUpon>Form_YourBooks.cs</DependentUpon>
     </Compile>
     <Compile Include="GenreDBDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -181,6 +199,9 @@
     <EmbeddedResource Include="Form_Borrowed.resx">
       <DependentUpon>Form_Borrowed.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_BorrowedClient.resx">
+      <DependentUpon>Form_BorrowedClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Catalogue.resx">
       <DependentUpon>Form_Catalogue.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,11 +220,17 @@
     <EmbeddedResource Include="Form_Readers.resx">
       <DependentUpon>Form_Readers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Return.resx">
+      <DependentUpon>Form_Return.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Terms.resx">
       <DependentUpon>Form_Terms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_MainUser.resx">
       <DependentUpon>Form_MainUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_YourBooks.resx">
+      <DependentUpon>Form_YourBooks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.yourAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yourBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.catalogueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrowABookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,7 +69,6 @@
             this.menuStrip1.BackColor = System.Drawing.Color.PeachPuff;
             this.menuStrip1.Font = new System.Drawing.Font("Lucida Handwriting", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.yourAccountToolStripMenuItem,
             this.yourBooksToolStripMenuItem,
             this.catalogueToolStripMenuItem,
             this.borrowABookToolStripMenuItem,
@@ -83,17 +81,12 @@
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // yourAccountToolStripMenuItem
-            // 
-            this.yourAccountToolStripMenuItem.Name = "yourAccountToolStripMenuItem";
-            this.yourAccountToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
-            this.yourAccountToolStripMenuItem.Text = "Your account";
-            // 
             // yourBooksToolStripMenuItem
             // 
             this.yourBooksToolStripMenuItem.Name = "yourBooksToolStripMenuItem";
             this.yourBooksToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
             this.yourBooksToolStripMenuItem.Text = "Your books";
+            this.yourBooksToolStripMenuItem.Click += new System.EventHandler(this.yourBooksToolStripMenuItem_Click);
             // 
             // catalogueToolStripMenuItem
             // 
@@ -107,12 +100,14 @@
             this.borrowABookToolStripMenuItem.Name = "borrowABookToolStripMenuItem";
             this.borrowABookToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
             this.borrowABookToolStripMenuItem.Text = "Borrow a book";
+            this.borrowABookToolStripMenuItem.Click += new System.EventHandler(this.borrowABookToolStripMenuItem_Click);
             // 
             // returnABookToolStripMenuItem
             // 
             this.returnABookToolStripMenuItem.Name = "returnABookToolStripMenuItem";
             this.returnABookToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
             this.returnABookToolStripMenuItem.Text = "Return a book";
+            this.returnABookToolStripMenuItem.Click += new System.EventHandler(this.returnABookToolStripMenuItem_Click);
             // 
             // backToLoginToolStripMenuItem
             // 
@@ -160,7 +155,6 @@
         private System.Windows.Forms.ToolStripMenuItem borrowABookToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem returnABookToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem yourAccountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yourBooksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backToLoginToolStripMenuItem;
     }
