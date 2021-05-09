@@ -21,6 +21,7 @@ namespace LibraryApp
         }
         public SqlConnection myConnection = default(SqlConnection);
         public SqlCommand myCommand = default(SqlCommand);
+        public SqlCommand myCommand1 = default(SqlCommand);
         public SqlDataAdapter adapter, adapter2;
         Form_Login lf = new Form_Login();
 
@@ -36,15 +37,17 @@ namespace LibraryApp
             try
             {
                 string p = "Yes";
-              
+               
                 myConnection = new SqlConnection(lf.connection);
                 myCommand = new SqlCommand("UPDATE Borrowed SET borrow_returned='"+p+ "' WHERE book_code = (Select Books.book_code from Books where book_name = '" + textBox2.Text + "')", myConnection);
+                myCommand1 = new SqlCommand("UPDATE Books SET book_pieces=book_pieces+1 WHERE book_code = (Select Books.book_code from Books where book_name = '" + textBox2.Text + "')", myConnection);
                 myConnection.Open();
                 if (textBox1.Text == "" || textBox2.Text == "")
                     MessageBox.Show("The fields cannot be empty!", "Empty fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     myCommand.ExecuteNonQuery();
+                    myCommand1.ExecuteNonQuery();
                     myConnection.Close();
 
                     MessageBox.Show("Book Returned successful!");

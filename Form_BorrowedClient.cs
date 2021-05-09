@@ -22,6 +22,7 @@ namespace LibraryApp
         }
         public SqlConnection myConnection = default(SqlConnection);
         public SqlCommand myCommand = default(SqlCommand);
+        public SqlCommand myCommand1 = default(SqlCommand);
         public SqlDataAdapter adapter, adapter2;
         Form_Login lf = new Form_Login();
 
@@ -84,11 +85,13 @@ namespace LibraryApp
                     string p = "No";
                     
                     myConnection = new SqlConnection(lf.connection);
-                    myCommand = new SqlCommand("INSERT INTO Borrowed (reader_code,book_code,loan_date,borrow_returned) VALUES((SELECT Accounts.code FROM Accounts WHERE username='"+textBox1.Text+"'),(Select Books.book_code from Books where book_name = '" + textBox2.Text + "'), '"+textBox3.Text+"', '"+p+"')", myConnection);                
+                    myCommand = new SqlCommand("INSERT INTO Borrowed (reader_code,book_code,loan_date,borrow_returned) VALUES((SELECT Accounts.code FROM Accounts WHERE username='"+textBox1.Text+"'),(Select Books.book_code from Books where book_name = '" + textBox2.Text + "'), '"+textBox3.Text+"', '"+p+"')", myConnection);
+                    myCommand1 = new SqlCommand("UPDATE Books SET book_pieces=book_pieces-1 WHERE book_code = (Select Books.book_code from Books where book_name = '" + textBox2.Text + "')", myConnection);
                     myConnection.Open();
-            
+
 
                     myCommand.ExecuteNonQuery();
+                        myCommand1.ExecuteNonQuery();
                     MessageBox.Show("Borrow successfully!");
 
                     myConnection.Close();
