@@ -153,7 +153,7 @@ namespace LibraryApp
             this.passwordDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.accountsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(587, -17);
+            this.dataGridView1.Location = new System.Drawing.Point(596, 20);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(445, 380);
             this.dataGridView1.TabIndex = 2;
